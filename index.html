@@ -50,6 +50,8 @@ section { margin-top:76px; }
 .ba-btn { border:0; background:transparent; padding:7px 16px; font-size:12.5px; font-weight:600; color:var(--ink2); cursor:pointer; }
 .ba-btn.on { background:var(--ink); color:#fff; }
 .g-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:24px; }
+.g-grid.collapsed { display:none; }
+.see-all { margin-top:22px; text-align:center; }
 .g-item { border:0; padding:0; border-radius:10px; overflow:hidden; cursor:pointer; aspect-ratio:4/5; background:var(--card); }
 .g-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
 .g-item:hover img { transform:scale(1.05); }
@@ -101,61 +103,13 @@ footer { margin-top:56px; color:var(--ink2); font-size:12.5px; border-top:1px so
     </div>
   </header>
 
-  <section id="films">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">AI ad films</div>
-        <h2>Short films for products and fashion</h2>
-      </div>
-      <span class="sec-num">01</span>
-    </div>
-    <p class="sec-note">Concept ads built with AI from product and character references, edited to final cut. Tap any film to play it with sound.</p>
-    <div class="v-grid">
-      <button class="v-card" data-v="f2">
-        <img src="videos/f2.jpg" alt="Black jacket, Cairo fashion film" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Black jacket, Cairo fashion film <i>0:20</i></span>
-      </button>
-      <button class="v-card" data-v="df">
-        <img src="videos/df.jpg" alt="Suit portrait, fashion film" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Suit portrait, fashion film <i>0:16</i></span>
-      </button>
-      <button class="v-card" data-v="c1">
-        <img src="videos/c1.jpg" alt="Cream jar, skincare ad concept" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Cream jar, skincare ad concept <i>0:10</i></span>
-      </button>
-      <button class="v-card" data-v="c2">
-        <img src="videos/c2.jpg" alt="Balm tube, skincare ad concept" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Balm tube, skincare ad concept <i>0:16</i></span>
-      </button>
-      <button class="v-card" data-v="c4">
-        <img src="videos/c4.jpg" alt="Face care, skincare ad concept" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Face care, skincare ad concept <i>0:12</i></span>
-      </button>
-      <button class="v-card" data-v="c3">
-        <img src="videos/c3.jpg" alt="Skin texture, skincare ad concept" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Skin texture, skincare ad concept <i>0:10</i></span>
-      </button>
-      <button class="v-card" data-v="hf">
-        <img src="videos/hf.jpg" alt="Foam cleanser, skincare ad concept" loading="lazy">
-        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="v-cap">Foam cleanser, skincare ad concept <i>0:15</i></span>
-      </button>
-    </div>
-  </section>
-
   <section id="photography">
     <div class="sec-head">
       <div>
         <div class="eyebrow">Photography</div>
         <h2>Product and fashion campaigns</h2>
       </div>
-      <span class="sec-num">02</span>
+      <span class="sec-num">01</span>
     </div>
     <div class="g-grid">
       <button class="g-item" data-idx="0"><img src="photos/samba-hero.jpg" alt="White classic sneaker floating over a sand-toned studio ground" loading="lazy"></button>
@@ -170,6 +124,9 @@ footer { margin-top:56px; color:var(--ink2); font-size:12.5px; border-top:1px so
       <button class="g-item" data-idx="9"><img src="photos/heels-pair.jpg" alt="Pair of black stiletto heels, three-quarter view" loading="lazy"></button>
       <button class="g-item" data-idx="10"><img src="photos/croc-dramatic.jpg" alt="Croc-embossed bag in dramatic low-key lighting" loading="lazy"></button>
       <button class="g-item" data-idx="11"><img src="photos/ctre-two.jpg" alt="Two athletic t-shirts side by side in studio light" loading="lazy"></button>
+    </div>
+    <div class="see-all"><button type="button" class="btn ghost" id="seeAllBtn">See all work (52 photos)</button></div>
+    <div class="g-grid collapsed" id="allWork">
       <button class="g-item" data-idx="12"><img src="photos/gown-limo.jpg" alt="Model in an evening gown beside a limousine at night" loading="lazy"></button>
       <button class="g-item" data-idx="13"><img src="photos/asics-stride.jpg" alt="Runner mid-stride wearing bright running shoes" loading="lazy"></button>
       <button class="g-item" data-idx="14"><img src="photos/dg-branch.jpg" alt="Editorial fashion portrait framed by a bare branch" loading="lazy"></button>
@@ -219,7 +176,7 @@ footer { margin-top:56px; color:var(--ink2); font-size:12.5px; border-top:1px so
         <div class="eyebrow">Retouching</div>
         <h2>Before and after</h2>
       </div>
-      <span class="sec-num">03</span>
+      <span class="sec-num">02</span>
     </div>
     <p class="sec-note">Studio photography retouched by hand: color, texture, backdrop and finish. Switch between the raw frame and the delivered image.</p>
     <div class="ba-grid">
@@ -254,6 +211,55 @@ footer { margin-top:56px; color:var(--ink2); font-size:12.5px; border-top:1px so
     </div>
   </section>
 
+  <section id="films">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">AI ad films</div>
+        <h2>Short films for products and fashion</h2>
+      </div>
+      <span class="sec-num">03</span>
+    </div>
+    <p class="sec-note">Concept ads built with AI from product and character references, edited to final cut. Tap any film to play it with sound.</p>
+    <div class="v-grid">
+      <button class="v-card" data-v="f2">
+        <img src="videos/f2.jpg" alt="Black jacket, Cairo fashion film" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Black jacket, Cairo fashion film <i>0:20</i></span>
+      </button>
+      <button class="v-card" data-v="df">
+        <img src="videos/df.jpg" alt="Suit portrait, fashion film" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Suit portrait, fashion film <i>0:16</i></span>
+      </button>
+      <button class="v-card" data-v="c1">
+        <img src="videos/c1.jpg" alt="Cream jar, skincare ad concept" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Cream jar, skincare ad concept <i>0:10</i></span>
+      </button>
+      <button class="v-card" data-v="c2">
+        <img src="videos/c2.jpg" alt="Balm tube, skincare ad concept" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Balm tube, skincare ad concept <i>0:16</i></span>
+      </button>
+      <button class="v-card" data-v="c4">
+        <img src="videos/c4.jpg" alt="Face care, skincare ad concept" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Face care, skincare ad concept <i>0:12</i></span>
+      </button>
+      <button class="v-card" data-v="c3">
+        <img src="videos/c3.jpg" alt="Skin texture, skincare ad concept" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Skin texture, skincare ad concept <i>0:10</i></span>
+      </button>
+      <button class="v-card" data-v="hf">
+        <img src="videos/hf.jpg" alt="Foam cleanser, skincare ad concept" loading="lazy">
+        <span class="v-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="v-cap">Foam cleanser, skincare ad concept <i>0:15</i></span>
+      </button>
+    </div>
+  </section>
+
+
   <section id="process">
     <div class="sec-head">
       <div>
@@ -273,7 +279,7 @@ footer { margin-top:56px; color:var(--ink2); font-size:12.5px; border-top:1px so
       <h3>Have a product to shoot?</h3>
       <p>Send a photo of your product and a word about what you need. I reply with ideas, timing and a quote.</p>
       <div class="cta" style="margin-top:0">
-        <a class="btn solid" href="https://wa.me/201102275639" rel="noopener">WhatsApp</a>
+        <a class="btn solid" href="https://wa.me/201102275639" rel="noopener">Send your product photo on WhatsApp</a>
         <a class="btn ghost" href="mailto:abdelrahman95ph@gmail.com">Email</a>
       </div>
     </div>
@@ -448,6 +454,8 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft') lbPrev.click();
   if(e.key==='ArrowRight') lbNext.click();
 });
+const seeAllBtn=document.getElementById('seeAllBtn');
+seeAllBtn.addEventListener('click',()=>{ const g=document.getElementById('allWork'); g.classList.toggle('collapsed'); seeAllBtn.textContent=g.classList.contains('collapsed')?'See all work (52 photos)':'Show less'; });
 document.querySelectorAll('.ba-card').forEach(card=>{
   const img = card.querySelector('img');
   const state = card.querySelector('.ba-state');
