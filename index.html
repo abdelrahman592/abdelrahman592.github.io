@@ -99,6 +99,9 @@ header.top .hero-intro { margin-top:10px; font-size:15px; }
 .camp-head { display:grid; gap:2px; }
 .camp-n { font-size:11.5px; letter-spacing:.2em; color:var(--ink2); font-weight:600; }
 .camp-head h3 { font-family:'Playfair Display',Georgia,serif; font-weight:400; font-size:clamp(22px,3vw,28px); letter-spacing:-0.01em; line-height:1.15; }
+.camp-desc { color:var(--ink2); font-size:14px; max-width:560px; margin-top:12px; }
+.camp-static { cursor:default; }
+.camp-static:hover { background:transparent; color:var(--ink); }
 .camp-head p { color:var(--ink2); font-size:14px; max-width:560px; margin-top:4px; }
 .camp-lead { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:14px; }
 .camp-lead .c-hero { grid-column:span 2; grid-row:span 2; aspect-ratio:3/4; width:100%; height:100%; border-radius:14px; }
@@ -114,6 +117,8 @@ header.top .hero-intro { margin-top:10px; font-size:15px; }
   .camp { margin-top:34px; }
   .camp-lead { grid-template-columns:repeat(2,1fr); gap:8px; }
   .camp-lead .c-hero { grid-column:span 2; grid-row:auto; }
+  .camp-samba .c-hero { aspect-ratio:4/3; height:auto; }
+  .camp-samba .c-hero img { object-position:50% 62%; }
   .camp-more { grid-template-columns:repeat(2,1fr); gap:8px; }
   .bar2 nav { gap:14px; }
 }
@@ -132,40 +137,47 @@ header.top .hero-intro { margin-top:10px; font-size:15px; }
   <section id="photography">
     <div class="eyebrow work-eyebrow">Work, 52 AI concept images in 7 series</div>
 
-    <article class="camp" id="c-samba">
-      <div class="camp-head"><span class="camp-n">01 / 07</span><h3>Classic sneaker</h3><p>Green and cream sneaker: floating hero, stitching macro, sole and rear views, flat lay and street style on feet.</p></div>
+    <article class="camp camp-samba" id="c-samba">
+      <div class="camp-head"><span class="camp-n">01 / 07</span><h3>Classic sneaker</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="0"><img src="photos/samba-side.jpg" alt="Profile view of a green and cream classic sneaker"></button><button class="g-item c-sup" data-idx="1"><img src="photos/samba-float.jpg" alt="Green and cream sneaker floating over a pale ground" loading="lazy"></button><button class="g-item c-sup" data-idx="2"><img src="photos/samba-macro.jpg" alt="Macro detail of stitching on a green and cream sneaker" loading="lazy"></button><button class="g-item c-sup" data-idx="3"><img src="photos/samba-onfeet.jpg" alt="Green and cream sneakers worn on feet, street style" loading="lazy"></button><button type="button" class="camp-btn" data-n="10"><b>10</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="4"><img src="photos/samba-flat.jpg" alt="Flat lay of a green and cream sneaker on a neutral ground" loading="lazy"></button><button class="g-item c-more" data-idx="5"><img src="photos/samba-frontlow.jpg" alt="Low front angle of a green and cream sneaker" loading="lazy"></button><button class="g-item c-more" data-idx="6"><img src="photos/samba-hero.jpg" alt="Green and cream classic sneaker floating over a sand-toned studio ground" loading="lazy"></button><button class="g-item c-more" data-idx="7"><img src="photos/samba-letters.jpg" alt="Sneaker detail showing side lettering" loading="lazy"></button><button class="g-item c-more" data-idx="8"><img src="photos/samba-rear.jpg" alt="Rear view of a green and cream classic sneaker" loading="lazy"></button><button class="g-item c-more" data-idx="9"><img src="photos/samba-sole.jpg" alt="Sole view of a green and cream classic sneaker" loading="lazy"></button></div>
+      <p class="camp-desc">Green and cream sneaker, from floating hero to stitching macro and street style.</p>
     </article>
-    <article class="camp" id="c-heels">
-      <div class="camp-head"><span class="camp-n">02 / 07</span><h3>Stiletto heels</h3><p>White stiletto heels on a dark reflective surface: pair, macro, top-down, flipped and floating.</p></div>
+    <article class="camp camp-heels" id="c-heels">
+      <div class="camp-head"><span class="camp-n">02 / 07</span><h3>Stiletto heels</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="10"><img src="photos/heels-hero.jpg" alt="White stiletto heels on a dark reflective surface" loading="lazy"></button><button class="g-item c-sup" data-idx="11"><img src="photos/heels-pair.jpg" alt="Pair of white stiletto heels, three-quarter view" loading="lazy"></button><button class="g-item c-sup" data-idx="12"><img src="photos/heels-flip.jpg" alt="White stiletto heel flipped onto its side" loading="lazy"></button><button class="g-item c-sup" data-idx="13"><img src="photos/heels-macro.jpg" alt="Macro detail of a white stiletto heel" loading="lazy"></button><button type="button" class="camp-btn" data-n="6"><b>6</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="14"><img src="photos/heels-floatpair.jpg" alt="Pair of white heels, one floating above a reflective surface" loading="lazy"></button><button class="g-item c-more" data-idx="15"><img src="photos/heels-top.jpg" alt="Top-down view of a white stiletto heel" loading="lazy"></button></div>
+      <p class="camp-desc">White stiletto heels on a dark reflective surface.</p>
     </article>
-    <article class="camp" id="c-croc">
-      <div class="camp-head"><span class="camp-n">03 / 07</span><h3>Croc leather bag</h3><p>Burgundy croc-embossed bag on red velvet and satin, with leather texture and gold zipper detail.</p></div>
-      <div class="camp-lead"><button class="g-item c-hero" data-idx="16"><img src="photos/croc-bag.jpg" alt="Burgundy croc-embossed bag on red velvet and satin" loading="lazy"></button><button class="g-item c-sup" data-idx="17"><img src="photos/croc-dramatic.jpg" alt="Burgundy croc-embossed bag in low-key light" loading="lazy"></button><button class="g-item c-sup" data-idx="18"><img src="photos/croc-macro.jpg" alt="Macro texture of burgundy croc-embossed leather" loading="lazy"></button><button class="g-item c-sup" data-idx="19"><img src="photos/croc-zipper.jpg" alt="Gold zipper detail on a burgundy croc-embossed bag" loading="lazy"></button><button type="button" class="camp-btn" data-n="4"><b>4</b><span>View all images</span></button></div>
-      <div class="camp-more" hidden></div>
+    <article class="camp camp-croc" id="c-croc">
+      <div class="camp-head"><span class="camp-n">03 / 07</span><h3>Croc leather bag</h3></div>
+      <div class="camp-lead"><button class="g-item c-hero" data-idx="16"><img src="photos/croc-bag.jpg" alt="Burgundy croc-embossed bag on red velvet and satin" loading="lazy"></button><button class="g-item c-sup" data-idx="17"><img src="photos/croc-dramatic.jpg" alt="Burgundy croc-embossed bag in low-key light" loading="lazy"></button><button class="g-item c-sup" data-idx="18"><img src="photos/croc-macro.jpg" alt="Macro texture of burgundy croc-embossed leather" loading="lazy"></button><button class="g-item c-sup" data-idx="19"><img src="photos/croc-zipper.jpg" alt="Gold zipper detail on a burgundy croc-embossed bag" loading="lazy"></button><div class="camp-btn camp-static"><b>4</b><span>images in this series</span></div></div>
+      
+      <p class="camp-desc">Burgundy croc-embossed bag on red velvet, with texture and zipper detail.</p>
     </article>
-    <article class="camp" id="c-gown">
-      <div class="camp-head"><span class="camp-n">04 / 07</span><h3>Evening gown</h3><p>Red carpet, limousine, marble stairs and city lights, with embroidery and hem details.</p></div>
+    <article class="camp camp-gown" id="c-gown">
+      <div class="camp-head"><span class="camp-n">04 / 07</span><h3>Evening gown</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="20"><img src="photos/gown-carpet.jpg" alt="Evening gown on a red carpet staircase at night" loading="lazy"></button><button class="g-item c-sup" data-idx="21"><img src="photos/gown-limo.jpg" alt="Model in an evening gown beside a limousine at night" loading="lazy"></button><button class="g-item c-sup" data-idx="22"><img src="photos/gown-stairs.jpg" alt="Model in a gown descending marble stairs" loading="lazy"></button><button class="g-item c-sup" data-idx="23"><img src="photos/gown-night.jpg" alt="Evening gown under city night lights" loading="lazy"></button><button type="button" class="camp-btn" data-n="9"><b>9</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="24"><img src="photos/gown-detail.jpg" alt="Close-up of embroidery on a couture gown" loading="lazy"></button><button class="g-item c-more" data-idx="25"><img src="photos/gown-heels.jpg" alt="Gown hem with heels on a staircase" loading="lazy"></button><button class="g-item c-more" data-idx="26"><img src="photos/gown-limo2.jpg" alt="Second angle of gown and limousine scene" loading="lazy"></button><button class="g-item c-more" data-idx="27"><img src="photos/gown-portrait.jpg" alt="Fashion portrait of a model in a couture gown" loading="lazy"></button><button class="g-item c-more" data-idx="28"><img src="photos/gown-stairsback.jpg" alt="Back view of a gown on marble stairs" loading="lazy"></button></div>
+      <p class="camp-desc">Red carpet, limousine, marble stairs and city lights.</p>
     </article>
-    <article class="camp" id="c-dg">
-      <div class="camp-head"><span class="camp-n">05 / 07</span><h3>Editorial portraits</h3><p>Portraits framed by a bare branch, high-angle shots and floating fabric.</p></div>
+    <article class="camp camp-dg" id="c-dg">
+      <div class="camp-head"><span class="camp-n">05 / 07</span><h3>Editorial portraits</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="29"><img src="photos/dg-model.jpg" alt="Fashion model in a tailored dark look, editorial pose" loading="lazy"></button><button class="g-item c-sup" data-idx="30"><img src="photos/dg-branch.jpg" alt="Editorial fashion portrait framed by a bare branch" loading="lazy"></button><button class="g-item c-sup" data-idx="31"><img src="photos/dg-portrait.jpg" alt="Tight editorial portrait of a fashion model" loading="lazy"></button><button class="g-item c-sup" data-idx="32"><img src="photos/dg-highangle.jpg" alt="High-angle editorial fashion shot" loading="lazy"></button><button type="button" class="camp-btn" data-n="7"><b>7</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="33"><img src="photos/dg-arms.jpg" alt="Editorial crop of crossed arms in tailored fabric" loading="lazy"></button><button class="g-item c-more" data-idx="34"><img src="photos/dg-branch2.jpg" alt="Second editorial portrait with a bare branch" loading="lazy"></button><button class="g-item c-more" data-idx="35"><img src="photos/dg-float.jpg" alt="Fabric floating in an editorial studio shot" loading="lazy"></button></div>
+      <p class="camp-desc">Portraits with a bare branch, high angles and floating fabric.</p>
     </article>
-    <article class="camp" id="c-ctre">
-      <div class="camp-head"><span class="camp-n">06 / 07</span><h3>Athletic tees</h3><p>Grey, navy and brown tees: group layouts, solo shots, chest and back details.</p></div>
+    <article class="camp camp-ctre" id="c-ctre">
+      <div class="camp-head"><span class="camp-n">06 / 07</span><h3>Athletic tees</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="36"><img src="photos/ctre-group.jpg" alt="Group of athletic t-shirts laid out in studio light" loading="lazy"></button><button class="g-item c-sup" data-idx="37"><img src="photos/ctre-two.jpg" alt="Two athletic t-shirts side by side in studio light" loading="lazy"></button><button class="g-item c-sup" data-idx="38"><img src="photos/ctre-greycrouch.jpg" alt="Grey athletic t-shirt worn in a crouched pose" loading="lazy"></button><button class="g-item c-sup" data-idx="39"><img src="photos/ctre-greysun.jpg" alt="Grey athletic t-shirt in warm sunlight" loading="lazy"></button><button type="button" class="camp-btn" data-n="9"><b>9</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="40"><img src="photos/ctre-brownback.jpg" alt="Brown athletic t-shirt, back view" loading="lazy"></button><button class="g-item c-more" data-idx="41"><img src="photos/ctre-greyfront.jpg" alt="Grey athletic t-shirt, front view" loading="lazy"></button><button class="g-item c-more" data-idx="42"><img src="photos/ctre-navychest.jpg" alt="Navy athletic t-shirt, chest detail" loading="lazy"></button><button class="g-item c-more" data-idx="43"><img src="photos/ctre-navyover.jpg" alt="Navy athletic t-shirt, over-shoulder view" loading="lazy"></button><button class="g-item c-more" data-idx="44"><img src="photos/ctre-solo.jpg" alt="Single athletic t-shirt on a plain studio ground" loading="lazy"></button></div>
+      <p class="camp-desc">Grey, navy and brown tees, from group layouts to worn poses.</p>
     </article>
-    <article class="camp" id="c-asics">
-      <div class="camp-head"><span class="camp-n">07 / 07</span><h3>Running shoe</h3><p>Silver and white running shoe: suspended mid-air, mid-stride, on feet at the start line, with laces and sole detail.</p></div>
+    <article class="camp camp-asics" id="c-asics">
+      <div class="camp-head"><span class="camp-n">07 / 07</span><h3>Running shoe</h3></div>
       <div class="camp-lead"><button class="g-item c-hero" data-idx="45"><img src="photos/asics-hero.jpg" alt="Running shoe suspended mid-air with motion energy" loading="lazy"></button><button class="g-item c-sup" data-idx="46"><img src="photos/asics-stride.jpg" alt="Runner mid-stride wearing silver and white running shoes" loading="lazy"></button><button class="g-item c-sup" data-idx="47"><img src="photos/asics-feet.jpg" alt="Running shoes on feet, ready at the start line" loading="lazy"></button><button class="g-item c-sup" data-idx="48"><img src="photos/asics-sole.jpg" alt="Detail view of a running shoe sole" loading="lazy"></button><button type="button" class="camp-btn" data-n="7"><b>7</b><span>View all images</span></button></div>
       <div class="camp-more" hidden><button class="g-item c-more" data-idx="49"><img src="photos/asics-floor.jpg" alt="Running shoe low on a studio floor" loading="lazy"></button><button class="g-item c-more" data-idx="50"><img src="photos/asics-laces.jpg" alt="Lacing detail on a silver and white running shoe" loading="lazy"></button><button class="g-item c-more" data-idx="51"><img src="photos/asics-midstride.jpg" alt="Close crop of a runner&#x27;s shoe mid-stride" loading="lazy"></button></div>
+      <p class="camp-desc">Silver and white running shoe, mid-air, mid-stride and on feet.</p>
     </article>
   </section>
 
@@ -307,7 +319,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft') lbPrev.click();
   if(e.key==='ArrowRight') lbNext.click();
 });
-document.querySelectorAll('.camp-btn').forEach(btn=>btn.addEventListener('click',()=>{
+document.querySelectorAll('button.camp-btn').forEach(btn=>btn.addEventListener('click',()=>{
   const m=btn.closest('.camp').querySelector('.camp-more'); const open=m.hasAttribute('hidden');
   if(open){m.removeAttribute('hidden');btn.innerHTML='<b>&minus;</b><span>Show less</span>';}
   else{m.setAttribute('hidden','');btn.innerHTML='<b>'+btn.dataset.n+'</b><span>View all images</span>';btn.closest('.camp').scrollIntoView({block:'start'});}
