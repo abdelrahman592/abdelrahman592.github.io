@@ -167,7 +167,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .duo.slim{grid-template-columns:1fr 44px 1fr;max-width:820px;margin:clamp(20px,3vw,40px) auto 0}
 .duo.slim .duo-panel{height:auto;aspect-ratio:4/3}
 .duo.slim .duo-link{height:44px;width:44px;margin:0 auto;background:none}
-@media(max-width:760px){.sgrid .shot{grid-column:span 12}.duo{grid-template-columns:1fr 30px 1fr;max-width:none;margin-top:10px;gap:0}.duo-panel{height:auto;aspect-ratio:3/4}.duo-panel img{padding:8px}.duo-link{height:30px;width:30px;margin:0;background:none}.duo-cap{font-size:10px;gap:8px}}
+@media(max-width:760px){.series{padding:30px var(--pad)}.series-top{margin-bottom:18px;gap:10px}.series-id{margin-bottom:8px}.series-title{font-size:clamp(28px,8.6vw,42px)}.series-tag{font-size:13px;max-width:none}
+.sgrid{gap:10px}
+.sgrid .shot{grid-column:span 6}
+.sgrid .shot.push1{margin-top:0}
+.sgrid .shot.a-43,.sgrid .shot.a-11,.sgrid .shot.a-169{aspect-ratio:4/5}
+.shot img{transform:none}
+.shot .cap{font-size:9px;left:8px;bottom:8px;padding:4px 8px;letter-spacing:.12em}
+.viewall{margin-top:16px}
+.duo{grid-template-columns:1fr 30px 1fr;max-width:none;margin-top:10px;gap:0}.duo-panel{height:auto;aspect-ratio:3/4}.duo-panel img{padding:8px}.duo-link{height:30px;width:30px;margin:0;background:none}.duo-cap{font-size:10px;gap:8px}}
 .viewall{display:inline-flex;align-items:center;gap:12px;margin-top:clamp(22px,3vw,36px);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
 .viewall b{font-family:var(--anton);font-weight:400;color:var(--acc);font-size:15px;letter-spacing:.1em}
 .viewall i{display:block;width:44px;height:1px;background:var(--acc);transition:width .35s}
@@ -371,7 +379,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/samba-hero.webp" alt="Pair of green and cream classic sneakers in dramatic teal light"><figcaption class="cap">Campaign hero</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/samba-float.webp" alt="Green and cream sneaker floating over a pale ground" loading="lazy"><figcaption class="cap">Floating</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/samba-float.webp" alt="Green and cream sneaker floating over a pale ground"><figcaption class="cap">Floating</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/samba-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -389,7 +397,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/heels-floatpair.webp" alt="White stiletto pumps floating over a dark mirrored surface"><figcaption class="cap">Floating pair</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient" loading="lazy"><figcaption class="cap">Cream pumps</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient"><figcaption class="cap">Cream pumps</figcaption></figure>
     </div>
     <button class="viewall" data-series="1"><b>6</b> images <i></i> View all</button>
   </article>
@@ -401,7 +409,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/croc-dramatic.webp" alt="Burgundy croc-embossed leather bag on red silk drapes"><figcaption class="cap">On silk</figcaption></figure>
-      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather" loading="lazy"><figcaption class="cap">Hardware macro</figcaption></figure>
+      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather"><figcaption class="cap">Hardware macro</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/croc-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -419,7 +427,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/gown-stairs.webp" alt="Model in a gold sequin gown on a grand staircase"><figcaption class="cap">Grand staircase</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine" loading="lazy"><figcaption class="cap">Arrival</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine"><figcaption class="cap">Arrival</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/gown-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -437,7 +445,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/dg-branch.webp" alt="Black acetate sunglasses with gold logo resting on a silver branch"><figcaption class="cap">On silver</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/eye-7.webp" alt="Model in black tailoring wearing black sunglasses" loading="lazy"><figcaption class="cap">Worn</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/eye-7.webp" alt="Model in black tailoring wearing black sunglasses"><figcaption class="cap">Worn</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/dg-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -455,7 +463,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/ctre-group.webp" alt="Three models in grey, brown and navy tracksuits inside an elevator"><figcaption class="cap">Elevator trio</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator" loading="lazy"><figcaption class="cap">Brown duo</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator"><figcaption class="cap">Brown duo</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/ctre-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -473,7 +481,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/asics-hero.webp" alt="Model in white and mint sportswear wearing white running shoes"><figcaption class="cap">Ready stance</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/asics-stride.webp" alt="Model mid-stride in white and mint sportswear" loading="lazy"><figcaption class="cap">In motion</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/asics-stride.webp" alt="Model mid-stride in white and mint sportswear"><figcaption class="cap">In motion</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/asics-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -491,7 +499,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/desert-10.webp" alt="Vintage off-road car loaded with luggage in a desert valley"><figcaption class="cap">Expedition</figcaption></figure>
-      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/desert-4.webp" alt="Leather jackets on a wooden rack over a desert rug" loading="lazy"><figcaption class="cap">Desert wardrobe</figcaption></figure>
+      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/desert-4.webp" alt="Leather jackets on a wooden rack over a desert rug"><figcaption class="cap">Desert wardrobe</figcaption></figure>
     </div>
     <button class="viewall" data-series="7"><b>4</b> images <i></i> View all</button>
   </article>
@@ -503,7 +511,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/bag-2.webp" alt="Hands presenting a python-effect handbag on an amber backdrop"><figcaption class="cap">Presented</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/bag-3.webp" alt="Silhouette of a model holding a python-effect handbag" loading="lazy"><figcaption class="cap">Silhouette</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/bag-3.webp" alt="Silhouette of a model holding a python-effect handbag"><figcaption class="cap">Silhouette</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/bag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -521,7 +529,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/frag-hero.webp" alt="Clear perfume bottle on a stone pedestal in golden light"><figcaption class="cap">On stone</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/frag-artifact.webp" alt="Perfume bottle on a stone slab under sunbeams" loading="lazy"><figcaption class="cap">Sunbeam</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/frag-artifact.webp" alt="Perfume bottle on a stone slab under sunbeams"><figcaption class="cap">Sunbeam</figcaption></figure>
     </div>
     <button class="viewall" data-series="9"><b>9</b> images <i></i> View all</button>
   </article>
@@ -533,7 +541,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/gold-hero.webp" alt="Black and gold shampoo bottle on a pedestal in golden glow"><figcaption class="cap">Gold standard</figcaption></figure>
-      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/gold-group.webp" alt="Black and gold hair-care range on pedestals" loading="lazy"><figcaption class="cap">The range</figcaption></figure>
+      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/gold-group.webp" alt="Black and gold hair-care range on pedestals"><figcaption class="cap">The range</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/gold-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -551,7 +559,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/skin-hero.webp" alt="Model holding a white skincare bottle with lathered hands"><figcaption class="cap">Lather</figcaption></figure>
-      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/skin-berries.webp" alt="Skincare jar in a basket of fresh berries" loading="lazy"><figcaption class="cap">Fresh</figcaption></figure>
+      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/skin-berries.webp" alt="Skincare jar in a basket of fresh berries"><figcaption class="cap">Fresh</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/skin-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -569,7 +577,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/obag-hero.webp" alt="Model in sage green holding a burnt orange leather bag by a scooter"><figcaption class="cap">Sage and orange</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/obag-ride.webp" alt="Model with a burnt orange bag beside a vintage scooter" loading="lazy"><figcaption class="cap">Ride</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/obag-ride.webp" alt="Model with a burnt orange bag beside a vintage scooter"><figcaption class="cap">Ride</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/obag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -587,7 +595,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/red-hero.webp" alt="Red running shoe wrapped in light trails on dark red"><figcaption class="cap">Ignition</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/red-pair.webp" alt="Pair of red running shoes in smoke and red light" loading="lazy"><figcaption class="cap">Pair</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/red-pair.webp" alt="Pair of red running shoes in smoke and red light"><figcaption class="cap">Pair</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/red-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -605,7 +613,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/puff-hero.webp" alt="Model in a black puffer jacket crossing a city square"><figcaption class="cap">Downtown</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/puff-downtown.webp" alt="Model in a black puffer jacket carrying a tote in the city" loading="lazy"><figcaption class="cap">City walk</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/puff-downtown.webp" alt="Model in a black puffer jacket carrying a tote in the city"><figcaption class="cap">City walk</figcaption></figure>
     </div>
     <button class="viewall" data-series="14"><b>6</b> images <i></i> View all</button>
   </article>
@@ -617,7 +625,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/denim-hero.webp" alt="Model in ripped embellished jeans leaning on a black convertible"><figcaption class="cap">Denim and chrome</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/denim-seated.webp" alt="Model in ripped embellished jeans seated by a black convertible" loading="lazy"><figcaption class="cap">Seated</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/denim-seated.webp" alt="Model in ripped embellished jeans seated by a black convertible"><figcaption class="cap">Seated</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/denim-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -635,7 +643,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption class="cap">On black</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/derby-float.webp" alt="Black derby shoes floating over white" loading="lazy"><figcaption class="cap">Floating</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/derby-float.webp" alt="Black derby shoes floating over white"><figcaption class="cap">Floating</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/derby-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -653,7 +661,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     </div>
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/foam-hero.webp" alt="Marbled foam runner floating on a blue gradient"><figcaption class="cap">Floating</figcaption></figure>
-      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/foam-low.webp" alt="Marbled foam runner from a low angle" loading="lazy"><figcaption class="cap">Low angle</figcaption></figure>
+      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/foam-low.webp" alt="Marbled foam runner from a low angle"><figcaption class="cap">Low angle</figcaption></figure>
       <figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/foam-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
@@ -773,20 +781,20 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
   </div>
   <p class="refstrip-head">From reference input to film output</p>
   <div class="refstrip">
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-f2-ref.webp" alt="Model, outfit and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="videos/f2.webp" alt="Black jacket, Cairo fashion film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, outfit and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-df-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="df"><img decoding="async" src="videos/df.webp" alt="Suit portrait, fashion film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c1-ref.webp" alt="Model sheet and product photo (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="videos/c1.webp" alt="Cream jar, skincare ad concept" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c2-ref.webp" alt="Real product photo (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="videos/c2.webp" alt="Balm tube, skincare ad concept" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Real product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c3-ref.webp" alt="Model sheet and product photo (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="videos/c3.webp" alt="Skin texture, skincare ad concept" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c4-ref.webp" alt="Model sheet and product photo (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="videos/c4.webp" alt="Face care, skincare ad concept" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-hf-ref.webp" alt="Product photo (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="videos/hf.webp" alt="Foam cleanser, skincare ad concept" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl1"><img decoding="async" src="videos/dl1.webp" alt="Vintage SUV, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl2"><img decoding="async" src="videos/dl2.webp" alt="Campfire kettle, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-     <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl3"><img decoding="async" src="videos/dl3.webp" alt="SUV drifting, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl4"><img decoding="async" src="videos/dl4.webp" alt="Storage chest, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl5"><img decoding="async" src="videos/dl5.webp" alt="Full camp breeze, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl6"><img decoding="async" src="videos/dl6.webp" alt="Coffee steam, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)" loading="lazy"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl7"><img decoding="async" src="videos/dl7.webp" alt="Kettle and chair, desert lounge film" loading="lazy"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-f2-ref.webp" alt="Model, outfit and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, outfit and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-df-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="df"><img decoding="async" src="videos/df.webp" alt="Suit portrait, fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c1-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="videos/c1.webp" alt="Cream jar, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c2-ref.webp" alt="Real product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="videos/c2.webp" alt="Balm tube, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Real product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c3-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="videos/c3.webp" alt="Skin texture, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-c4-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="videos/c4.webp" alt="Face care, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/film-hf-ref.webp" alt="Product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl1"><img decoding="async" src="videos/dl1.webp" alt="Vintage SUV, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl2"><img decoding="async" src="videos/dl2.webp" alt="Campfire kettle, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+     <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl3"><img decoding="async" src="videos/dl3.webp" alt="SUV drifting, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl4"><img decoding="async" src="videos/dl4.webp" alt="Storage chest, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl5"><img decoding="async" src="videos/dl5.webp" alt="Full camp breeze, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl6"><img decoding="async" src="videos/dl6.webp" alt="Coffee steam, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="dl7"><img decoding="async" src="videos/dl7.webp" alt="Kettle and chair, desert lounge film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
  </div>
 </section>
 
