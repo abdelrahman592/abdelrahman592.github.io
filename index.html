@@ -313,6 +313,15 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
   .marquee .track{animation:none}
   .scroll-hint i{animation:none}
 }
+
+/* refstrip v2: one large tappable sheet per film */
+.refstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(18px,2vw,30px);overflow:visible;padding:4px var(--pad) 40px}
+.refpair{width:auto;flex:none}
+.refpair .pair{display:grid;grid-template-columns:1fr auto 118px;align-items:center;gap:12px}
+.refimg{width:100%;height:280px;cursor:zoom-in;object-fit:contain}
+.filmthumb{width:118px;height:210px}
+.refcap{font-size:12.5px}
+@media(max-width:760px){.refstrip{grid-template-columns:1fr}.refpair .pair{grid-template-columns:1fr auto 108px}.refimg{height:250px}.filmthumb{width:108px;height:192px}}
 </style>
 </head>
 <body>
@@ -749,15 +758,15 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
       <span class="vmeta"><span class="vname">Foam cleanser &mdash; skincare ad</span><span class="vdur">0:15</span></span>
     </button>
   </div>
-  <p class="refstrip-head">From reference input to film output</p>
+  <p class="refstrip-head">Each film: its reference sheet &rarr; the result</p>
   <div class="refstrip">
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/desert-ref.webp" alt="Model, product and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="desert-lounge"><img decoding="async" src="preview-v4/videos/df.webp" alt="Desert camp, Desert Lounge fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, product and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-f2-ref.webp" alt="Model, outfit and location sheets (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model, outfit and location sheets (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c1-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c2-ref.webp" alt="Real product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Real product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c3-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c4-ref.webp" alt="Model sheet and product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Model sheet and product photo (reference input)</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-hf-ref.webp" alt="Product photo (reference input)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Product photo (reference input)</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/desert-ref.webp" alt="Reference sheet: clothes, model and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="desert-lounge"><img decoding="async" src="preview-v4/videos/df.webp" alt="Desert camp, Desert Lounge fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: clothes, model and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-f2-ref.webp" alt="Reference sheet: model, outfit pieces and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model, outfit pieces and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c1-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c2-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: product photo</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c3-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c4-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-hf-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: product photo</p></div>
   </div>
 </section>
 
@@ -920,6 +929,7 @@ document.querySelectorAll('.shot').forEach(function(f){
 });
 
 /* film cards: hover preview + click for sound */
+document.querySelectorAll('.refimg').forEach(function(im){ im.addEventListener('click',function(){ lbOpen([im.getAttribute('src')],0); }); });
 document.querySelectorAll('.filmthumb').forEach(function(b){ b.addEventListener('click',function(){ lbOpenVideo(b.dataset.v); }); });
 document.querySelectorAll('.vcard').forEach(function(c){
   var v=c.querySelector('video');
