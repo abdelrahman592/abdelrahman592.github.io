@@ -279,8 +279,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 
 /* ---------- lightbox ---------- */
 .totop{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,239,230,.3);background:rgba(12,11,10,.85);color:#f4efe6;font-size:20px;line-height:1;cursor:pointer;z-index:90;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s,border-color .2s}.totop.show{opacity:1;pointer-events:auto;transform:none}.totop:hover{border-color:var(--acc);color:var(--acc)}
-.lb{position:fixed;inset:0;z-index:150;background:rgba(8,6,4,.94);display:none;align-items:center;justify-content:center;flex-direction:column}
-.lb.open{display:flex}
+.lb{position:fixed;inset:0;z-index:150;background:rgba(8,6,4,.94);display:flex;visibility:hidden;opacity:0;align-items:center;justify-content:center;flex-direction:column;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility 0s linear .35s}
+.lb.open{visibility:visible;opacity:1;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility 0s}
+.lb img{transition:opacity .28s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+.lb.open img{transform:none}
+.lb:not(.open) img{transform:scale(.97)}
+.srcbtn,.viewall{transition:color .3s,border-color .3s,transform .2s}
+.srcbtn:active,.viewall:active,.lb .bar button:active,.lb .close:active{transform:scale(.96)}
+.nav ul a,.lb .close{transition:color .3s,opacity .3s}
 .lb .stage{max-width:min(1100px,92vw);max-height:78vh;display:flex;align-items:center;justify-content:center}
 .lb img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:4px}
 .lb video{max-width:min(1100px,92vw);max-height:78vh;border-radius:4px}
@@ -313,6 +319,8 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 @media(prefers-reduced-motion:reduce){
   .marquee .track{animation:none}
   .scroll-hint i{animation:none}
+  .lb,.lb img,.totop,.srcbtn,.viewall{transition:none!important}
+  html{scroll-behavior:auto}
 }
 
 /* refstrip v2: one large tappable sheet per film */
@@ -897,7 +905,7 @@ var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lb
     lbCount=document.getElementById('lbCount'), curSet=[], curIdx=0;
 function lbShow(){
   if(curSet.length){ lbImg.style.display='block'; lbVid.style.display='none'; lbVidLink.style.display='none'; document.getElementById('lbPrev').style.display=''; document.getElementById('lbNext').style.display=''; lbVid.pause(); lbVid.removeAttribute('src');
-    lbImg.src=curSet[curIdx]; lbCount.textContent=(curIdx+1)+' / '+curSet.length; }
+    var ns=curSet[curIdx]; lbImg.style.opacity=0; var done=false; function show(){ if(done)return; done=true; lbImg.style.opacity=1; } lbImg.onload=show; lbImg.onerror=show; setTimeout(show,700); lbImg.src=ns; if(lbImg.complete&&lbImg.naturalWidth) requestAnimationFrame(function(){ requestAnimationFrame(show); }); lbCount.textContent=(curIdx+1)+' / '+curSet.length; }
 }
 function lbOpen(set,idx){ curSet=set; curIdx=idx||0; lb.classList.add('open'); lbShow(); document.body.style.overflow='hidden'; }
 function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.display='none'; lbVid.style.display='block'; document.getElementById('lbPrev').style.display='none'; document.getElementById('lbNext').style.display='none';
@@ -954,8 +962,9 @@ document.querySelectorAll('.srcbtn').forEach(function(b){
   b.addEventListener('click',function(){
     var w=b.closest('article').querySelector('.duo-wrap');
     if(!w) return;
-    if(w.hasAttribute('hidden')){ w.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); }
-    else { w.setAttribute('hidden',''); b.setAttribute('aria-expanded','false'); }
+    function rf(){ if(window.ScrollTrigger&&ScrollTrigger.refresh) ScrollTrigger.refresh(); }
+    if(w.hasAttribute('hidden')){ w.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); if(!reduced&&w.animate) w.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{duration:550,easing:'cubic-bezier(.22,1,.36,1)'}); rf(); }
+    else { b.setAttribute('aria-expanded','false'); if(!reduced&&w.animate){ var an=w.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(10px)'}],{duration:260,easing:'ease-out'}); an.onfinish=function(){ w.setAttribute('hidden',''); rf(); }; } else { w.setAttribute('hidden',''); rf(); } }
   });
 });
 
