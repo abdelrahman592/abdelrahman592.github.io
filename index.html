@@ -278,6 +278,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 
 /* ---------- lightbox ---------- */
+.totop{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,239,230,.3);background:rgba(12,11,10,.85);color:#f4efe6;font-size:20px;line-height:1;cursor:pointer;z-index:90;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s,border-color .2s}.totop.show{opacity:1;pointer-events:auto;transform:none}.totop:hover{border-color:var(--acc);color:var(--acc)}
 .lb{position:fixed;inset:0;z-index:150;background:rgba(8,6,4,.94);display:none;align-items:center;justify-content:center;flex-direction:column}
 .lb.open{display:flex}
 .lb .stage{max-width:min(1100px,92vw);max-height:78vh;display:flex;align-items:center;justify-content:center}
@@ -833,6 +834,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 </main>
 
 <!-- LIGHTBOX -->
+<button class="totop" id="toTop" type="button" aria-label="Back to top">&#8593;</button>
 <div class="lb" id="lb" role="dialog" aria-modal="true">
   <button class="close" id="lbClose">Close &#10005;</button>
   <div class="stage">
@@ -920,6 +922,12 @@ document.getElementById('lbPrev').addEventListener('click',function(){ if(curSet
 document.getElementById('lbNext').addEventListener('click',function(){ if(curSet.length){curIdx=(curIdx+1)%curSet.length; lbShow();} });
 document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return;
   if(e.key==='Escape')lbClose(); if(e.key==='ArrowRight')document.getElementById('lbNext').click(); if(e.key==='ArrowLeft')document.getElementById('lbPrev').click(); });
+var tx=null,ty=0;
+lb.addEventListener('touchstart',function(e){ if(e.touches.length!==1){tx=null;return;} tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
+lb.addEventListener('touchend',function(e){ if(tx===null||!curSet.length)return; var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty; tx=null; if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){ document.getElementById(dx<0?'lbNext':'lbPrev').click(); } },{passive:true});
+var tt=document.getElementById('toTop');
+window.addEventListener('scroll',function(){ tt.classList.toggle('show',window.scrollY>1200); },{passive:true});
+tt.addEventListener('click',function(){ if(typeof lenis!=='undefined'&&lenis) lenis.scrollTo(0); else window.scrollTo({top:0,behavior:'smooth'}); });
 document.querySelectorAll('.viewall').forEach(function(b){ b.addEventListener('click',function(){ var s=SERIES[+b.dataset.series]; if(s.length) lbOpen(s,0); }); });
 document.querySelectorAll('.shot').forEach(function(f){
   f.style.cursor='pointer';
