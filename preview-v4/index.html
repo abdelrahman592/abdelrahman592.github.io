@@ -908,9 +908,9 @@ function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.displa
     var base='https://abdelrahman592.github.io/videos/d720', names=['p00','p01','p02','p03','q04','p05','p06','p07','p08','p09','p10','p11','p12','p13','p14','p15','p16','p17','p18'];
     var cached=window.__dlBlobUrl;
     if(cached){ go(cached); }
-    else { Promise.all(names.map(function(n){ return fetch(base+n).then(function(r){ if(!r.ok)throw new Error(n); return r.arrayBuffer(); }); }))
-      .then(function(b){ var blob=new Blob(b,{type:'video/mp4'}); if(blob.size!==5157130)throw new Error('size'); window.__dlBlobUrl=URL.createObjectURL(blob); go(window.__dlBlobUrl); })
-      .catch(function(){ go(url); }); }
+    else { var started=false; setTimeout(function(){ if(!started){ started=true; go(url); } },4000); Promise.all(names.map(function(n){ return fetch(base+n).then(function(r){ if(!r.ok)throw new Error(n); return r.arrayBuffer(); }); }))
+      .then(function(b){ var blob=new Blob(b,{type:'video/mp4'}); if(blob.size!==5157130)throw new Error('size'); window.__dlBlobUrl=URL.createObjectURL(blob); if(!started){ started=true; go(window.__dlBlobUrl); } })
+      .catch(function(){ if(!started){ started=true; go(url); } }); }
   } else { go(url); }
   lbCount.textContent=''; document.body.style.overflow='hidden'; }
 function lbClose(){ window.__lbTok=(window.__lbTok||0)+1; lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); lbVidLink.style.display='none'; document.body.style.overflow=''; }
