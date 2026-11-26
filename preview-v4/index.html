@@ -181,6 +181,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .viewall i{display:block;width:44px;height:1px;background:var(--acc);transition:width .35s}
 .viewall:hover i{width:72px}
 
+
+.duo-wrap{grid-column:span 12}
+.duo-wrap[hidden]{display:none}
+.sactions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.srcbtn{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(22px,3vw,36px);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:11px 18px;transition:color .3s,border-color .3s}
+.srcbtn:hover{color:var(--ink);border-color:var(--acc)}
+.srcbtn[aria-expanded="true"]{color:var(--acc);border-color:var(--acc)}
+@media(max-width:760px){.srcbtn{margin-top:16px;font-size:12px;padding:9px 14px}.sactions{gap:20px}}
 /* ---------- films ---------- */
 .films-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,24px);padding:0 var(--pad)}
 .vcard{position:relative;overflow:hidden;border-radius:6px;background:var(--bg2);cursor:pointer;grid-column:span 4;aspect-ratio:9/12}
@@ -365,7 +373,7 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
       <span class="row"><span>Selected</span></span>
       <span class="row"><span>Work<span class="gold">.</span></span></span>
     </h2>
-    <p class="sec-note">136 AI concept images in 18 series. Each series leads with its strongest final frames; where a source reference informed the work, the pair sits just below the overview. All series are self-initiated concept studies, not commissioned by or affiliated with the brands shown.</p>
+    <p class="sec-note">136 AI concept images in 18 series. Each series leads with its strongest final frames; where a source reference informed the work, a source &#8594; result pair is one tap away. All series are self-initiated concept studies, not commissioned by or affiliated with the brands shown.</p>
     <span class="ghost" aria-hidden="true">136</span>
   </div>
 
@@ -378,16 +386,16 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
       <p class="series-tag">Floating hero, stitching macro and street style.</p>
     </div>
     <div class="sgrid">
-      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/samba-hero.webp" alt="Pair of green and cream classic sneakers in dramatic teal light"><figcaption class="cap">Campaign hero</figcaption></figure>
+      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/samba-flat.webp" alt="Pair of green and cream classic sneakers floating at an angle in dramatic teal light"><figcaption class="cap">Campaign hero</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/samba-float.webp" alt="Green and cream sneaker floating over a pale ground"><figcaption class="cap">Floating</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/samba-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/samba-side.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="0"><b>10</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="0"><b>10</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s2">
@@ -410,14 +418,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/croc-dramatic.webp" alt="Burgundy croc-embossed leather bag on red silk drapes"><figcaption class="cap">On silk</figcaption></figure>
       <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather"><figcaption class="cap">Hardware macro</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/croc-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/croc-bag.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="2"><b>4</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="2"><b>4</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s4">
@@ -428,14 +436,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/gown-stairs.webp" alt="Model in a gold sequin gown on a grand staircase"><figcaption class="cap">Grand staircase</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine"><figcaption class="cap">Arrival</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/gown-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/gown-stairsback.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="3"><b>9</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="3"><b>9</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s5">
@@ -446,14 +454,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/dg-branch.webp" alt="Black acetate sunglasses with gold logo resting on a silver branch"><figcaption class="cap">On silver</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/eye-7.webp" alt="Model in black tailoring wearing black sunglasses"><figcaption class="cap">Worn</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/dg-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/eye-3.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="4"><b>14</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="4"><b>14</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s6">
@@ -464,14 +472,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/ctre-group.webp" alt="Three models in grey, brown and navy tracksuits inside an elevator"><figcaption class="cap">Elevator trio</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator"><figcaption class="cap">Brown duo</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/ctre-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/ctre-greyfront.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="5"><b>9</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="5"><b>9</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s7">
@@ -482,14 +490,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/asics-hero.webp" alt="Model in white and mint sportswear wearing white running shoes"><figcaption class="cap">Ready stance</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/asics-stride.webp" alt="Model mid-stride in white and mint sportswear"><figcaption class="cap">In motion</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/asics-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/asics-floor.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="6"><b>7</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="6"><b>7</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s8">
@@ -512,14 +520,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/bag-2.webp" alt="Hands presenting a python-effect handbag on an amber backdrop"><figcaption class="cap">Presented</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/bag-3.webp" alt="Silhouette of a model holding a python-effect handbag"><figcaption class="cap">Silhouette</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/bag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/bag-4.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="8"><b>7</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="8"><b>7</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s11">
@@ -542,14 +550,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/gold-hero.webp" alt="Black and gold shampoo bottle on a pedestal in golden glow"><figcaption class="cap">Gold standard</figcaption></figure>
       <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/gold-group.webp" alt="Black and gold hair-care range on pedestals"><figcaption class="cap">The range</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/gold-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/gold-pump.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="10"><b>8</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="10"><b>8</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s13">
@@ -560,14 +568,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/skin-hero.webp" alt="Model holding a white skincare bottle with lathered hands"><figcaption class="cap">Lather</figcaption></figure>
       <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="photos/skin-berries.webp" alt="Skincare jar in a basket of fresh berries"><figcaption class="cap">Fresh</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/skin-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/skin-lather.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="11"><b>10</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="11"><b>10</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s14">
@@ -578,14 +586,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/obag-hero.webp" alt="Model in sage green holding a burnt orange leather bag by a scooter"><figcaption class="cap">Sage and orange</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/obag-ride.webp" alt="Model with a burnt orange bag beside a vintage scooter"><figcaption class="cap">Ride</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/obag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/obag-product.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="12"><b>6</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="12"><b>6</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s15">
@@ -596,14 +604,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/red-hero.webp" alt="Red running shoe wrapped in light trails on dark red"><figcaption class="cap">Ignition</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/red-pair.webp" alt="Pair of red running shoes in smoke and red light"><figcaption class="cap">Pair</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/red-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/red-close.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="13"><b>6</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="13"><b>6</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s16">
@@ -626,14 +634,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="photos/denim-hero.webp" alt="Model in ripped embellished jeans leaning on a black convertible"><figcaption class="cap">Denim and chrome</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/denim-seated.webp" alt="Model in ripped embellished jeans seated by a black convertible"><figcaption class="cap">Seated</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/denim-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/denim-detail.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="15"><b>5</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="15"><b>5</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s18">
@@ -644,14 +652,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption class="cap">On black</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="photos/derby-float.webp" alt="Black derby shoes floating over white"><figcaption class="cap">Floating</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/derby-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/derby-profile.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="16"><b>10</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="16"><b>10</b> images <i></i> View all</button></div>
   </article>
 
   <article class="series" id="s19">
@@ -662,14 +670,14 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
     <div class="sgrid">
       <figure class="shot sp7 a-169 reveal"><img decoding="async" src="photos/foam-hero.webp" alt="Marbled foam runner floating on a blue gradient"><figcaption class="cap">Floating</figcaption></figure>
       <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="photos/foam-low.webp" alt="Marbled foam runner from a low angle"><figcaption class="cap">Low angle</figcaption></figure>
-      <figure class="duo slim" data-duo>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
         <div class="duo-panel duo-ref"><img decoding="async" src="sources/foam-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
         <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
         <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="photos/foam-motion.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure>
+      </figure></div>
     </div>
-    <button class="viewall" data-series="17"><b>6</b> images <i></i> View all</button>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="17"><b>6</b> images <i></i> View all</button></div>
   </article>
 
   <!-- FILMS -->
@@ -953,34 +961,14 @@ document.querySelectorAll('.vcard').forEach(function(c){
 });
 
 var isMobile = window.matchMedia('(max-width:760px)').matches;
-/* reference -> result duo: staged cinematic reveal between independent panels */
-document.querySelectorAll('[data-duo]').forEach(function(d){
-  var refP=d.querySelector('.duo-ref'), resP=d.querySelector('.duo-res'),
-      wipe=d.querySelector('.duo-wipe'), edge=d.querySelector('.duo-edge'),
-      link=d.querySelector('.duo-link'), arrow=link.querySelector('b'),
-      rimg=d.querySelector('.duo-wipe img'), tag=resP.querySelector('.duo-tag');
-  if(reduced || !hasGSAP || typeof ScrollTrigger==='undefined') return;
-  if(isMobile) return; /* no duo entrance on small screens: work must be visible immediately */
-  gsap.set(refP,{autoAlpha:0,y:34});
-  gsap.set(link,{scaleX:0});
-  gsap.set(arrow,{autoAlpha:0,scale:.5});
-  gsap.set(wipe,{clipPath:'inset(0 100% 0 0)'});
-  gsap.set(rimg,{scale:1.08});
-  gsap.set(tag,{autoAlpha:0});
-  var proxy={p:0};
-  ScrollTrigger.create({trigger:d,start:'top 80%',once:true,onEnter:function(){
-    var tl=gsap.timeline();
-    tl.to(refP,{autoAlpha:1,y:0,duration:.55,ease:'power3.out'})
-      .to(link,{scaleX:1,duration:.4,ease:'power2.out'},'-=.15')
-      .to(arrow,{autoAlpha:1,scale:1,duration:.4,ease:'back.out(2)'},'-=.2')
-      .to(proxy,{p:100,duration:1.1,ease:'power3.inOut',onUpdate:function(){
-        wipe.style.clipPath='inset(0 '+(100-proxy.p)+'% 0 0)';
-        edge.style.left=proxy.p+'%';
-        edge.style.opacity=(proxy.p>2&&proxy.p<96)?1:0;
-      }},'-=.05')
-      .to(rimg,{scale:1,duration:1.3,ease:'power3.out'},'<')
-      .to(tag,{autoAlpha:1,duration:.4},'-=.8');
-  }});
+/* source -> result: on-demand reveal per series */
+document.querySelectorAll('.srcbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var w=b.closest('article').querySelector('.duo-wrap');
+    if(!w) return;
+    if(w.hasAttribute('hidden')){ w.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); }
+    else { w.setAttribute('hidden',''); b.setAttribute('aria-expanded','false'); }
+  });
 });
 
 /* nav scroll state */
