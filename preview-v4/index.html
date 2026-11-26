@@ -89,9 +89,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero-low{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;padding:clamp(26px,4.5vh,44px) var(--pad) clamp(26px,4.5vh,44px)}
 .hero-sub{max-width:470px;color:var(--mutd);font-size:clamp(15px,1.4vw,18px)}
 .hero-sub b{color:var(--inkd);font-weight:600}
-.btn-solid{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#160b04;font-weight:600;font-size:14px;letter-spacing:.06em;padding:16px 26px;border-radius:100px;transition:transform .3s,background .3s}
-.btn-solid:hover{background:#ff7a45}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(23,19,16,.4);border-radius:999px;padding:13px 24px;transition:background .35s,color .35s,border-color .35s}
+.btn-solid{display:inline-flex;align-items:center;gap:10px;background:#f2480a;color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;padding:16px 26px;border-radius:100px;transition:transform .3s,background .3s}
+.btn-solid:hover{background:#ff5a1f}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:1.5px solid rgba(23,19,16,.65);border-radius:999px;padding:13px 24px;transition:background .35s,color .35s,border-color .35s}
 .btn-ghost::after{content:'\2197';font-size:13px;transition:transform .35s}
 .btn-ghost:hover{background:var(--inkd);border-color:var(--inkd);color:var(--paper)}
 .btn-ghost:hover::after{transform:translate(2px,-3px)}
@@ -872,7 +872,8 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
   <button class="close" id="lbClose">Close &#10005;</button>
   <div class="stage">
     <img decoding="async" id="lbImg" alt="">
-    <video id="lbVid" controls playsinline style="display:none"></video>
+    <video id="lbVid" controls playsinline preload="metadata" style="display:none"></video>
+    <a id="lbVidLink" href="#" target="_blank" rel="noopener" style="display:none;color:var(--paper);font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(244,239,230,.4);border-radius:999px;padding:12px 22px;margin-top:14px">Open video directly &#8599;</a>
   </div>
   <div class="bar">
     <button id="lbPrev">&#8592; Prev</button>
@@ -925,16 +926,19 @@ var SERIES = [
 ];
 
 /* lightbox */
-var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbVid=document.getElementById('lbVid'),
+var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbVid=document.getElementById('lbVid'), lbVidLink=document.getElementById('lbVidLink'),
     lbCount=document.getElementById('lbCount'), curSet=[], curIdx=0;
 function lbShow(){
-  if(curSet.length){ lbImg.style.display='block'; lbVid.style.display='none'; lbVid.pause(); lbVid.removeAttribute('src');
+  if(curSet.length){ lbImg.style.display='block'; lbVid.style.display='none'; lbVidLink.style.display='none'; document.getElementById('lbPrev').style.display=''; document.getElementById('lbNext').style.display=''; lbVid.pause(); lbVid.removeAttribute('src');
     lbImg.src=curSet[curIdx]; lbCount.textContent=(curIdx+1)+' / '+curSet.length; }
 }
 function lbOpen(set,idx){ curSet=set; curIdx=idx||0; lb.classList.add('open'); lbShow(); document.body.style.overflow='hidden'; }
-function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.display='none'; lbVid.style.display='block';
-  lbVid.src='videos/'+v+'.mp4'; lbVid.play(); lbCount.textContent=''; document.body.style.overflow='hidden'; }
-function lbClose(){ lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); document.body.style.overflow=''; }
+function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.display='none'; lbVid.style.display='block'; document.getElementById('lbPrev').style.display='none'; document.getElementById('lbNext').style.display='none';
+  var url='https://abdelrahman592.github.io/videos/'+v+'.mp4';
+  lbVidLink.href=url; lbVidLink.style.display='none';
+  lbVid.onerror=function(){ lbVid.style.display='none'; lbVidLink.style.display='inline-block'; };
+  lbVid.src=url; var pr=lbVid.play(); if(pr&&pr.catch)pr.catch(function(){}); lbCount.textContent=''; document.body.style.overflow='hidden'; }
+function lbClose(){ lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); lbVidLink.style.display='none'; document.body.style.overflow=''; }
 document.getElementById('lbClose').addEventListener('click',lbClose);
 lb.addEventListener('click',function(e){ if(e.target===lb) lbClose(); });
 document.getElementById('lbPrev').addEventListener('click',function(){ if(curSet.length){curIdx=(curIdx-1+curSet.length)%curSet.length; lbShow();} });
@@ -1060,7 +1064,7 @@ if(reduced || !hasGSAP){
   /* hero exit choreography: wordmark lifts and fades, cards drift out at different depths */
   gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}})
     .to('#heroTitle',{yPercent:-55,scale:.93,autoAlpha:0,ease:'none'},0)
-    .to('.hero-kick,.hero-sub,.hero-cta',{y:-46,autoAlpha:0,ease:'none'},0)
+    .to('.hero-kick,.hero-sub',{y:-46,autoAlpha:0,ease:'none'},0)
     .to('.hcard',{y:function(i){return -26-(i%3)*58},rotate:function(i){return (i%2?1:-1)*(1.2+(i%3)*.8)},ease:'none'},0);
 
   /* liquid scroll: media skews with scroll velocity */
