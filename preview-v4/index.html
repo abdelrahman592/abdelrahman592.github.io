@@ -164,7 +164,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .duo-tag.gold{background:var(--acc);color:#160b04;font-weight:600}
 .duo-cap{grid-column:1/-1;display:flex;justify-content:space-between;gap:18px;margin-top:10px;font-size:12.5px;color:var(--mut);letter-spacing:.04em}
 .duo-cap span:last-child{text-align:right}
-@media(max-width:760px){.duo{grid-template-columns:1fr}.duo-panel{height:auto;aspect-ratio:4/3}.duo-link{height:44px;margin:0 18%;background-size:100% 1px;background-position:center;background-repeat:no-repeat}}
+@media(max-width:760px){.sgrid .shot{display:none!important}.duo{grid-template-columns:1fr 30px 1fr;margin-top:10px;gap:0}.duo-panel{height:auto;aspect-ratio:3/4}.duo-panel img{padding:8px}.duo-link{height:30px;width:30px;margin:0;background:none}.duo-cap{font-size:10px;gap:8px}}
 .viewall{display:inline-flex;align-items:center;gap:12px;margin-top:clamp(22px,3vw,36px);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
 .viewall b{font-family:var(--anton);font-weight:400;color:var(--acc);font-size:15px;letter-spacing:.1em}
 .viewall i{display:block;width:44px;height:1px;background:var(--acc);transition:width .35s}
@@ -1138,6 +1138,7 @@ if(reduced || !hasGSAP){
   gsap.utils.toArray('.sgrid').forEach(function(grid){
     var gw=Math.max(1,grid.offsetWidth);
     gsap.utils.toArray(grid.querySelectorAll('.shot:not(.shot-x)')).forEach(function(el){
+      if(el.offsetParent===null) return;
       var colF=Math.min(1,el.offsetLeft/gw);
       gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',rotate:3.2,scale:1.07},{clipPath:'inset(0 0 0% 0)',rotate:0,scale:1,duration:1.35,delay:+(colF*0.28).toFixed(3),ease:'power4.out',scrollTrigger:{trigger:el,start:'top 88%'}});
       var img=el.querySelector('img');
@@ -1207,6 +1208,7 @@ if(reduced || !hasGSAP){
     b.addEventListener('mouseleave',function(){ gsap.to(b,{x:0,y:0,duration:.8,ease:'elastic.out(1,.4)'}); });
   });
   gsap.utils.toArray('.push1:not(.shot-x),.push2:not(.shot-x)').forEach(function(el){
+    if(el.offsetParent===null) return;
     gsap.fromTo(el,{y:40},{y:-40,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
   });
 }
