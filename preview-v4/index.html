@@ -1123,12 +1123,24 @@ if(reduced || !hasGSAP){
     .fromTo('.hcard',{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.1,stagger:.09,ease:'power4.inOut'},'-=.55')
     .fromTo('.hcard img',{scale:1.3},{scale:1,duration:1.5,stagger:.09,ease:'power3.out'},'<');
 
-  gsap.utils.toArray('.shot').forEach(function(el){
-    gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',rotate:2.2,scale:1.04},{clipPath:'inset(0 0 0% 0)',rotate:0,scale:1,duration:1.15,ease:'power4.inOut',scrollTrigger:{trigger:el,start:'top 86%'}});
-    var img=el.querySelector('img');
-    if(img) gsap.fromTo(img,{scale:1.24,yPercent:-6},{scale:1.12,yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+  /* staggered scroll entrances: left-to-right cascade per grid (awwwards staggered-grid-reveal pattern) */
+  gsap.utils.toArray('.sgrid').forEach(function(grid){
+    var gw=Math.max(1,grid.offsetWidth);
+    gsap.utils.toArray(grid.querySelectorAll('.shot')).forEach(function(el){
+      var colF=Math.min(1,el.offsetLeft/gw);
+      gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',rotate:3.2,scale:1.07},{clipPath:'inset(0 0 0% 0)',rotate:0,scale:1,duration:1.35,delay:+(colF*0.28).toFixed(3),ease:'power4.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+      var img=el.querySelector('img');
+      if(img) gsap.fromTo(img,{scale:1.26,yPercent:-6},{scale:1.12,yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+    });
   });
-  gsap.utils.toArray('.reveal:not(.shot)').forEach(function(el){
+  gsap.utils.toArray('.films-grid').forEach(function(grid){
+    var gw=Math.max(1,grid.offsetWidth);
+    gsap.utils.toArray(grid.querySelectorAll('.vcard')).forEach(function(el){
+      var colF=Math.min(1,el.offsetLeft/gw);
+      gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',scale:1.06},{clipPath:'inset(0 0 0% 0)',scale:1,duration:1.25,delay:+(colF*0.25).toFixed(3),ease:'power4.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+  });
+  gsap.utils.toArray('.reveal:not(.shot):not(.vcard)').forEach(function(el){
     gsap.fromTo(el,{y:60,opacity:0},{y:0,opacity:1,duration:1,ease:'power3.out',
       scrollTrigger:{trigger:el,start:'top 88%'}});
     var img=el.querySelector('img');
