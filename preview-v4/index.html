@@ -894,8 +894,18 @@ function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.displa
   var url='https://abdelrahman592.github.io/videos/'+v+'.mp4';
   lbVidLink.href=url; lbVidLink.style.display='none';
   lbVid.onerror=function(){ lbVid.style.display='none'; lbVidLink.style.display='inline-block'; };
-  lbVid.src=url; var pr=lbVid.play(); if(pr&&pr.catch)pr.catch(function(){}); lbCount.textContent=''; document.body.style.overflow='hidden'; }
-function lbClose(){ lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); lbVidLink.style.display='none'; document.body.style.overflow=''; }
+  var tok=(window.__lbTok=(window.__lbTok||0)+1);
+  function go(u){ if(tok!==window.__lbTok)return; lbVid.src=u; var pr=lbVid.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+  if(v==='desert-lounge' && window.fetch && window.Blob && window.URL){
+    var base='https://abdelrahman592.github.io/videos/d720', names=['p00','p01','p02','p03','q04','p05','p06','p07','p08','p09','p10','p11','p12','p13','p14','p15','p16','p17','p18'];
+    var cached=window.__dlBlobUrl;
+    if(cached){ go(cached); }
+    else { Promise.all(names.map(function(n){ return fetch(base+n).then(function(r){ if(!r.ok)throw new Error(n); return r.arrayBuffer(); }); }))
+      .then(function(b){ var blob=new Blob(b,{type:'video/mp4'}); if(blob.size!==5157130)throw new Error('size'); window.__dlBlobUrl=URL.createObjectURL(blob); go(window.__dlBlobUrl); })
+      .catch(function(){ go(url); }); }
+  } else { go(url); }
+  lbCount.textContent=''; document.body.style.overflow='hidden'; }
+function lbClose(){ window.__lbTok=(window.__lbTok||0)+1; lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); lbVidLink.style.display='none'; document.body.style.overflow=''; }
 document.getElementById('lbClose').addEventListener('click',lbClose);
 lb.addEventListener('click',function(e){ if(e.target===lb) lbClose(); });
 document.getElementById('lbPrev').addEventListener('click',function(){ if(curSet.length){curIdx=(curIdx-1+curSet.length)%curSet.length; lbShow();} });
