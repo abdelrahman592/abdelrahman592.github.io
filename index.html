@@ -404,6 +404,20 @@ footer{padding-bottom:104px}
     <figure class="hcard"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models wearing tracksuits in three colorways"><figcaption>Tracksuits &middot; 3 colorways</figcaption></figure>
     <figure class="hcard"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Crocodile-texture handbag in dramatic light"><figcaption>Handbag &middot; Croc texture</figcaption></figure>
   </div>
+<script>
+/* rotate featured pieces on every load (fallback: static markup stays as is) */
+(function(){try{
+var SER=[["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"], ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"], ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"], ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"], ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"], ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"], ["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"], ["preview-v4/photos/frag-hero.webp", "preview-v4/photos/frag-artifact.webp", "preview-v4/photos/frag-anchor.webp", "preview-v4/photos/frag-drift.webp", "preview-v4/photos/frag-dune.webp", "preview-v4/photos/frag-integrate.webp", "preview-v4/photos/frag-oasis.webp", "preview-v4/photos/frag-openbox.webp", "preview-v4/photos/frag-set.webp"]],T=["Classic Sneaker", "Monochrome Derby", "Stiletto Heels", "Croc Leather Bag", "Evening Gown", "Athletic Tracksuits", "Gold Hair-Care", "Niche Fragrance"],R={"preview-v4/photos/croc-bag.webp": 0.75, "preview-v4/photos/croc-dramatic.webp": 0.75, "preview-v4/photos/croc-macro.webp": 0.75, "preview-v4/photos/croc-zipper.webp": 0.75, "preview-v4/photos/ctre-greycrouch.webp": 0.75, "preview-v4/photos/ctre-greyfront.webp": 0.75, "preview-v4/photos/ctre-greysun.webp": 0.75, "preview-v4/photos/ctre-group.webp": 0.75, "preview-v4/photos/ctre-navychest.webp": 0.75, "preview-v4/photos/ctre-solo.webp": 0.75, "preview-v4/photos/ctre-two.webp": 0.75, "preview-v4/photos/derby-float.webp": 0.67, "preview-v4/photos/derby-hero.webp": 0.67, "preview-v4/photos/derby-macro.webp": 0.67, "preview-v4/photos/derby-onfeet.webp": 0.67, "preview-v4/photos/derby-pair.webp": 0.67, "preview-v4/photos/derby-profile.webp": 0.67, "preview-v4/photos/derby-strip.webp": 0.67, "preview-v4/photos/derby-top.webp": 0.67, "preview-v4/photos/dg-portrait.webp": 0.75, "preview-v4/photos/frag-artifact.webp": 0.67, "preview-v4/photos/frag-hero.webp": 0.67, "preview-v4/photos/gold-angle.webp": 0.67, "preview-v4/photos/gold-group.webp": 1.79, "preview-v4/photos/gold-hero.webp": 0.67, "preview-v4/photos/gold-lineup.webp": 1.79, "preview-v4/photos/gold-pump.webp": 0.67, "preview-v4/photos/gold-spray.webp": 0.67, "preview-v4/photos/gold-tall.webp": 0.67, "preview-v4/photos/gold-tube.webp": 0.67, "preview-v4/photos/gown-carpet.webp": 0.75, "preview-v4/photos/gown-detail.webp": 0.75, "preview-v4/photos/gown-heels.webp": 0.75, "preview-v4/photos/gown-limo.webp": 0.75, "preview-v4/photos/gown-limo2.webp": 0.75, "preview-v4/photos/gown-night.webp": 0.75, "preview-v4/photos/gown-stairs.webp": 0.75, "preview-v4/photos/gown-stairsback.webp": 0.75, "preview-v4/photos/heels-flip.webp": 0.75, "preview-v4/photos/heels-floatpair.webp": 0.75, "preview-v4/photos/heels-hero.webp": 0.75, "preview-v4/photos/heels-macro.webp": 0.75, "preview-v4/photos/heels-pair.webp": 0.75, "preview-v4/photos/heels-top.webp": 0.75, "preview-v4/photos/samba-flat.webp": 0.81, "preview-v4/photos/samba-float.webp": 0.75, "preview-v4/photos/samba-frontlow.webp": 0.75, "preview-v4/photos/samba-hero.webp": 0.81, "preview-v4/photos/samba-letters.webp": 0.75, "preview-v4/photos/samba-macro.webp": 0.81, "preview-v4/photos/samba-onfeet.webp": 0.75, "preview-v4/photos/samba-rear.webp": 0.75, "preview-v4/photos/samba-side.webp": 0.75, "preview-v4/photos/samba-sole.webp": 0.75, "preview-v4/photos/skin-basket.webp": 0.75, "preview-v4/photos/skin-berries.webp": 0.75, "preview-v4/photos/skin-dropper.webp": 0.67, "preview-v4/photos/skin-duo.webp": 0.67, "preview-v4/photos/skin-hero.webp": 0.67, "preview-v4/photos/skin-jar.webp": 0.75, "preview-v4/photos/skin-lather.webp": 0.75, "preview-v4/photos/skin-macro.webp": 0.67, "preview-v4/photos/skin-netbag.webp": 0.75, "preview-v4/photos/skin-portrait.webp": 0.67, "preview-v4/photos/frag-anchor.webp": 0.67, "preview-v4/photos/frag-drift.webp": 0.67, "preview-v4/photos/frag-dune.webp": 0.67, "preview-v4/photos/frag-integrate.webp": 0.67, "preview-v4/photos/frag-oasis.webp": 0.67, "preview-v4/photos/frag-openbox.webp": 0.67, "preview-v4/photos/frag-set.webp": 0.67};
+window.__ROT={SER:SER,T:T,R:R};
+function ok(u){return (R[u]||.75)<1.2;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+var cards=document.querySelectorAll('#heroStrip .hcard');
+var order=shuffle([0,1,2,3,4,5,6,7]).slice(0,cards.length);
+cards.forEach(function(c,k){var si=order[k];var u=pick(SER[si].filter(ok));var im=c.querySelector('img');
+ im.setAttribute('src',u);im.setAttribute('alt',T[si]);var cap=c.querySelector('figcaption');if(cap){cap.textContent=T[si];cap.setAttribute('data-i18n','s'+si+'t');}});
+}catch(e){}})();
+</script>
   <div class="hero-low">
     <p class="hero-sub" data-fade data-i18n="heroSub"><b>Campaign images and short ad films</b> for your product, made from one simple photo. Finished by hand, delivered in days.</p>
     <div class="hero-cta" data-fade>
@@ -551,7 +565,7 @@ footer{padding-bottom:104px}
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
       </figure></div>
     </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="5"><b>10</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="0"><b>10</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
   </article>
 
     <article class="series" id="s1">
@@ -569,7 +583,7 @@ footer{padding-bottom:104px}
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
       </figure></div>
     </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="0"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="1"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
   </article>
 
   <article class="series" id="s2">
@@ -581,7 +595,7 @@ footer{padding-bottom:104px}
       <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/heels-floatpair.webp" alt="White stiletto pumps floating over a dark mirrored surface"><figcaption class="cap">Floating pair</figcaption></figure>
       <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient"><figcaption class="cap">Cream pumps</figcaption></figure>
     </div>
-    <button class="viewall" data-series="1"><b>6</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button>
+    <button class="viewall" data-series="2"><b>6</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button>
   </article>
 
   <article class="series" id="s3">
@@ -599,7 +613,7 @@ footer{padding-bottom:104px}
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
       </figure></div>
     </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="2"><b>4</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="3"><b>4</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
   </article>
 
   <article class="series" id="s4">
@@ -617,7 +631,7 @@ footer{padding-bottom:104px}
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
       </figure></div>
     </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="3"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="4"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
   </article>
 
   <article class="series" id="s5">
@@ -635,7 +649,7 @@ footer{padding-bottom:104px}
         <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
       </figure></div>
     </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="4"><b>7</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="5"><b>7</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
   </article>
 
 
@@ -680,12 +694,12 @@ footer{padding-bottom:104px}
       <span class="row"><span data-i18n="prT1">How the work</span></span>
       <span class="row"><span data-i18n="prT2">is made<span class="gold">.</span></span></span>
     </h2>
-    <p class="sec-note" data-i18n="prNote">Each image is generated with Google Flow (Nano Banana), upscaled with Magnific, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.</p>
+    <p class="sec-note" data-i18n="prNote">Each image is generated with AI, upscaled to print-sharp detail, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.</p>
     <span class="ghost" aria-hidden="true">03</span>
   </div>
   <div class="steps">
     <div class="step reveal"><span class="n">01</span><h3 data-i18n="st1h">Send one photo</h3><p data-i18n="st1p">Send a simple photo of your product on WhatsApp. That is all the input the process needs.</p></div>
-    <div class="step reveal"><span class="n">02</span><h3 data-i18n="st2h">Generate &amp; upscale</h3><p data-i18n="st2p">Concept scenes are generated with Google Flow (Nano Banana) and upscaled with Magnific for print-sharp detail.</p></div>
+    <div class="step reveal"><span class="n">02</span><h3 data-i18n="st2h">Generate &amp; upscale</h3><p data-i18n="st2p">Concept scenes are generated with AI and upscaled for print-sharp detail.</p></div>
     <div class="step reveal"><span class="n">03</span><h3 data-i18n="st3h">Finish by hand</h3><p data-i18n="st3p">Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.</p></div>
   </div>
   <div class="cta-row"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
@@ -766,6 +780,30 @@ footer{padding-bottom:104px}
 <script src="preview-v4/js/ScrollTrigger.min.js"></script>
 <script src="preview-v4/js/lenis.min.js"></script>
 <script>
+(function(){try{
+var ROT=window.__ROT;if(!ROT)return;var R=ROT.R;
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+document.querySelectorAll('article.series').forEach(function(art,si){
+ var shots=art.querySelectorAll('.sgrid .shot');var pool=(ROT.SER[si]||[]).filter(function(u){return (R[u]||.75)<1.2;});
+ if(shots.length<2||pool.length<2)return;
+ var keep={};shots.forEach(function(f){var im=f.querySelector('img'),cp=f.querySelector('.cap');if(im&&cp)keep[im.getAttribute('src')]=cp.textContent;});
+ var pk=shuffle(pool).slice(0,shots.length);
+ shots.forEach(function(f,k){var im=f.querySelector('img'),cp=f.querySelector('.cap');im.setAttribute('src',pk[k]);
+  im.setAttribute('alt',ROT.T[si]);
+  if(cp){if(keep[pk[k]]){cp.textContent=keep[pk[k]];}else{cp.parentNode.removeChild(cp);}}});
+});
+var pairs=[],seen={};
+document.querySelectorAll('#proof figure.duo,.duo-wrap figure.duo').forEach(function(d){
+ var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');if(!a||!b)return;
+ var ra=a.getAttribute('src'),rb=b.getAttribute('src');if(seen[ra])return;seen[ra]=1;pairs.push([ra,rb]);});
+var tgt=document.querySelectorAll('#proof figure.duo');
+if(pairs.length>=tgt.length){var pp=shuffle(pairs).slice(0,tgt.length);
+ tgt.forEach(function(d,k){var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');
+  a.setAttribute('src',pp[k][0]);b.setAttribute('src',pp[k][1]);
+  a.setAttribute('alt','Simple source photo of the product');b.setAttribute('alt','Finished campaign image of the product');});}
+}catch(e){}})();
+</script>
+<script>
 (function(){
 "use strict";
 var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -784,16 +822,7 @@ var mq2 = ''; ['From one photo','To a full campaign','Cairo','Worldwide'].forEac
 document.getElementById('mq2').innerHTML = mq2 + mq2;
 
 /* series data for lightbox */
-var SERIES = [
-  ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"],
-  ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"],
-  ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"],
-  ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"],
-  ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"]
-  ,["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"]
-  ,["preview-v4/photos/skin-hero.webp", "preview-v4/photos/skin-berries.webp", "preview-v4/photos/skin-lather.webp", "preview-v4/photos/skin-duo.webp", "preview-v4/photos/skin-portrait.webp", "preview-v4/photos/skin-macro.webp", "preview-v4/photos/skin-basket.webp", "preview-v4/photos/skin-netbag.webp", "preview-v4/photos/skin-jar.webp", "preview-v4/photos/skin-dropper.webp"]
-  ,["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"]
-];
+var SERIES = [["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"], ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"], ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"], ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"], ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"], ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"], ["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"], ["preview-v4/photos/frag-hero.webp", "preview-v4/photos/frag-artifact.webp", "preview-v4/photos/frag-anchor.webp", "preview-v4/photos/frag-drift.webp", "preview-v4/photos/frag-dune.webp", "preview-v4/photos/frag-integrate.webp", "preview-v4/photos/frag-oasis.webp", "preview-v4/photos/frag-openbox.webp", "preview-v4/photos/frag-set.webp"]];
 
 /* lightbox */
 var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbVid=document.getElementById('lbVid'), lbVidLink=document.getElementById('lbVidLink'),
@@ -1030,9 +1059,9 @@ s4t:'Evening Gown',s4g:'Gold sequins, a grand staircase and a waiting limousine.
 s5t:'Athletic Tracksuits',s5g:'Three colorways, one elevator, flash photography.',
 s6t:'Skincare Ritual',s6g:'Lather, glass and fresh ingredients.',
 prLabel:'04 &mdash; Process',prT1:'How the work',prT2:'is made<span class="gold">.</span>',
-prNote:'Each image is generated with Google Flow (Nano Banana), upscaled with Magnific, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.',
+prNote:'Each image is generated with AI, upscaled to print-sharp detail, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.',
 st1h:'Send one photo',st1p:'Send a simple photo of your product on WhatsApp. That is all the input the process needs.',
-st2h:'Generate &amp; upscale',st2p:'Concept scenes are generated with Google Flow (Nano Banana) and upscaled with Magnific for print-sharp detail.',
+st2h:'Generate &amp; upscale',st2p:'Concept scenes are generated with AI and upscaled for print-sharp detail.',
 st3h:'Finish by hand',st3p:'Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.',
 ctaProcess:'Send one product photo on WhatsApp &#8599;',
 fpH:'Commercial use',fpP:"You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.",
@@ -1067,9 +1096,9 @@ s4t:'فستان سهرة',s4g:'ترتر دهبي، سلم كبير، وليمو�
 s5t:'تراكات رياضية',s5g:'تلات ألوان، أسانسير واحد، وتصوير بفلاش.',
 s6t:'عناية بالبشرة',s6g:'رغوة، زجاج، ومكونات طازجة.',
 prLabel:'04 — الخطوات',prT1:'الشغل ده',prT2:'بيتعمل إزاي<span class="gold">.</span>',
-prNote:'كل صورة بتتولد بـ Google Flow (Nano Banana)، وبتترفع جودتها بـ Magnific، وبعدين بتتشطب وبتتراجع باليد قبل التسليم. الأفلام ماشية بنفس الطريق: تجهيز المرجع، توليد، مونتاج، مراجعة.',
+prNote:'كل صورة بتتولد بالذكاء الاصطناعي، وبتترفع جودتها لتفاصيل حادة، وبعدين بتتشطب وبتتراجع باليد قبل التسليم. الأفلام ماشية بنفس الطريق: تجهيز المرجع، توليد، مونتاج، مراجعة.',
 st1h:'ابعت صورة واحدة',st1p:'ابعت صورة بسيطة لمنتجك على واتساب. دي كل الحاجة اللي الشغل محتاجها.',
-st2h:'توليد ورفع جودة',st2p:'مشاهد بأفكار مختلفة بتتولد بـ Google Flow (Nano Banana) وبتترفع بـ Magnific لتفاصيل حادة تصلح للطباعة.',
+st2h:'توليد ورفع جودة',st2p:'مشاهد بأفكار مختلفة بتتولد بالذكاء الاصطناعي وبتترفع لتفاصيل حادة تصلح للطباعة.',
 st3h:'تشطيب باليد',st3p:'كل صورة بتتشطب وبتتراجع باليد قبل التسليم. الأفلام بتتمونتج لقص نهائي.',
 ctaProcess:'ابعت صورة منتجك على واتساب ↗',
 fpH:'الاستخدام التجاري',fpP:'حقوق صور منتجاتك ولوجوهاتك بتفضل ليك. الصور المتولدة بالذكاء الاصطناعي تابعة لشروط أدوات التوليد، فمينفعش نعدك بتسجيل حقوق ملكية حصري.',
