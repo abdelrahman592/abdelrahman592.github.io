@@ -332,6 +332,20 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 .refcap{font-size:12.5px}
 @media(max-width:760px){.refstrip{grid-template-columns:1fr}.refpair .pair{grid-template-columns:1fr auto 108px}.refimg{height:250px}.filmthumb{width:108px;height:192px}}
 .btn-solid{text-wrap:balance}
+
+/* language toggle + RTL */
+.langbtn{font:inherit;font-size:12px;letter-spacing:.1em;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:inherit;transition:border-color .3s}
+.langbtn:hover{border-color:var(--acc)}
+html[dir=rtl] body{letter-spacing:0}
+html[dir=rtl] .nav .brand,html[dir=rtl] .nav ul a,html[dir=rtl] .sec-label,html[dir=rtl] .hero-kick,html[dir=rtl] .sindex-label,html[dir=rtl] .refstrip-head,html[dir=rtl] .band-kick,html[dir=rtl] .contact .c-kick,html[dir=rtl] footer,html[dir=rtl] .fineprint h4,html[dir=rtl] .srcbtn,html[dir=rtl] .viewall,html[dir=rtl] .shot .cap,html[dir=rtl] .duo-tag,html[dir=rtl] .hcard figcaption,html[dir=rtl] .series-id{letter-spacing:.04em;text-transform:none}
+html[dir=rtl] .sec-title,html[dir=rtl] .series-title,html[dir=rtl] .band-title,html[dir=rtl] .contact h2,html[dir=rtl] .step h3{font-family:'Space Grotesk',Tahoma,Arial,sans-serif;font-weight:700;text-transform:none;letter-spacing:0;line-height:1.2}
+html[dir=rtl] .series-tag{text-align:left}
+html[dir=rtl] .sec-label::after{display:none}
+.about-body{max-width:640px;color:var(--mut);font-size:clamp(15px,1.4vw,19px);line-height:1.75}
+.about-body b{color:var(--ink);font-weight:600}
+.cta-row{padding:clamp(30px,4vw,48px) var(--pad) 0}
+.wasticky{display:none}
+@media(max-width:760px){.wasticky{display:inline-flex;position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:95;padding:13px 22px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -348,10 +362,12 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 <header class="nav">
   <a class="brand" href="#top">Abdelrahman Ali <em>&mdash; Cairo</em></a>
   <ul>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#films">Films</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#films" data-i18n="nFilms">Films</a></li>
+    <li><a href="#work" data-i18n="nWork">Work</a></li>
+    <li><a href="#process" data-i18n="nProcess">Process</a></li>
+    <li><a href="#about" data-i18n="nAbout">About</a></li>
+    <li><a href="#contact" data-i18n="nContact">Contact</a></li>
+    <li><button class="langbtn" id="langBtn" type="button" aria-label="Switch language">عربي</button></li>
   </ul>
 </header>
 
@@ -359,22 +375,22 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-kick" data-fade><span><b>Abdelrahman Ali</b> &middot; AI product &amp; fashion studio</span><span>Based in Cairo &middot; Working worldwide</span></p>
+  <p class="hero-kick" data-fade><span data-i18n="kickA"><b>Abdelrahman Ali</b> &middot; AI product &amp; fashion studio</span><span data-i18n="kickB">Based in Cairo &middot; Working worldwide</span></p>
   <div class="hero-title">
     <h1 id="heroTitle"><span class="row"><span>Abdelrahman Ali<span class="dot">.</span></span></span></h1>
   </div>
   <div class="hero-strip" id="heroStrip">
     <figure class="hcard"><img decoding="async" fetchpriority="high" src="preview-v4/photos/gown-limo.webp" alt="Model in an evening gown beside a limousine at night"><figcaption>Evening gown &middot; Limousine</figcaption></figure>
-    <figure class="hcard"><img decoding="async" fetchpriority="high" src="preview-v4/photos/samba-onfeet.webp" alt="Green and cream sneakers worn on feet, street style"><figcaption>Sneaker &middot; On feet</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption>Derby &middot; Studio</figcaption></figure>
     <figure class="hcard"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Heeled shoes in a dramatic studio setup"><figcaption>Heels &middot; Studio</figcaption></figure>
-    <figure class="hcard"><img decoding="async" src="preview-v4/photos/dg-portrait.webp" alt="Fashion editorial portrait"><figcaption>Fashion editorial</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/red-hero.webp" alt="Red running shoe wrapped in light trails on dark red"><figcaption>Runner &middot; Light trails</figcaption></figure>
     <figure class="hcard"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models wearing tracksuits in three colorways"><figcaption>Tracksuits &middot; 3 colorways</figcaption></figure>
     <figure class="hcard"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Crocodile-texture handbag in dramatic light"><figcaption>Handbag &middot; Croc texture</figcaption></figure>
   </div>
   <div class="hero-low">
-    <p class="hero-sub" data-fade><b>Finished by hand.</b> Campaign images and short ad films from a simple photo of your product.</p>
+    <p class="hero-sub" data-fade data-i18n="heroSub"><b>Campaign images and short ad films</b> for your product, made from one simple photo. Finished by hand, delivered in days.</p>
     <div class="hero-cta" data-fade>
-      <a class="btn-solid magnet" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27m%20interested%20in%20product%20campaign%20images.">Message on WhatsApp &#8599;</a>
+      <a class="btn-solid magnet" data-wa data-i18n="ctaStart" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Start with one product photo &#8599;</a>
       <a class="btn-ghost" href="https://www.instagram.com/abdelra7man_alii" rel="noopener">Instagram</a>
       <a class="btn-ghost" href="https://www.linkedin.com/in/abdelrahman-visuals" rel="noopener">LinkedIn</a>
     </div>
@@ -384,345 +400,41 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true"><div class="track" id="mq1"></div></div>
 
-<!-- WORK -->
-<section class="sec" id="work">
+<!-- PROOF: source -> result -->
+<section class="sec" id="proof">
   <div class="sec-head">
-    <p class="sec-label">01 &mdash; Work</p>
+    <p class="sec-label" data-i18n="pLabel">01 &mdash; Proof</p>
     <h2 class="sec-title">
-      <span class="row"><span>Selected</span></span>
-      <span class="row"><span>Work<span class="gold">.</span></span></span>
+      <span class="row"><span data-i18n="pT1">Source &#8594;</span></span>
+      <span class="row"><span data-i18n="pT2">Result<span class="gold">.</span></span></span>
     </h2>
-    <p class="sec-note">135 AI concept images in 18 series. Each series leads with its strongest final frames; where a source reference informed the work, a source &#8594; result pair is one tap away. All series are self-initiated concept studies, not commissioned by or affiliated with the brands shown.</p>
-    <span class="ghost" aria-hidden="true">135</span>
+    <p class="sec-note" data-i18n="pNote">Every campaign starts from a simple photo of your product. The details that make it yours stay intact.</p>
   </div>
-
-  <nav class="sindex" aria-label="Jump to a series"><span class="sindex-label">Jump to a series</span><div class="sindex-row"><a href="#s1"><b>01</b> Classic Sneaker</a><a href="#s2"><b>02</b> Stiletto Heels</a><a href="#s3"><b>03</b> Croc Leather Bag</a><a href="#s4"><b>04</b> Evening Gown</a><a href="#s5"><b>05</b> Eyewear Editorial</a><a href="#s6"><b>06</b> Athletic Tracksuits</a><a href="#s7"><b>07</b> Running Shoe</a><a href="#s8"><b>08</b> Desert Lounge</a><a href="#s9"><b>09</b> Python-Effect Handbag</a><a href="#s11"><b>10</b> Niche Fragrance</a><a href="#s12"><b>11</b> Gold Hair-Care</a><a href="#s13"><b>12</b> Skincare Ritual</a><a href="#s14"><b>13</b> Burnt Orange Bag</a><a href="#s15"><b>14</b> Retro Red Runner</a><a href="#s16"><b>15</b> City Puffer</a><a href="#s17"><b>16</b> Denim Editorial</a><a href="#s18"><b>17</b> Monochrome Derby</a><a href="#s19"><b>18</b> Foam Runner</a></div></nav>
-
-  <!-- 01 sneaker -->
-    <article class="series" id="s1">
-    <div class="series-top">
-      <div><p class="series-id">01 / 18</p><h3 class="series-title">Classic Sneaker</h3></div>
-      <p class="series-tag">Floating hero, stitching macro and street style.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/samba-flat.webp" alt="Pair of green and cream classic sneakers floating at an angle in dramatic teal light"><figcaption class="cap">Campaign hero</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/samba-float.webp" alt="Green and cream sneaker floating over a pale ground"><figcaption class="cap">Floating</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/samba-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/samba-side.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="0"><b>10</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s2">
-    <div class="series-top">
-      <div><p class="series-id">02 / 18</p><h3 class="series-title">Stiletto Heels</h3></div>
-      <p class="series-tag">Mirror finishes, floating pairs and cream leather.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/heels-floatpair.webp" alt="White stiletto pumps floating over a dark mirrored surface"><figcaption class="cap">Floating pair</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient"><figcaption class="cap">Cream pumps</figcaption></figure>
-    </div>
-    <button class="viewall" data-series="1"><b>6</b> images <i></i> View all</button>
-  </article>
-
-  <article class="series" id="s3">
-    <div class="series-top">
-      <div><p class="series-id">03 / 18</p><h3 class="series-title">Croc Leather Bag</h3></div>
-      <p class="series-tag">Burgundy croc embossing on red silk drapes.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Burgundy croc-embossed leather bag on red silk drapes"><figcaption class="cap">On silk</figcaption></figure>
-      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="preview-v4/photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather"><figcaption class="cap">Hardware macro</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/croc-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/croc-bag.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="2"><b>4</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s4">
-    <div class="series-top">
-      <div><p class="series-id">04 / 18</p><h3 class="series-title">Evening Gown</h3></div>
-      <p class="series-tag">Gold sequins, a grand staircase and a waiting limousine.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/gown-stairs.webp" alt="Model in a gold sequin gown on a grand staircase"><figcaption class="cap">Grand staircase</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine"><figcaption class="cap">Arrival</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/gown-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/gown-stairsback.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="3"><b>8</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s5">
-    <div class="series-top">
-      <div><p class="series-id">05 / 18</p><h3 class="series-title">Eyewear Editorial</h3></div>
-      <p class="series-tag">Black acetate on silver branches, worn with sharp tailoring.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/dg-branch.webp" alt="Black acetate sunglasses with gold logo resting on a silver branch"><figcaption class="cap">On silver</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/eye-7.webp" alt="Model in black tailoring wearing black sunglasses"><figcaption class="cap">Worn</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/dg-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/eye-3.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="4"><b>14</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s6">
-    <div class="series-top">
-      <div><p class="series-id">06 / 18</p><h3 class="series-title">Athletic Tracksuits</h3></div>
-      <p class="series-tag">Three colorways, one elevator, flash photography.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models in grey, brown and navy tracksuits inside an elevator"><figcaption class="cap">Elevator trio</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator"><figcaption class="cap">Brown duo</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/ctre-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/ctre-greyfront.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="5"><b>9</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s7">
-    <div class="series-top">
-      <div><p class="series-id">07 / 18</p><h3 class="series-title">Running Shoe</h3></div>
-      <p class="series-tag">Mint studio athletics, ready stance to full stride.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/asics-hero.webp" alt="Model in white and mint sportswear wearing white running shoes"><figcaption class="cap">Ready stance</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/asics-stride.webp" alt="Model mid-stride in white and mint sportswear"><figcaption class="cap">In motion</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/asics-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/asics-floor.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="6"><b>7</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s8">
-    <div class="series-top">
-      <div><p class="series-id">08 / 18</p><h3 class="series-title">Desert Lounge</h3></div>
-      <p class="series-tag">A 16-second desert camp fashion film, built from one reference sheet: the clothes, the model and the location.</p>
-    </div>
-    <div class="sgrid">
-      <button class="vcard feat reveal" data-v="desert-lounge" style="grid-column:1/-1">
-        <img decoding="async" class="poster" src="preview-v4/videos/df.webp" alt="Man in sunglasses against a desert backdrop, Desert Lounge fashion film">
-        <video src="https://abdelrahman592.github.io/videos/desert-lounge.mp4" poster="preview-v4/videos/df.webp" muted loop playsinline preload="none"></video>
-        <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="vmeta"><span class="vname">Desert Lounge &mdash; fashion film</span><span class="vdur">0:16</span></span>
-      </button>
-      <figure class="shot reveal" style="grid-column:1/-1;aspect-ratio:1000/1044;width:100%;max-width:640px;justify-self:center"><img decoding="async" src="preview-v4/sources/desert-ref.webp" alt="Model, product and location reference sheet for the Desert Lounge film"><figcaption class="cap">Reference sheet: clothes, model and location</figcaption></figure>
-    </div>
-  </article>
-
-  <article class="series" id="s9">
-    <div class="series-top">
-      <div><p class="series-id">09 / 18</p><h3 class="series-title">Python-Effect Handbag</h3></div>
-      <p class="series-tag">Amber light, black silk and python texture.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/bag-2.webp" alt="Hands presenting a python-effect handbag on an amber backdrop"><figcaption class="cap">Presented</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/bag-3.webp" alt="Silhouette of a model holding a python-effect handbag"><figcaption class="cap">Silhouette</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/bag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/bag-4.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="8"><b>7</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s11">
-    <div class="series-top">
-      <div><p class="series-id">10 / 18</p><h3 class="series-title">Niche Fragrance</h3></div>
-      <p class="series-tag">Desert light, stone pedestals and a clear bottle.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/frag-hero.webp" alt="Clear perfume bottle on a stone pedestal in golden light"><figcaption class="cap">On stone</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/frag-artifact.webp" alt="Perfume bottle on a stone slab under sunbeams"><figcaption class="cap">Sunbeam</figcaption></figure>
-    </div>
-    <button class="viewall" data-series="9"><b>9</b> images <i></i> View all</button>
-  </article>
-
-  <article class="series" id="s12">
-    <div class="series-top">
-      <div><p class="series-id">11 / 18</p><h3 class="series-title">Gold Hair-Care</h3></div>
-      <p class="series-tag">Black and gold bottles in a golden glow.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/gold-hero.webp" alt="Black and gold shampoo bottle on a pedestal in golden glow"><figcaption class="cap">Gold standard</figcaption></figure>
-      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="preview-v4/photos/gold-group.webp" alt="Black and gold hair-care range on pedestals"><figcaption class="cap">The range</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/gold-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/gold-pump.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="10"><b>8</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s13">
-    <div class="series-top">
-      <div><p class="series-id">12 / 18</p><h3 class="series-title">Skincare Ritual</h3></div>
-      <p class="series-tag">Lather, glass and fresh ingredients.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/skin-hero.webp" alt="Model holding a white skincare bottle with lathered hands"><figcaption class="cap">Lather</figcaption></figure>
-      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="preview-v4/photos/skin-berries.webp" alt="Skincare jar in a basket of fresh berries"><figcaption class="cap">Fresh</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/skin-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/skin-lather.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="11"><b>10</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s14">
-    <div class="series-top">
-      <div><p class="series-id">13 / 18</p><h3 class="series-title">Burnt Orange Bag</h3></div>
-      <p class="series-tag">Sage studio, a vintage scooter and pebbled leather.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/obag-hero.webp" alt="Model in sage green holding a burnt orange leather bag by a scooter"><figcaption class="cap">Sage and orange</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/obag-ride.webp" alt="Model with a burnt orange bag beside a vintage scooter"><figcaption class="cap">Ride</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/obag-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/obag-product.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="12"><b>6</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s15">
-    <div class="series-top">
-      <div><p class="series-id">14 / 18</p><h3 class="series-title">Retro Red Runner</h3></div>
-      <p class="series-tag">High-velocity red: smoke, sparks and light trails.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/red-hero.webp" alt="Red running shoe wrapped in light trails on dark red"><figcaption class="cap">Ignition</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/red-pair.webp" alt="Pair of red running shoes in smoke and red light"><figcaption class="cap">Pair</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/red-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/red-close.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="13"><b>6</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s16">
-    <div class="series-top">
-      <div><p class="series-id">15 / 18</p><h3 class="series-title">City Puffer</h3></div>
-      <p class="series-tag">A black puffer through downtown streets.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/puff-hero.webp" alt="Model in a black puffer jacket crossing a city square"><figcaption class="cap">Downtown</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/puff-downtown.webp" alt="Model in a black puffer jacket carrying a tote in the city"><figcaption class="cap">City walk</figcaption></figure>
-    </div>
-    <button class="viewall" data-series="14"><b>6</b> images <i></i> View all</button>
-  </article>
-
-  <article class="series" id="s17">
-    <div class="series-top">
-      <div><p class="series-id">16 / 18</p><h3 class="series-title">Denim Editorial</h3></div>
-      <p class="series-tag">Ripped, pearl-studded denim and a black convertible.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/denim-hero.webp" alt="Model in ripped embellished jeans leaning on a black convertible"><figcaption class="cap">Denim and chrome</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/denim-seated.webp" alt="Model in ripped embellished jeans seated by a black convertible"><figcaption class="cap">Seated</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/denim-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/denim-detail.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="15"><b>5</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s18">
-    <div class="series-top">
-      <div><p class="series-id">17 / 18</p><h3 class="series-title">Monochrome Derby</h3></div>
-      <p class="series-tag">A chunky black derby in black-on-black studio light.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption class="cap">On black</figcaption></figure>
-      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/derby-float.webp" alt="Black derby shoes floating over white"><figcaption class="cap">Floating</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/derby-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/derby-profile.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="16"><b>10</b> images <i></i> View all</button></div>
-  </article>
-
-  <article class="series" id="s19">
-    <div class="series-top">
-      <div><p class="series-id">18 / 18</p><h3 class="series-title">Foam Runner</h3></div>
-      <p class="series-tag">Marbled foam, floating on a blue gradient.</p>
-    </div>
-    <div class="sgrid">
-      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/foam-hero.webp" alt="Marbled foam runner floating on a blue gradient"><figcaption class="cap">Floating</figcaption></figure>
-      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="preview-v4/photos/foam-low.webp" alt="Marbled foam runner from a low angle"><figcaption class="cap">Low angle</figcaption></figure>
-      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
-        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/foam-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
-        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
-        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/foam-motion.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
-        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
-      </figure></div>
-    </div>
-    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false">Source &#8594; Result</button><button class="viewall" data-series="17"><b>6</b> images <i></i> View all</button></div>
-  </article>
-
-  <!-- FILMS -->
-<!-- STATEMENT BAND -->
-<section class="band">
-  <p class="band-kick" data-fade>The idea</p>
-  <h2 class="band-title">
-    <span class="row"><span>Reference in.</span></span>
-    <span class="row"><span>Campaign out.</span></span>
-  </h2>
-  <p class="band-note" data-fade>Every series on this page starts from a simple source photo of the product and ends as a finished campaign image, retouched and reviewed by hand.</p>
+  <figure class="duo slim" data-duo>
+    <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/derby-ref.webp" alt="Simple source photo of a shoe"><span class="duo-tag" data-i18n="duoRef">Reference</span></div>
+    <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+    <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/derby-profile.webp" alt="Finished campaign image of the shoe"></div><span class="duo-tag gold" data-i18n="duoRes">Result</span></div>
+    <figcaption class="duo-cap"><span data-i18n="duoCapL">Source reference</span><span data-i18n="duoCapR">Final campaign image</span></figcaption>
+  </figure>
+  <figure class="duo slim" data-duo>
+    <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/croc-ref.webp" alt="Simple source photo of a leather bag"><span class="duo-tag" data-i18n="duoRef">Reference</span></div>
+    <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+    <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/croc-bag.webp" alt="Finished campaign image of the leather bag"></div><span class="duo-tag gold" data-i18n="duoRes">Result</span></div>
+    <figcaption class="duo-cap"><span data-i18n="duoCapL">Source reference</span><span data-i18n="duoCapR">Final campaign image</span></figcaption>
+  </figure>
+  <div class="cta-row" style="text-align:center"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
 </section>
 
+<!-- FILMS -->
 <section class="sec" id="films">
   <div class="sec-head">
-    <p class="sec-label">02 &mdash; Films</p>
+    <p class="sec-label" data-i18n="fLabel">02 &mdash; Films</p>
     <h2 class="sec-title">
-      <span class="row"><span>AI Ad</span></span>
-      <span class="row"><span>Films<span class="gold">.</span></span></span>
+      <span class="row"><span data-i18n="fT1">AI Ad</span></span>
+      <span class="row"><span data-i18n="fT2">Films<span class="gold">.</span></span></span>
     </h2>
-    <p class="sec-note">Concept ads built with AI from product and character references, edited to final cut. Preview each film in motion, tap to watch with sound.</p>
-    <span class="ghost" aria-hidden="true">07</span>
+    <p class="sec-note" data-i18n="fNote">Concept ads built with AI from product and character references, edited to final cut. Preview each film in motion, tap to watch with sound.</p>
+    <span class="ghost" aria-hidden="true">03</span>
   </div>
   <div class="films-grid">
     <button class="vcard feat reveal" data-v="desert-lounge">
@@ -737,30 +449,6 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
       <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
       <span class="vmeta"><span class="vname">Black jacket &mdash; Cairo fashion film</span><span class="vdur">0:20</span></span>
     </button>
-    <button class="vcard reveal" data-v="c1">
-      <img decoding="async" class="poster" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept">
-      <video src="https://abdelrahman592.github.io/videos/c1.mp4" poster="preview-v4/videos/c1.webp" muted loop playsinline preload="none"></video>
-      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="vmeta"><span class="vname">Cream jar &mdash; skincare ad</span><span class="vdur">0:10</span></span>
-    </button>
-    <button class="vcard reveal" data-v="c2">
-      <img decoding="async" class="poster" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept">
-      <video src="https://abdelrahman592.github.io/videos/c2.mp4" poster="preview-v4/videos/c2.webp" muted loop playsinline preload="none"></video>
-      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="vmeta"><span class="vname">Balm tube &mdash; skincare ad</span><span class="vdur">0:16</span></span>
-    </button>
-    <button class="vcard reveal" data-v="c4">
-      <img decoding="async" class="poster" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept">
-      <video src="https://abdelrahman592.github.io/videos/c4.mp4" poster="preview-v4/videos/c4.webp" muted loop playsinline preload="none"></video>
-      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="vmeta"><span class="vname">Face care &mdash; skincare ad</span><span class="vdur">0:12</span></span>
-    </button>
-    <button class="vcard reveal" data-v="c3">
-      <img decoding="async" class="poster" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept">
-      <video src="https://abdelrahman592.github.io/videos/c3.mp4" poster="preview-v4/videos/c3.webp" muted loop playsinline preload="none"></video>
-      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-      <span class="vmeta"><span class="vname">Skin texture &mdash; skincare ad</span><span class="vdur">0:10</span></span>
-    </button>
     <button class="vcard reveal" data-v="hf">
       <img decoding="async" class="poster" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept">
       <video src="https://abdelrahman592.github.io/videos/hf.mp4" poster="preview-v4/videos/hf.webp" muted loop playsinline preload="none"></video>
@@ -768,52 +456,172 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
       <span class="vmeta"><span class="vname">Foam cleanser &mdash; skincare ad</span><span class="vdur">0:15</span></span>
     </button>
   </div>
-  <p class="refstrip-head">Each film: its reference sheet &rarr; the result</p>
+  <p class="refstrip-head" data-i18n="rHead">Each film: its reference sheet &rarr; the result</p>
   <div class="refstrip">
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/desert-ref.webp" alt="Reference sheet: clothes, model and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="desert-lounge"><img decoding="async" src="preview-v4/videos/df.webp" alt="Desert camp, Desert Lounge fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: clothes, model and location</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-f2-ref.webp" alt="Reference sheet: model, outfit pieces and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model, outfit pieces and location</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c1-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c2-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: product photo</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c3-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c4-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
-    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-hf-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: product photo</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/desert-ref.webp" alt="Reference sheet: clothes, model and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="desert-lounge"><img decoding="async" src="preview-v4/videos/df.webp" alt="Desert camp, Desert Lounge fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc1">Reference sheet: clothes, model and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-f2-ref.webp" alt="Reference sheet: model, outfit pieces and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc2">Reference sheet: model, outfit pieces and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-hf-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc4">Reference sheet: product photo</p></div>
   </div>
+
+  <div class="cta-row" style="text-align:center"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
 </section>
+
+<!-- STATEMENT BAND -->
+<section class="band">
+  <p class="band-kick" data-fade data-i18n="bKick">The idea</p>
+  <h2 class="band-title">
+    <span class="row"><span data-i18n="bT1">Reference in.</span></span>
+    <span class="row"><span data-i18n="bT2">Campaign out.</span></span>
+  </h2>
+  <p class="band-note" data-fade data-i18n="bNote">Every series on this page starts from a simple source photo of the product and ends as a finished campaign image, retouched and reviewed by hand.</p>
+</section>
+
+<!-- WORK -->
+<section class="sec" id="work">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="wLabel">03 &mdash; Work</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="wT1">Selected</span></span>
+      <span class="row"><span data-i18n="wT2">Work<span class="gold">.</span></span></span>
+    </h2>
+    <p class="sec-note" data-i18n="wNote">33 campaign images in 5 series. Each series leads with its strongest frames; a source &#8594; result pair is one tap away.</p>
+    <span class="ghost" aria-hidden="true">33</span>
+  </div>
+
+  <nav class="sindex" aria-label="Jump to a series"><span class="sindex-label" data-i18n="jump">Jump to a series</span><div class="sindex-row"><a href="#s1"><b>01</b> Monochrome Derby</a><a href="#s2"><b>02</b> Stiletto Heels</a><a href="#s3"><b>03</b> Croc Leather Bag</a><a href="#s4"><b>04</b> Evening Gown</a><a href="#s5"><b>05</b> Athletic Tracksuits</a></div></nav>
+
+  <!-- 01 sneaker -->
+    <article class="series" id="s1">
+    <div class="series-top">
+      <div><p class="series-id">01 / 06</p><h3 class="series-title" data-i18n="s1t">Monochrome Derby</h3></div>
+      <p class="series-tag" data-i18n="s1g">Black-on-black studio light, floating form.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption class="cap">On black</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/derby-float.webp" alt="Black derby shoes floating over white"><figcaption class="cap">Floating</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/derby-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/derby-profile.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="0"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s2">
+    <div class="series-top">
+      <div><p class="series-id">02 / 06</p><h3 class="series-title" data-i18n="s2t">Stiletto Heels</h3></div>
+      <p class="series-tag" data-i18n="s2g">Mirror finishes, floating pairs and cream leather.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/heels-floatpair.webp" alt="White stiletto pumps floating over a dark mirrored surface"><figcaption class="cap">Floating pair</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient"><figcaption class="cap">Cream pumps</figcaption></figure>
+    </div>
+    <button class="viewall" data-series="1"><b>6</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button>
+  </article>
+
+  <article class="series" id="s3">
+    <div class="series-top">
+      <div><p class="series-id">03 / 06</p><h3 class="series-title" data-i18n="s3t">Croc Leather Bag</h3></div>
+      <p class="series-tag" data-i18n="s3g">Burgundy croc embossing on red silk drapes.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Burgundy croc-embossed leather bag on red silk drapes"><figcaption class="cap">On silk</figcaption></figure>
+      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="preview-v4/photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather"><figcaption class="cap">Hardware macro</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/croc-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/croc-bag.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="2"><b>4</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s4">
+    <div class="series-top">
+      <div><p class="series-id">04 / 06</p><h3 class="series-title" data-i18n="s4t">Evening Gown</h3></div>
+      <p class="series-tag" data-i18n="s4g">Gold sequins, a grand staircase and a waiting limousine.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/gown-stairs.webp" alt="Model in a gold sequin gown on a grand staircase"><figcaption class="cap">Grand staircase</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine"><figcaption class="cap">Arrival</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/gown-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/gown-stairsback.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="3"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s5">
+    <div class="series-top">
+      <div><p class="series-id">05 / 05</p><h3 class="series-title" data-i18n="s5t">Athletic Tracksuits</h3></div>
+      <p class="series-tag" data-i18n="s5g">Three colorways, one elevator, flash photography.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models in grey, brown and navy tracksuits inside an elevator"><figcaption class="cap">Elevator trio</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator"><figcaption class="cap">Brown duo</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/ctre-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/ctre-greyfront.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="4"><b>7</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
 
 <div class="marquee rev" aria-hidden="true"><div class="track" id="mq2"></div></div>
 
 <!-- PROCESS -->
 <section class="sec on-paper" id="process">
   <div class="sec-head">
-    <p class="sec-label">03 &mdash; Process</p>
+    <p class="sec-label" data-i18n="prLabel">04 &mdash; Process</p>
     <h2 class="sec-title">
-      <span class="row"><span>How the work</span></span>
-      <span class="row"><span>is made<span class="gold">.</span></span></span>
+      <span class="row"><span data-i18n="prT1">How the work</span></span>
+      <span class="row"><span data-i18n="prT2">is made<span class="gold">.</span></span></span>
     </h2>
-    <p class="sec-note">Each image is generated with Google Flow (Nano Banana), upscaled with Magnific, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.</p>
+    <p class="sec-note" data-i18n="prNote">Each image is generated with Google Flow (Nano Banana), upscaled with Magnific, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.</p>
     <span class="ghost" aria-hidden="true">03</span>
   </div>
   <div class="steps">
-    <div class="step reveal"><span class="n">01</span><h3>Reference</h3><p>You send a simple photo of your product. That is all the input the process needs.</p></div>
-    <div class="step reveal"><span class="n">02</span><h3>Generate &amp; upscale</h3><p>Concept scenes are generated with Google Flow (Nano Banana) and upscaled with Magnific for print-sharp detail.</p></div>
-    <div class="step reveal"><span class="n">03</span><h3>Finish by hand</h3><p>Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.</p></div>
+    <div class="step reveal"><span class="n">01</span><h3 data-i18n="st1h">Send one photo</h3><p data-i18n="st1p">Send a simple photo of your product on WhatsApp. That is all the input the process needs.</p></div>
+    <div class="step reveal"><span class="n">02</span><h3 data-i18n="st2h">Generate &amp; upscale</h3><p data-i18n="st2p">Concept scenes are generated with Google Flow (Nano Banana) and upscaled with Magnific for print-sharp detail.</p></div>
+    <div class="step reveal"><span class="n">03</span><h3 data-i18n="st3h">Finish by hand</h3><p data-i18n="st3p">Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.</p></div>
   </div>
+  <div class="cta-row"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
   <div class="fineprint">
-    <div><h4>About this portfolio</h4><p>Self-initiated AI concept studies. Not commissioned by or affiliated with the brands shown.</p></div>
-    <div><h4>Commercial use</h4><p>You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.</p></div>
+    <div style="grid-column:1/-1;max-width:640px"><h4 data-i18n="fpH">Commercial use</h4><p data-i18n="fpP">You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.</p></div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="aLabel">05 &mdash; About</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="aT1">The hands</span></span>
+      <span class="row"><span data-i18n="aT2">behind it<span class="gold">.</span></span></span>
+    </h2>
+    <p class="about-body" data-i18n="aBody" style="margin-top:26px"><b>Abdelrahman Ali</b> is a Cairo-based visual artist with five years of hands-on retouching, photography and video editing, now focused on AI product and fashion imagery. Every campaign is art-directed, generated and finished by hand, one product at a time.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <p class="c-kick" data-fade>Contact</p>
+  <p class="c-kick" data-fade data-i18n="cKick">Contact</p>
   <h2>
-    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block">Have a product</span></span>
-    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block">to <span class="acc">shoot?</span></span></span>
+    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block" data-i18n="cT1">Have a product</span></span>
+    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block" data-i18n="cT2">to <span class="acc">shoot?</span></span></span>
   </h2>
-  <p data-fade>Send a photo of your product and a word about what you need. I reply with ideas, timing and a quote.</p>
+  <p data-fade data-i18n="cP">Send one photo of your product and a word about what you need. I reply with ideas, timing and a quote.</p>
   <div class="c-actions" data-fade>
-    <a class="btn-solid magnet" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27m%20interested%20in%20product%20campaign%20images.">Send your product photo on WhatsApp&nbsp;&#8599;</a>
+    <a class="btn-solid magnet" data-wa data-i18n="ctaContact" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send your product photo on WhatsApp &#8599;</a>
   </div>
   <div class="c-links" data-fade>
     <a class="chan" href="https://www.instagram.com/abdelra7man_alii" rel="noopener">
@@ -835,11 +643,13 @@ footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;jus
 </section>
 
 <footer>
-  <span>Based in Cairo, Egypt &middot; Available for projects worldwide</span>
+  <span data-i18n="ftA">Based in Cairo, Egypt &middot; Available for projects worldwide</span>
   <span>&copy; 2026 Abdelrahman Ali</span>
 </footer>
 
 </main>
+
+<a class="wasticky btn-solid" data-wa data-i18n="ctaStart" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Start with one product photo &#8599;</a>
 
 <!-- LIGHTBOX -->
 <button class="totop" id="toTop" type="button" aria-label="Back to top">&#8593;</button>
@@ -880,24 +690,11 @@ document.getElementById('mq2').innerHTML = mq2 + mq2;
 
 /* series data for lightbox */
 var SERIES = [
-  ["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"],
+  ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"],
   ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"],
   ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"],
   ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"],
-  ["preview-v4/photos/dg-branch.webp", "preview-v4/photos/eye-7.webp", "preview-v4/photos/eye-3.webp", "preview-v4/photos/dg-model.webp", "preview-v4/photos/dg-branch2.webp", "preview-v4/photos/dg-float.webp", "preview-v4/photos/dg-arms.webp", "preview-v4/photos/dg-highangle.webp", "preview-v4/photos/dg-portrait.webp", "preview-v4/photos/eye-1.webp", "preview-v4/photos/eye-2.webp", "preview-v4/photos/eye-4.webp", "preview-v4/photos/eye-5.webp", "preview-v4/photos/eye-6.webp"],
-  ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-brownback.webp", "preview-v4/photos/ctre-navychest.webp", "preview-v4/photos/ctre-navyover.webp"],
-  ["preview-v4/photos/asics-hero.webp", "preview-v4/photos/asics-stride.webp", "preview-v4/photos/asics-floor.webp", "preview-v4/photos/asics-feet.webp", "preview-v4/photos/asics-sole.webp", "preview-v4/photos/asics-laces.webp", "preview-v4/photos/asics-midstride.webp"],
-  ["preview-v4/photos/desert-10.webp", "preview-v4/photos/desert-4.webp", "preview-v4/photos/desert-11.webp", "preview-v4/photos/desert-lookbook.webp"],
-  ["preview-v4/photos/bag-2.webp", "preview-v4/photos/bag-3.webp", "preview-v4/photos/bag-4.webp", "preview-v4/photos/bag-1.webp", "preview-v4/photos/bag-5.webp", "preview-v4/photos/bag-6.webp", "preview-v4/photos/bag-7.webp"],
-  ["preview-v4/photos/frag-hero.webp", "preview-v4/photos/frag-artifact.webp", "preview-v4/photos/frag-oasis.webp", "preview-v4/photos/frag-drift.webp", "preview-v4/photos/frag-set.webp", "preview-v4/photos/frag-openbox.webp", "preview-v4/photos/frag-integrate.webp", "preview-v4/photos/frag-anchor.webp", "preview-v4/photos/frag-dune.webp"],
-  ["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"],
-  ["preview-v4/photos/skin-hero.webp", "preview-v4/photos/skin-berries.webp", "preview-v4/photos/skin-lather.webp", "preview-v4/photos/skin-duo.webp", "preview-v4/photos/skin-portrait.webp", "preview-v4/photos/skin-macro.webp", "preview-v4/photos/skin-basket.webp", "preview-v4/photos/skin-netbag.webp", "preview-v4/photos/skin-jar.webp", "preview-v4/photos/skin-dropper.webp"],
-  ["preview-v4/photos/obag-hero.webp", "preview-v4/photos/obag-ride.webp", "preview-v4/photos/obag-product.webp", "preview-v4/photos/obag-seated.webp", "preview-v4/photos/obag-clasp.webp", "preview-v4/photos/obag-stride.webp"],
-  ["preview-v4/photos/red-hero.webp", "preview-v4/photos/red-pair.webp", "preview-v4/photos/red-close.webp", "preview-v4/photos/red-ignition.webp", "preview-v4/photos/red-macro.webp", "preview-v4/photos/red-trail.webp"],
-  ["preview-v4/photos/puff-hero.webp", "preview-v4/photos/puff-downtown.webp", "preview-v4/photos/puff-portrait.webp", "preview-v4/photos/puff-rest.webp", "preview-v4/photos/puff-walk.webp", "preview-v4/photos/puff-lean.webp"],
-  ["preview-v4/photos/denim-hero.webp", "preview-v4/photos/denim-seated.webp", "preview-v4/photos/denim-detail.webp", "preview-v4/photos/denim-cover.webp", "preview-v4/photos/denim-poster.webp"],
-  ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-beam.webp", "preview-v4/photos/derby-side.webp", "preview-v4/photos/derby-pair.webp"],
-  ["preview-v4/photos/foam-hero.webp", "preview-v4/photos/foam-low.webp", "preview-v4/photos/foam-motion.webp", "preview-v4/photos/foam-macro.webp", "preview-v4/photos/foam-pair.webp", "preview-v4/photos/foam-duo.webp"]
+  ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"]
 ];
 
 /* lightbox */
@@ -1106,7 +903,102 @@ if(reduced || !hasGSAP){
     gsap.fromTo(el,{y:40},{y:-40,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
   });
 }
+
+/* i18n: EN/AR toggle */
+var WA_EN='https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.';
+var WA_AR='https://wa.me/201556528559?text='+encodeURIComponent('أهلاً عبدالرحمن، حابب أبدأ بصورة واحدة لمنتجي.');
+var I18N={
+en:{
+nFilms:'Films',nWork:'Work',nProcess:'Process',nAbout:'About',nContact:'Contact',
+kickA:'<b>Abdelrahman Ali</b> &middot; AI product &amp; fashion studio',kickB:'Based in Cairo &middot; Working worldwide',
+heroSub:'<b>Campaign images and short ad films</b> for your product, made from one simple photo. Finished by hand, delivered in days.',
+ctaStart:'Start with one product photo &#8599;',
+pLabel:'01 &mdash; Proof',pT1:'Source &#8594;',pT2:'Result<span class="gold">.</span>',
+pNote:'Every campaign starts from a simple photo of your product. The details that make it yours stay intact.',
+duoRef:'Reference',duoRes:'Result',duoCapL:'Source reference',duoCapR:'Final campaign image',
+fLabel:'02 &mdash; Films',fT1:'AI Ad',fT2:'Films<span class="gold">.</span>',
+fNote:'Concept ads built with AI from product and character references, edited to final cut. Preview each film in motion, tap to watch with sound.',
+rHead:'Each film: its reference sheet &rarr; the result',
+rc1:'Reference sheet: clothes, model and location',rc2:'Reference sheet: model, outfit pieces and location',rc3:'Reference sheet: model and product',rc4:'Reference sheet: product photo',
+bKick:'The idea',bT1:'Reference in.',bT2:'Campaign out.',
+bNote:'Every series on this page starts from a simple source photo of the product and ends as a finished campaign image, retouched and reviewed by hand.',
+wLabel:'03 &mdash; Work',wT1:'Selected',wT2:'Work<span class="gold">.</span>',
+wNote:'33 campaign images in 5 series. Each series leads with its strongest frames; a source &#8594; result pair is one tap away.',
+jump:'Jump to a series',srcBtn:'Source &#8594; Result',vAll:'images &middot; View all',
+s1t:'Monochrome Derby',s1g:'Black-on-black studio light, floating form.',
+s2t:'Stiletto Heels',s2g:'Mirror finishes, floating pairs and cream leather.',
+s3t:'Croc Leather Bag',s3g:'Burgundy croc embossing on red silk drapes.',
+s4t:'Evening Gown',s4g:'Gold sequins, a grand staircase and a waiting limousine.',
+s5t:'Athletic Tracksuits',s5g:'Three colorways, one elevator, flash photography.',
+s6t:'Skincare Ritual',s6g:'Lather, glass and fresh ingredients.',
+prLabel:'04 &mdash; Process',prT1:'How the work',prT2:'is made<span class="gold">.</span>',
+prNote:'Each image is generated with Google Flow (Nano Banana), upscaled with Magnific, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.',
+st1h:'Send one photo',st1p:'Send a simple photo of your product on WhatsApp. That is all the input the process needs.',
+st2h:'Generate &amp; upscale',st2p:'Concept scenes are generated with Google Flow (Nano Banana) and upscaled with Magnific for print-sharp detail.',
+st3h:'Finish by hand',st3p:'Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.',
+ctaProcess:'Send one product photo on WhatsApp &#8599;',
+fpH:'Commercial use',fpP:"You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.",
+aLabel:'05 &mdash; About',aT1:'The hands',aT2:'behind it<span class="gold">.</span>',
+aBody:'<b>Abdelrahman Ali</b> is a Cairo-based visual artist with five years of hands-on retouching, photography and video editing, now focused on AI product and fashion imagery. Every campaign is art-directed, generated and finished by hand, one product at a time.',
+cKick:'Contact',cT1:'Have a product',cT2:'to <span class="acc">shoot?</span>',
+cP:'Send one photo of your product and a word about what you need. I reply with ideas, timing and a quote.',
+ctaContact:'Send your product photo on WhatsApp &#8599;',
+ftA:'Based in Cairo, Egypt &middot; Available for projects worldwide'
+},
+ar:{
+nFilms:'أفلام',nWork:'الشغل',nProcess:'الخطوات',nAbout:'عنّي',nContact:'تواصل',
+kickA:'<b>عبدالرحمن علي</b> · استوديو منتجات وأزياء بالذكاء الاصطناعي',kickB:'من القاهرة · شغل مع العالم',
+heroSub:'<b>صور حملات وأفلام إعلانية بالذكاء الاصطناعي</b> لمنتجك، من صورة واحدة بسيطة. تشطيب باليد، والتسليم خلال أيام.',
+ctaStart:'ابدأ بصورة واحدة لمنتجك ↗',
+pLabel:'01 — البرهان',pT1:'من صورة',pT2:'لنتيجة<span class="gold">.</span>',
+pNote:'كل حملة بتبدأ من صورة بسيطة لمنتجك. التفاصيل اللي بتميزه بتفضل زي ما هي.',
+duoRef:'الصورة الأصلية',duoRes:'النتيجة',duoCapL:'الصورة المرجعية',duoCapR:'صورة الحملة النهائية',
+fLabel:'02 — الأفلام',fT1:'أفلام إعلانية',fT2:'بالذكاء الاصطناعي<span class="gold">.</span>',
+fNote:'إعلانات اتبنت بالذكاء الاصطناعي من مراجع للمنتج والشخصية، واتمونتجت لنسخة نهائية. شوف كل فيلم وهو بيتحرك، ودوس عليه عشان تسمعه بالصوت.',
+rHead:'كل فيلم: شيت المرجع ← النتيجة',
+rc1:'شيت مرجع: الهدوم، الموديل، واللوكيشن',rc2:'شيت مرجع: الموديل، قطع اللبس، واللوكيشن',rc3:'شيت مرجع: الموديل والمنتج',rc4:'شيت مرجع: صورة المنتج',
+bKick:'الفكرة',bT1:'صورة تدخل.',bT2:'حملة تطلع.',
+bNote:'كل سلسلة في الصفحة دي بتبدأ من صورة بسيطة للمنتج وبتنتهي كصورة حملة نهائية، متشطبة ومراجعة باليد.',
+wLabel:'03 — الشغل',wT1:'شغل',wT2:'مختار<span class="gold">.</span>',
+wNote:'33 صورة حملة في 5 سلاسل. كل سلسلة بتبدأ بأقوى لقطاتها، ومقارنة الصورة ← النتيجة على بعد ضغطة واحدة.',
+jump:'روح لسلسلة',srcBtn:'الصورة ← النتيجة',vAll:'صور · شوف الكل',
+s1t:'ديربي أسود',s1g:'إضاءة استوديو أسود على أسود، وشكل طائر.',
+s2t:'كعب ستيليتو',s2g:'تشطيبات مرايا، أزواج طايرة، وجلد كريمي.',
+s3t:'شنطة جلد كروك',s3g:'نقشة كروك بورجوندي على ستائر حرير أحمر.',
+s4t:'فستان سهرة',s4g:'ترتر دهبي، سلم كبير، وليموزين مستنية.',
+s5t:'تراكات رياضية',s5g:'تلات ألوان، أسانسير واحد، وتصوير بفلاش.',
+s6t:'عناية بالبشرة',s6g:'رغوة، زجاج، ومكونات طازجة.',
+prLabel:'04 — الخطوات',prT1:'الشغل ده',prT2:'بيتعمل إزاي<span class="gold">.</span>',
+prNote:'كل صورة بتتولد بـ Google Flow (Nano Banana)، وبتترفع جودتها بـ Magnific، وبعدين بتتشطب وبتتراجع باليد قبل التسليم. الأفلام ماشية بنفس الطريق: تجهيز المرجع، توليد، مونتاج، مراجعة.',
+st1h:'ابعت صورة واحدة',st1p:'ابعت صورة بسيطة لمنتجك على واتساب. دي كل الحاجة اللي الشغل محتاجها.',
+st2h:'توليد ورفع جودة',st2p:'مشاهد بأفكار مختلفة بتتولد بـ Google Flow (Nano Banana) وبتترفع بـ Magnific لتفاصيل حادة تصلح للطباعة.',
+st3h:'تشطيب باليد',st3p:'كل صورة بتتشطب وبتتراجع باليد قبل التسليم. الأفلام بتتمونتج لقص نهائي.',
+ctaProcess:'ابعت صورة منتجك على واتساب ↗',
+fpH:'الاستخدام التجاري',fpP:'حقوق صور منتجاتك ولوجوهاتك بتفضل ليك. الصور المتولدة بالذكاء الاصطناعي تابعة لشروط أدوات التوليد، فمينفعش نعدك بتسجيل حقوق ملكية حصري.',
+aLabel:'05 — عنّي',aT1:'الإيد اللي',aT2:'ورا الشغل<span class="gold">.</span>',
+aBody:'<b>عبدالرحمن علي</b> فيجوال آرتست من القاهرة، عنده خمس سنين خبرة عملية في الريتاتش والتصوير والمونتاج، ودلوقتي مركّز على صور المنتجات والأزياء بالذكاء الاصطناعي. كل حملة بتتوجّه فنياً وبتتولد وبتتشطب باليد، منتج واحد في المرة.',
+cKick:'تواصل',cT1:'عندك منتج',cT2:'<span class="acc">عايز تصوره؟</span>',
+cP:'ابعت صورة واحدة لمنتجك وكلمة عن اللي محتاجه، وهرد عليك بأفكار ومعاد تسليم وسعر.',
+ctaContact:'ابعت صورة منتجك على واتساب ↗',
+ftA:'من القاهرة، مصر · متاح لمشاريع في أي مكان'
+}};
+var lang=''; try{lang=localStorage.getItem('aaLang')||'';}catch(e){}
+if(lang!=='ar'&&lang!=='en'){ try{lang=((navigator.language||'').toLowerCase().indexOf('ar')===0)?'ar':'en';}catch(e){lang='en';} }
+function setLang(l){ lang=(l==='ar')?'ar':'en'; var d=I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.setAttribute('href', lang==='ar'?WA_AR:WA_EN); });
+  var h=document.documentElement; h.setAttribute('lang',lang);
+  if(lang==='ar'){h.setAttribute('dir','rtl');}else{h.removeAttribute('dir');}
+  var b=document.getElementById('langBtn'); if(b) b.textContent=(lang==='ar'?'EN':'عربي');
+  try{localStorage.setItem('aaLang',lang);}catch(e){}
+  if(window.ScrollTrigger&&ScrollTrigger.refresh) setTimeout(function(){ScrollTrigger.refresh();},80);
+}
+var langBtnEl=document.getElementById('langBtn'); if(langBtnEl) langBtnEl.addEventListener('click',function(){ setLang(lang==='ar'?'en':'ar'); });
+if(lang==='ar') setLang('ar');
+
 })();
 </script>
 </body>
 </html>
+
+<!-- restructure v2: AR/EN toggle, 5 series, WhatsApp-first CTA -->
