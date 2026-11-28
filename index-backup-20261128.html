@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abdelrahman Ali | AI Product &amp; Fashion Photography</title>
+<meta name="description" content="AI product and fashion photography, ad films and retouching by Abdelrahman Ali.">
+<link rel="canonical" href="https://abdelrahman592.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://abdelrahman592.github.io/">
+<meta property="og:title" content="Abdelrahman Ali | AI Product &amp; Fashion Photography">
+<meta property="og:description" content="AI product campaigns, fashion editorials and short ad films created from your product photos. Based in Cairo, working worldwide.">
+<meta property="og:image" content="https://abdelrahman592.github.io/photos/gown-limo.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abdelrahman Ali | AI Product &amp; Fashion Photography">
+<meta name="twitter:description" content="AI product campaigns, fashion editorials and short ad films created from your product photos. Based in Cairo, working worldwide.">
+<meta name="twitter:image" content="https://abdelrahman592.github.io/photos/gown-limo.webp">
+<link href="preview-v4/fonts/fonts.css" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0b0a; --bg2:#161311; --ink:#f4efe6; --mut:#a99f8d; --acc:#ff5a1f;
+  --paper:#f1ebdf; --inkd:#171310; --mutd:#6e6659; --lined:rgba(23,19,16,.16);
+  --line:rgba(244,239,230,.13); --pad:clamp(20px,4vw,64px);
+  --anton:'Anton',sans-serif; --grot:'Space Grotesk',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scrollbar-width:thin;scrollbar-color:var(--acc) var(--bg)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--grot);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--acc);color:#160b04}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.gold{color:var(--acc)}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- loader ---------- */
+#loader{position:fixed;inset:0;z-index:200;background:#0a0806;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+#loader .mono{font-family:var(--anton);font-size:clamp(90px,18vw,220px);line-height:1;color:var(--ink)}
+#loader .mono span{color:var(--acc)}
+#loader .count{position:absolute;right:var(--pad);bottom:calc(var(--pad) - 8px);font-family:var(--anton);font-size:clamp(40px,7vw,90px);color:rgba(244,239,230,.28)}
+#loader .tag{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--mut)}
+#loader{animation:loaderhide .6s ease 4s forwards}
+@keyframes loaderhide{to{opacity:0;visibility:hidden}}
+
+/* ---------- cursor ---------- */
+.cursor,.cursor2{position:fixed;top:0;left:0;pointer-events:none;z-index:180;border-radius:50%;display:none}
+@media(hover:hover) and (pointer:fine){.cursor{display:block}.cursor2{display:flex}}
+.cursor{width:8px;height:8px;background:var(--acc);transform:translate(-50%,-50%)}
+.cursor2{width:38px;height:38px;border:1px solid rgba(255,90,31,.55);transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;align-items:center;justify-content:center}
+.cursor2 .cl{font:600 9px/1 var(--grot);letter-spacing:.18em;text-transform:uppercase;color:#171310;opacity:0;transition:opacity .2s}
+.cursor2.view{width:78px;height:78px;background:var(--acc);border-color:var(--acc)}
+.cursor2.view .cl{opacity:1}
+.cursor2.big{width:74px;height:74px;background:rgba(255,90,31,.12)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);mix-blend-mode:difference;color:#fff;transition:background .35s,padding .35s,border-color .35s;border-bottom:1px solid transparent}
+.nav.scrolled{mix-blend-mode:normal;background:rgba(10,8,6,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--line);padding-top:13px;padding-bottom:13px;color:var(--ink)}
+.nav .brand{font-family:var(--grot);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.nav .brand em{font-style:normal;font-weight:400;letter-spacing:.14em;font-size:12px;opacity:.75}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;position:relative;padding:4px 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.65,0,.35,1)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+@media(max-width:640px){.nav{padding:14px var(--pad)}.nav ul{gap:14px}.nav ul a{font-size:11px;letter-spacing:.16em}.nav .brand{font-size:12px;white-space:nowrap}.nav .brand em{display:none}.nav ul li:nth-child(3){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--paper);color:var(--inkd);padding-top:clamp(84px,10vh,110px);overflow:hidden}
+.hero-kick{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:0 var(--pad);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--mutd)}
+.hero-kick b{color:var(--acc);font-weight:600}
+.hero-title{padding:clamp(14px,2.4vh,26px) var(--pad) 0}
+.hero h1{font-family:var(--anton);font-weight:400;font-size:clamp(40px,10.9vw,190px);line-height:.92;text-transform:uppercase;white-space:nowrap}
+.hero h1 .row{display:block;overflow:hidden}
+.hero h1 .row>span{display:inline-block}
+.hero h1 .dot{color:var(--acc)}
+.hero-strip{display:flex;align-items:flex-end;gap:clamp(10px,1.4vw,20px);padding:clamp(24px,4vh,42px) var(--pad) 0}
+.hcard{position:relative;flex:1 1 0;min-width:0;border-radius:10px;overflow:hidden;background:#ddd2c0;transition:flex-grow .95s cubic-bezier(.22,1,.36,1)}
+.hcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hcard:hover{flex-grow:2.15}
+.hcard figcaption{position:absolute;left:10px;bottom:10px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:rgba(12,11,10,.55);color:#f4efe6;padding:5px 10px;border-radius:100px;backdrop-filter:blur(4px)}
+.hcard:nth-child(1){height:clamp(170px,26vh,300px)}
+.hcard:nth-child(2){height:clamp(215px,36vh,400px)}
+.hcard:nth-child(3){height:clamp(185px,30vh,340px)}
+.hcard:nth-child(4){height:clamp(240px,42vh,460px)}
+.hcard:nth-child(5){height:clamp(175px,27vh,310px)}
+.hcard:nth-child(6){height:clamp(210px,34vh,380px)}
+.hero-low{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;padding:clamp(26px,4.5vh,44px) var(--pad) clamp(26px,4.5vh,44px)}
+.hero-sub{max-width:470px;color:var(--mutd);font-size:clamp(15px,1.4vw,18px)}
+.hero-sub b{color:var(--inkd);font-weight:600}
+.btn-solid{display:inline-flex;align-items:center;gap:10px;background:#f2480a;color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;padding:16px 26px;border-radius:100px;transition:transform .3s,background .3s}
+.btn-solid:hover{background:#ff5a1f}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:1.5px solid rgba(23,19,16,.65);border-radius:999px;padding:13px 24px;transition:background .35s,color .35s,border-color .35s}
+.btn-ghost::after{content:'\2197';font-size:13px;transition:transform .35s}
+.btn-ghost:hover{background:var(--inkd);border-color:var(--inkd);color:var(--paper)}
+.btn-ghost:hover::after{transform:translate(2px,-3px)}
+.hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero .btn-ghost{color:var(--inkd)}
+@media(max-width:900px){
+.hero-strip{overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.hero-strip::-webkit-scrollbar{display:none}
+.hcard{flex:0 0 auto;width:58vw}
+.hcard:hover{flex-grow:1}
+.hcard:nth-child(1),.hcard:nth-child(3),.hcard:nth-child(5){height:210px}
+.hcard:nth-child(2),.hcard:nth-child(4),.hcard:nth-child(6){height:260px}
+.hero-kick span:last-child{display:none}
+}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;background:var(--bg)}
+.marquee .track{display:flex;width:max-content;animation:mq 26s linear infinite}
+.marquee span{font-family:var(--anton);font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;padding-right:14px;color:var(--ink)}
+.marquee span em{font-style:normal;color:var(--acc)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marquee.rev .track{animation-direction:reverse}
+
+/* ---------- section heads ---------- */
+.sec{padding:clamp(80px,11vw,150px) 0 0}
+.sec-head{position:relative;padding:0 var(--pad);margin-bottom:clamp(44px,6vw,84px)}
+.sec-label{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--mut);margin-bottom:18px}
+.sec-label::after{content:"";height:1px;width:80px;background:var(--line)}
+.sec-title{font-family:var(--anton);font-weight:400;font-size:clamp(46px,8.4vw,124px);line-height:.96;text-transform:uppercase}
+.sec-title .row{display:block;overflow:hidden}.sec-title .row>span{display:inline-block}
+.sec-note{max-width:560px;color:var(--mut);margin-top:20px;font-size:clamp(14px,1.3vw,17px)}
+.ghost{position:absolute;top:-.35em;right:var(--pad);font-family:var(--anton);font-size:clamp(120px,22vw,320px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(244,239,230,.13);pointer-events:none;user-select:none}
+
+/* ---------- series ---------- */
+.series{position:relative;padding:clamp(38px,5vw,72px) var(--pad);border-top:1px solid var(--line);scroll-margin-top:70px}
+.series-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(30px,4vw,54px);flex-wrap:wrap}
+.series-id{font-family:var(--anton);font-size:clamp(15px,1.5vw,19px);color:var(--acc);letter-spacing:.18em;margin-bottom:12px}
+.series-title{font-family:var(--anton);font-weight:400;font-size:clamp(34px,5.4vw,84px);line-height:.98;text-transform:uppercase}
+.series-tag{font-size:clamp(14px,1.25vw,17px);color:var(--mut);max-width:320px;text-align:right;line-height:1.55}
+@media(max-width:760px){.series-tag{text-align:left}}
+
+.shot-x{display:none!important}
+.sindex{margin:clamp(28px,4vw,48px) var(--pad) 0;position:relative}
+.sindex-label{display:block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut,#8f887c);margin-bottom:14px}
+.sindex-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sindex-row::-webkit-scrollbar{display:none}
+.sindex-row a{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;letter-spacing:.08em;color:var(--ink);text-decoration:none;white-space:nowrap;transition:border-color .35s,color .35s}
+.sindex-row a b{font-family:var(--anton);font-weight:400;font-size:12px;color:var(--acc);letter-spacing:.06em}
+.sindex-row a:hover{border-color:var(--acc)}
+.sgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,24px)}
+.shot{position:relative;overflow:hidden;border-radius:6px;background:var(--bg2)}
+.shot img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.shot .cap{position:absolute;left:12px;bottom:10px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,230,.85);background:rgba(13,11,9,.55);backdrop-filter:blur(4px);padding:5px 10px;border-radius:100px}
+.a-43{aspect-ratio:4/5}.a-11{aspect-ratio:1/1}.a-169{aspect-ratio:4/3}
+.sp3{grid-column:span 3}.sp4{grid-column:span 4}.sp5{grid-column:span 5}.sp6{grid-column:span 6}.sp7{grid-column:span 7}.sp8{grid-column:span 8}
+.push1{margin-top:clamp(24px,4vw,72px)}.push2{margin-top:clamp(48px,8vw,140px)}
+@media(max-width:760px){.sp3,.sp4,.sp5{grid-column:span 6}.sp6,.sp7,.sp8{grid-column:span 12}.push2{margin-top:0}}
+@media(max-width:520px){.sp3,.sp4,.sp5{grid-column:span 12}}
+
+/* reference -> result duo: two independent panels, no overlay */
+.duo{grid-column:span 12;display:grid;grid-template-columns:5fr 58px 7fr;align-items:center;margin:14px 0 0}
+.duo-panel{position:relative;border-radius:6px;overflow:hidden;background:#16120e;height:clamp(300px,54vh,600px)}
+.duo-panel img{width:100%;height:100%;object-fit:contain;padding:clamp(12px,2vw,26px)}
+.duo-wipe{position:absolute;inset:0}
+.duo-wipe img{position:absolute;inset:0}
+.duo-edge{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--acc);box-shadow:0 0 24px rgba(255,90,31,.9);opacity:0;pointer-events:none;z-index:2}
+.duo-link{position:relative;height:1px;background:linear-gradient(90deg,rgba(255,90,31,0),var(--acc),rgba(255,90,31,0));transform-origin:left center}
+.duo-link b{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,90,31,.55);background:#0d0b09;color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:400}
+.duo-tag{position:absolute;top:14px;left:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;border-radius:100px;background:rgba(13,11,9,.6);backdrop-filter:blur(4px);z-index:2}
+.duo-tag.gold{background:var(--acc);color:#160b04;font-weight:600}
+.duo-cap{grid-column:1/-1;display:flex;justify-content:space-between;gap:18px;margin-top:10px;font-size:12.5px;color:var(--mut);letter-spacing:.04em}
+.duo-cap span:last-child{text-align:right}
+.duo.slim{grid-template-columns:1fr 44px 1fr;max-width:820px;margin:clamp(20px,3vw,40px) auto 0}
+.duo.slim .duo-panel{height:auto;aspect-ratio:4/3}
+.duo.slim .duo-link{height:44px;width:44px;margin:0 auto;background:none}
+@media(max-width:760px){.series{padding:30px var(--pad)}.series-top{margin-bottom:18px;gap:10px}.series-id{margin-bottom:8px}.series-title{font-size:clamp(28px,8.6vw,42px)}.series-tag{font-size:13px;max-width:none}
+.sgrid{gap:10px}
+.sgrid .shot{grid-column:span 6}
+.sgrid .shot.push1{margin-top:0}
+.sgrid .shot.a-43,.sgrid .shot.a-11,.sgrid .shot.a-169{aspect-ratio:4/5}
+.shot img{transform:none}
+.shot .cap{font-size:9px;left:8px;bottom:8px;padding:4px 8px;letter-spacing:.12em}
+.viewall{margin-top:16px}
+.duo{grid-template-columns:1fr 30px 1fr;max-width:none;margin-top:10px;gap:0}.duo-panel{height:auto;aspect-ratio:3/4}.duo-panel img{padding:8px}.duo-link{height:30px;width:30px;margin:0;background:none}.duo-cap{font-size:10px;gap:8px}}
+.viewall{display:inline-flex;align-items:center;gap:12px;margin-top:clamp(22px,3vw,36px);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.viewall b{font-family:var(--anton);font-weight:400;color:var(--acc);font-size:15px;letter-spacing:.1em}
+.viewall i{display:block;width:44px;height:1px;background:var(--acc);transition:width .35s}
+.viewall:hover i{width:72px}
+
+
+.duo-wrap{grid-column:span 12}
+.duo-wrap[hidden]{display:none}
+.sactions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.srcbtn{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(22px,3vw,36px);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:11px 18px;transition:color .3s,border-color .3s}
+.srcbtn:hover{color:var(--ink);border-color:var(--acc)}
+.srcbtn[aria-expanded="true"]{color:var(--acc);border-color:var(--acc)}
+@media(max-width:760px){.srcbtn{margin-top:16px;font-size:12px;padding:9px 14px}.sactions{gap:20px}}
+/* ---------- films ---------- */
+.films-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,24px);padding:0 var(--pad)}
+.vcard{position:relative;overflow:hidden;border-radius:6px;background:var(--bg2);cursor:pointer;grid-column:span 4;aspect-ratio:9/12}
+.vcard.feat{grid-column:span 8;aspect-ratio:16/10}
+@media(max-width:760px){.vcard,.vcard.feat{grid-column:span 12;aspect-ratio:16/10}}
+.vcard video,.vcard img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcard video{opacity:0;transition:opacity .45s}
+.vcard.playing video{opacity:1}
+.vcard .vmeta{position:absolute;left:0;right:0;bottom:0;padding:16px;display:flex;justify-content:space-between;align-items:flex-end;background:linear-gradient(transparent,rgba(10,8,6,.8));z-index:2}
+.vcard .vname{font-size:13.5px;font-weight:500;letter-spacing:.04em}
+.vcard .vdur{font-size:11px;letter-spacing:.14em;color:var(--acc);border:1px solid rgba(255,90,31,.5);padding:4px 9px;border-radius:100px}
+.vcard .playic{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(13,11,9,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .3s,opacity .3s}
+.vcard:hover .playic{transform:translate(-50%,-50%) scale(1.12)}
+.vcard.playing .playic{opacity:0}
+.playic svg{width:20px;height:20px;fill:var(--ink);margin-left:3px}
+
+/* film reference strip */
+.refstrip-head{padding:clamp(34px,4vw,54px) var(--pad) 16px;display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.refstrip-head::after{content:"";height:1px;flex:1;background:var(--line)}
+.refstrip{display:flex;gap:clamp(14px,1.8vw,26px);overflow-x:auto;padding:4px var(--pad) 26px;scrollbar-width:thin}
+.refpair{flex:0 0 auto;display:flex;flex-direction:column;gap:8px;width:240px}
+.refpair .pair{display:flex;align-items:center;gap:10px}
+.refimg{width:100px;height:136px;object-fit:contain;background:#16120e;border:1px solid var(--line);border-radius:4px;padding:5px}
+.pair .arr{color:var(--acc);font-size:17px}
+.filmthumb{position:relative;width:100px;height:136px;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--bg2);text-align:left}
+.filmthumb img{width:100%;height:100%;object-fit:cover}
+.filmthumb .miniplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,8,6,.3);transition:background .3s}
+.filmthumb:hover .miniplay{background:rgba(10,8,6,.1)}
+.miniplay svg{width:18px;height:18px;fill:var(--ink)}
+.refcap{font-size:11.5px;color:var(--mut);line-height:1.45}
+
+/* ---------- statement band ---------- */
+.band{background:var(--acc);color:#160b04;padding:clamp(80px,11vw,150px) var(--pad)}
+.band-kick{font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;margin-bottom:22px}
+.band-title{font-family:var(--anton);font-weight:400;font-size:clamp(52px,10vw,150px);line-height:.94;text-transform:uppercase}
+.band-title .row{display:block;overflow:hidden}.band-title .row>span{display:inline-block}
+.band-note{margin-top:28px;max-width:540px;font-size:clamp(14px,1.3vw,17px);color:rgba(22,11,4,.78)}
+
+/* ---------- paper section ---------- */
+.on-paper{background:var(--paper);color:var(--inkd);padding-bottom:clamp(80px,10vw,140px)}
+.on-paper .sec-label,.on-paper .sec-note,.on-paper .step p,.on-paper .fineprint p{color:var(--mutd)}
+.on-paper .sec-label::after{background:var(--lined)}
+.on-paper .ghost{-webkit-text-stroke:1px rgba(255,90,31,.4)}
+.on-paper .step{border-top-color:var(--lined)}
+.on-paper .step:last-child{border-bottom-color:var(--lined)}
+.on-paper .fineprint h4{color:var(--acc)}
+
+/* ---------- process ---------- */
+.steps{padding:0 var(--pad)}
+.step{display:grid;grid-template-columns:110px 1fr 1.2fr;gap:clamp(16px,3vw,48px);align-items:baseline;padding:clamp(26px,3.4vw,44px) 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--anton);font-size:clamp(30px,4vw,54px);color:transparent;-webkit-text-stroke:1px rgba(255,90,31,.8)}
+.step h3{font-family:var(--anton);font-weight:400;font-size:clamp(22px,2.8vw,38px);text-transform:uppercase;letter-spacing:.02em}
+.step p{color:var(--mut);font-size:clamp(14px,1.2vw,16px)}
+@media(max-width:760px){.step{grid-template-columns:64px 1fr}.step p{grid-column:2}}
+.fineprint{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);padding:clamp(40px,5vw,64px) var(--pad) 0}
+.fineprint h4{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.fineprint p{color:var(--mut);font-size:14px}
+@media(max-width:760px){.fineprint{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{padding:clamp(90px,12vw,170px) var(--pad) clamp(60px,8vw,100px);text-align:center}
+.contact .c-kick{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--mut);margin-bottom:24px}
+.contact h2{font-family:var(--anton);font-weight:400;font-size:clamp(44px,9vw,140px);line-height:.96;text-transform:uppercase}
+.contact h2 .acc{color:var(--acc)}
+.contact p{max-width:480px;margin:26px auto 0;color:var(--mut)}
+.contact .c-actions{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:40px;flex-wrap:wrap}
+.contact .c-links{display:flex;flex-direction:column;margin:56px auto 0;max-width:880px}
+.chan{position:relative;display:flex;align-items:center;gap:22px;padding:24px 28px;border-top:1px solid var(--line);overflow:hidden;isolation:isolate}
+.chan:last-child{border-bottom:1px solid var(--line)}
+.chan::after{content:'';position:absolute;inset:0;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.76,0,.24,1);z-index:-1}
+.chan:hover::after{transform:scaleX(1)}
+.chan .badge{width:46px;height:46px;flex:0 0 auto;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--anton);font-size:13px;letter-spacing:.08em;color:var(--acc);transition:border-color .4s,color .4s}
+.chan:hover .badge{border-color:var(--inkd);color:var(--inkd)}
+.chan .who{flex:1 1 auto;text-align:left;min-width:0}
+.chan .who b{display:block;font-family:var(--anton);font-weight:400;font-size:clamp(19px,2.4vw,27px);letter-spacing:.04em;text-transform:uppercase;color:var(--ink);transition:color .4s}
+.chan .who span{display:block;margin-top:3px;font-size:12px;letter-spacing:.14em;color:var(--mut);transition:color .4s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chan:hover .who b{color:var(--inkd)}
+.chan:hover .who span{color:rgba(23,19,16,.62)}
+.chan .go{font-size:24px;line-height:1;color:var(--acc);transition:transform .45s cubic-bezier(.76,0,.24,1),color .4s}
+.chan:hover .go{transform:translate(6px,-6px);color:var(--inkd)}
+@media(max-width:640px){
+.chan{gap:14px;padding:18px 16px}
+.chan .badge{width:38px;height:38px;font-size:11px}
+.chan .go{font-size:19px}
+}
+footer{border-top:1px solid var(--line);padding:22px var(--pad);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+
+/* ---------- lightbox ---------- */
+.totop{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,239,230,.3);background:rgba(12,11,10,.85);color:#f4efe6;font-size:20px;line-height:1;cursor:pointer;z-index:90;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .3s,transform .3s,border-color .2s}.totop.show{opacity:1;pointer-events:auto;transform:none}.totop:hover{border-color:var(--acc);color:var(--acc)}
+.lb{position:fixed;inset:0;z-index:150;background:rgba(8,6,4,.94);display:flex;visibility:hidden;opacity:0;align-items:center;justify-content:center;flex-direction:column;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility 0s linear .35s}
+.lb.open{visibility:visible;opacity:1;transition:opacity .35s cubic-bezier(.22,1,.36,1),visibility 0s}
+.lb img{transition:opacity .28s ease,transform .5s cubic-bezier(.22,1,.36,1)}
+.lb.open img{transform:none}
+.lb:not(.open) img{transform:scale(.97)}
+.srcbtn,.viewall{transition:color .3s,border-color .3s,transform .2s}
+.srcbtn:active,.viewall:active,.lb .bar button:active,.lb .close:active{transform:scale(.96)}
+.nav ul a,.lb .close{transition:color .3s,opacity .3s}
+.lb .stage{max-width:min(1100px,92vw);max-height:78vh;display:flex;align-items:center;justify-content:center}
+.lb img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:4px}
+.lb video{max-width:min(1100px,92vw);max-height:78vh;border-radius:4px}
+.lb .bar{display:flex;align-items:center;gap:20px;margin-top:18px}
+.lb .bar button{font-size:12px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line);padding:10px 18px;border-radius:100px;transition:border-color .3s,color .3s}
+.lb .bar button:hover{border-color:var(--acc);color:var(--acc)}
+.lb .lbcount{font-size:12px;letter-spacing:.2em;color:var(--mut)}
+.lb .close{position:absolute;top:20px;right:var(--pad);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
+.lb .close:hover{color:var(--acc)}
+
+.hero h1 .ch{display:inline-block;transform-origin:0 100%}
+@media(hover:hover) and (pointer:fine){
+.hcard img{transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.hcard:hover img{transform:scale(1.12)}
+.hcard figcaption{transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .6s cubic-bezier(.22,1,.36,1)}
+.hcard:hover figcaption{transform:translateY(-4px)}
+.shot,.vcard{transition:box-shadow .8s cubic-bezier(.22,1,.36,1)}
+.shot:hover,.vcard:hover{box-shadow:0 32px 64px -20px rgba(0,0,0,.6)}
+.shot::after,.vcard::after{content:'';position:absolute;inset:0;background:radial-gradient(430px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.13),transparent 62%);opacity:0;transition:opacity .55s cubic-bezier(.22,1,.36,1);pointer-events:none;z-index:1}
+.shot:hover::after,.vcard:hover::after{opacity:1}
+.shot .cap{z-index:2}
+.vcard img.poster,.vcard video{transition:transform 1.1s cubic-bezier(.22,1,.36,1),opacity .45s}
+.vcard:hover img.poster,.vcard:hover video{transform:scale(1.07)}
+.vcard .vmeta{transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.vcard:hover .vmeta{transform:translateY(-6px)}
+.vcard .playic{transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .4s}
+}
+/* reveal defaults (JS enhances) */
+.reveal{will-change:transform}
+@media(prefers-reduced-motion:reduce){
+  .marquee .track{animation:none}
+  .scroll-hint i{animation:none}
+  .lb,.lb img,.totop,.srcbtn,.viewall{transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* refstrip v2: one large tappable sheet per film */
+.refstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:clamp(18px,2vw,30px);overflow:visible;padding:4px var(--pad) 40px}
+.refpair{width:auto;flex:none}
+.refpair .pair{display:grid;grid-template-columns:1fr auto 118px;align-items:center;gap:12px}
+.refimg{width:100%;height:280px;cursor:zoom-in;object-fit:contain}
+.filmthumb{width:118px;height:210px}
+.refcap{font-size:12.5px}
+@media(max-width:760px){.refstrip{grid-template-columns:1fr}.refpair .pair{grid-template-columns:1fr auto 108px}.refimg{height:250px}.filmthumb{width:108px;height:192px}}
+.btn-solid{text-wrap:balance}
+
+/* language toggle + RTL */
+.langbtn{font:inherit;font-size:12px;letter-spacing:.1em;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:inherit;transition:border-color .3s}
+.langbtn:hover{border-color:var(--acc)}
+html[dir=rtl] body{letter-spacing:0}
+html[dir=rtl] .nav .brand,html[dir=rtl] .nav ul a,html[dir=rtl] .sec-label,html[dir=rtl] .hero-kick,html[dir=rtl] .sindex-label,html[dir=rtl] .refstrip-head,html[dir=rtl] .band-kick,html[dir=rtl] .contact .c-kick,html[dir=rtl] footer,html[dir=rtl] .fineprint h4,html[dir=rtl] .srcbtn,html[dir=rtl] .viewall,html[dir=rtl] .shot .cap,html[dir=rtl] .duo-tag,html[dir=rtl] .hcard figcaption,html[dir=rtl] .series-id{letter-spacing:.04em;text-transform:none}
+html[dir=rtl] .sec-title,html[dir=rtl] .series-title,html[dir=rtl] .band-title,html[dir=rtl] .contact h2,html[dir=rtl] .step h3{font-family:'Space Grotesk',Tahoma,Arial,sans-serif;font-weight:700;text-transform:none;letter-spacing:0;line-height:1.2}
+html[dir=rtl] .series-tag{text-align:left}
+html[dir=rtl] .sec-label::after{display:none}
+.about-body{max-width:640px;color:var(--mut);font-size:clamp(15px,1.4vw,19px);line-height:1.75}
+.about-body b{color:var(--ink);font-weight:600}
+.cta-row{padding:clamp(30px,4vw,48px) var(--pad) 0}
+.wasticky{display:none}
+@media(max-width:760px){.wasticky{display:inline-flex;position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:95;padding:13px 22px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap}}
+
+@media(max-width:640px){.nav ul{flex-wrap:wrap;row-gap:6px}#langBtn{position:fixed;top:12px;right:12px;z-index:120;background:rgba(10,8,6,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
+@media(max-width:640px){.nav{flex-wrap:wrap;align-items:flex-start;padding-right:var(--pad)}.nav .brand{padding-right:76px;padding-top:6px;line-height:1.2}.nav ul{width:100%;justify-content:space-between;gap:0;margin-top:10px}.nav ul a{font-size:11px;letter-spacing:.14em;padding:9px 0}html[dir=rtl] .nav .brand{padding-right:0;padding-left:76px}html[dir=rtl] #langBtn{right:auto;left:12px}}
+
+/* mobile polish v1 */
+@media(max-width:760px){
+.vcard .vmeta{padding:44px 16px 16px;background:linear-gradient(transparent,rgba(10,8,6,.55) 35%,rgba(10,8,6,.92))}
+.vcard .vname{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.vcard .vdur{background:rgba(10,8,6,.62);color:#ff7a45;border-color:rgba(255,122,69,.7)}
+footer{padding-bottom:104px}
+.viewall{padding:11px 0}
+.srcbtn{min-height:40px}
+.lb .close{padding:12px 10px;top:12px}
+.wasticky{transition:opacity .25s,transform .25s}
+.wasticky.hide{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(20px)}
+}
+[dir=rtl] .hero h1,[dir=rtl] .hero-title{direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="mono">A<span>.</span></div>
+  <div class="tag">AI Product &amp; Fashion Photography</div>
+  <div class="count" id="loadCount">00</div>
+</div>
+
+<div class="cursor" id="cur1"></div>
+<div class="cursor2" id="cur2"></div>
+
+<header class="nav">
+  <a class="brand" href="#top">Abdelrahman Ali <em>&mdash; Cairo</em></a>
+  <ul>
+    <li><a href="#films" data-i18n="nFilms">Films</a></li>
+    <li><a href="#work" data-i18n="nWork">Work</a></li>
+    <li><a href="#process" data-i18n="nProcess">Process</a></li>
+    <li><a href="#about" data-i18n="nAbout">About</a></li>
+    <li><a href="#contact" data-i18n="nContact">Contact</a></li>
+    <li><button class="langbtn" id="langBtn" type="button" aria-label="Switch language">عربي</button></li>
+  </ul>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-kick" data-fade><span data-i18n="kickA"><b>Abdelrahman Ali</b> &middot; AI product &amp; fashion studio</span><span data-i18n="kickB">Based in Cairo &middot; Working worldwide</span></p>
+  <div class="hero-title">
+    <h1 id="heroTitle"><span class="row"><span>Abdelrahman Ali<span class="dot">.</span></span></span></h1>
+  </div>
+  <div class="hero-strip" id="heroStrip">
+    <figure class="hcard"><img decoding="async" fetchpriority="high" src="preview-v4/photos/gown-limo.webp" alt="Model in an evening gown beside a limousine at night"><figcaption>Evening gown &middot; Limousine</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/samba-onfeet.webp" alt="Green and cream sneakers worn on feet, street style"><figcaption>Sneaker &middot; On feet</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Heeled shoes in a dramatic studio setup"><figcaption>Heels &middot; Studio</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/dg-portrait.webp" alt="Fashion editorial portrait"><figcaption>Fashion editorial</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models wearing tracksuits in three colorways"><figcaption>Tracksuits &middot; 3 colorways</figcaption></figure>
+    <figure class="hcard"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Crocodile-texture handbag in dramatic light"><figcaption>Handbag &middot; Croc texture</figcaption></figure>
+  </div>
+<script>
+/* rotate featured pieces on every load (fallback: static markup stays as is) */
+(function(){try{
+var SER=[["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"], ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"], ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"], ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"], ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"], ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"], ["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"], ["preview-v4/photos/frag-hero.webp", "preview-v4/photos/frag-artifact.webp", "preview-v4/photos/frag-anchor.webp", "preview-v4/photos/frag-drift.webp", "preview-v4/photos/frag-dune.webp", "preview-v4/photos/frag-integrate.webp", "preview-v4/photos/frag-oasis.webp", "preview-v4/photos/frag-openbox.webp", "preview-v4/photos/frag-set.webp"]],T=["Classic Sneaker", "Monochrome Derby", "Stiletto Heels", "Croc Leather Bag", "Evening Gown", "Athletic Tracksuits", "Gold Hair-Care", "Niche Fragrance"],R={"preview-v4/photos/croc-bag.webp": 0.75, "preview-v4/photos/croc-dramatic.webp": 0.75, "preview-v4/photos/croc-macro.webp": 0.75, "preview-v4/photos/croc-zipper.webp": 0.75, "preview-v4/photos/ctre-greycrouch.webp": 0.75, "preview-v4/photos/ctre-greyfront.webp": 0.75, "preview-v4/photos/ctre-greysun.webp": 0.75, "preview-v4/photos/ctre-group.webp": 0.75, "preview-v4/photos/ctre-navychest.webp": 0.75, "preview-v4/photos/ctre-solo.webp": 0.75, "preview-v4/photos/ctre-two.webp": 0.75, "preview-v4/photos/derby-float.webp": 0.67, "preview-v4/photos/derby-hero.webp": 0.67, "preview-v4/photos/derby-macro.webp": 0.67, "preview-v4/photos/derby-onfeet.webp": 0.67, "preview-v4/photos/derby-pair.webp": 0.67, "preview-v4/photos/derby-profile.webp": 0.67, "preview-v4/photos/derby-strip.webp": 0.67, "preview-v4/photos/derby-top.webp": 0.67, "preview-v4/photos/dg-portrait.webp": 0.75, "preview-v4/photos/frag-artifact.webp": 0.67, "preview-v4/photos/frag-hero.webp": 0.67, "preview-v4/photos/gold-angle.webp": 0.67, "preview-v4/photos/gold-group.webp": 1.79, "preview-v4/photos/gold-hero.webp": 0.67, "preview-v4/photos/gold-lineup.webp": 1.79, "preview-v4/photos/gold-pump.webp": 0.67, "preview-v4/photos/gold-spray.webp": 0.67, "preview-v4/photos/gold-tall.webp": 0.67, "preview-v4/photos/gold-tube.webp": 0.67, "preview-v4/photos/gown-carpet.webp": 0.75, "preview-v4/photos/gown-detail.webp": 0.75, "preview-v4/photos/gown-heels.webp": 0.75, "preview-v4/photos/gown-limo.webp": 0.75, "preview-v4/photos/gown-limo2.webp": 0.75, "preview-v4/photos/gown-night.webp": 0.75, "preview-v4/photos/gown-stairs.webp": 0.75, "preview-v4/photos/gown-stairsback.webp": 0.75, "preview-v4/photos/heels-flip.webp": 0.75, "preview-v4/photos/heels-floatpair.webp": 0.75, "preview-v4/photos/heels-hero.webp": 0.75, "preview-v4/photos/heels-macro.webp": 0.75, "preview-v4/photos/heels-pair.webp": 0.75, "preview-v4/photos/heels-top.webp": 0.75, "preview-v4/photos/samba-flat.webp": 0.81, "preview-v4/photos/samba-float.webp": 0.75, "preview-v4/photos/samba-frontlow.webp": 0.75, "preview-v4/photos/samba-hero.webp": 0.81, "preview-v4/photos/samba-letters.webp": 0.75, "preview-v4/photos/samba-macro.webp": 0.81, "preview-v4/photos/samba-onfeet.webp": 0.75, "preview-v4/photos/samba-rear.webp": 0.75, "preview-v4/photos/samba-side.webp": 0.75, "preview-v4/photos/samba-sole.webp": 0.75, "preview-v4/photos/skin-basket.webp": 0.75, "preview-v4/photos/skin-berries.webp": 0.75, "preview-v4/photos/skin-dropper.webp": 0.67, "preview-v4/photos/skin-duo.webp": 0.67, "preview-v4/photos/skin-hero.webp": 0.67, "preview-v4/photos/skin-jar.webp": 0.75, "preview-v4/photos/skin-lather.webp": 0.75, "preview-v4/photos/skin-macro.webp": 0.67, "preview-v4/photos/skin-netbag.webp": 0.75, "preview-v4/photos/skin-portrait.webp": 0.67, "preview-v4/photos/frag-anchor.webp": 0.67, "preview-v4/photos/frag-drift.webp": 0.67, "preview-v4/photos/frag-dune.webp": 0.67, "preview-v4/photos/frag-integrate.webp": 0.67, "preview-v4/photos/frag-oasis.webp": 0.67, "preview-v4/photos/frag-openbox.webp": 0.67, "preview-v4/photos/frag-set.webp": 0.67};
+window.__ROT={SER:SER,T:T,R:R};
+function ok(u){return (R[u]||.75)<1.2;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+var cards=document.querySelectorAll('#heroStrip .hcard');
+var order=shuffle([0,1,2,3,4,5,6,7]).slice(0,cards.length);
+cards.forEach(function(c,k){var si=order[k];var u=pick(SER[si].filter(ok));var im=c.querySelector('img');
+ im.setAttribute('src',u);im.setAttribute('alt',T[si]);var cap=c.querySelector('figcaption');if(cap){cap.textContent=T[si];cap.setAttribute('data-i18n','s'+si+'t');}});
+}catch(e){}})();
+</script>
+  <div class="hero-low">
+    <p class="hero-sub" data-fade data-i18n="heroSub"><b>Campaign images and short ad films</b> for your product, made from one simple photo. Finished by hand, delivered in days.</p>
+    <div class="hero-cta" data-fade>
+      <a class="btn-solid magnet" data-wa data-i18n="ctaStart" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Start with one product photo &#8599;</a>
+      <a class="btn-ghost" href="https://www.instagram.com/abdelra7man_alii" rel="noopener">Instagram</a>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/abdelrahman-visuals" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="track" id="mq1"></div></div>
+
+<!-- PROOF: source -> result -->
+<section class="sec" id="proof">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="pLabel">01 &mdash; Proof</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="pT1">Source &#8594;</span></span>
+      <span class="row"><span data-i18n="pT2">Result<span class="gold">.</span></span></span>
+    </h2>
+    <p class="sec-note" data-i18n="pNote">Every campaign starts from a simple photo of your product. The details that make it yours stay intact.</p>
+  </div>
+  <figure class="duo slim" data-duo>
+    <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/derby-ref.webp" alt="Simple source photo of a shoe"><span class="duo-tag" data-i18n="duoRef">Reference</span></div>
+    <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+    <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/derby-profile.webp" alt="Finished campaign image of the shoe"></div><span class="duo-tag gold" data-i18n="duoRes">Result</span></div>
+    <figcaption class="duo-cap"><span data-i18n="duoCapL">Source reference</span><span data-i18n="duoCapR">Final campaign image</span></figcaption>
+  </figure>
+  <figure class="duo slim" data-duo>
+    <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/croc-ref.webp" alt="Simple source photo of a leather bag"><span class="duo-tag" data-i18n="duoRef">Reference</span></div>
+    <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+    <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/croc-bag.webp" alt="Finished campaign image of the leather bag"></div><span class="duo-tag gold" data-i18n="duoRes">Result</span></div>
+    <figcaption class="duo-cap"><span data-i18n="duoCapL">Source reference</span><span data-i18n="duoCapR">Final campaign image</span></figcaption>
+  </figure>
+  <div class="cta-row" style="text-align:center"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
+</section>
+
+<!-- FILMS -->
+<section class="sec" id="films">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="fLabel">02 &mdash; Films</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="fT1">AI Ad</span></span>
+      <span class="row"><span data-i18n="fT2">Films<span class="gold">.</span></span></span>
+    </h2>
+    <p class="sec-note" data-i18n="fNote">Concept ads built with AI from product and character references, edited to final cut. Preview each film in motion, tap to watch with sound.</p>
+    <span class="ghost" aria-hidden="true">03</span>
+  </div>
+  <div class="films-grid">
+    <button class="vcard feat reveal" data-v="desert-lounge">
+      <img decoding="async" class="poster" src="preview-v4/videos/df.webp" alt="Man in sunglasses against a desert backdrop, Desert Lounge fashion film">
+      <video src="https://abdelrahman592.github.io/videos/desert-lounge.mp4" poster="preview-v4/videos/df.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Desert Lounge &mdash; fashion film</span><span class="vdur">0:16</span></span>
+    </button>
+    <button class="vcard reveal" data-v="f2">
+      <img decoding="async" class="poster" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film">
+      <video src="https://abdelrahman592.github.io/videos/f2.mp4" poster="preview-v4/videos/f2.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Black jacket &mdash; Cairo fashion film</span><span class="vdur">0:20</span></span>
+    </button>
+    <button class="vcard reveal" data-v="c1">
+      <img decoding="async" class="poster" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept">
+      <video src="https://abdelrahman592.github.io/videos/c1.mp4" poster="preview-v4/videos/c1.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Cream jar &mdash; skincare ad</span><span class="vdur">0:10</span></span>
+    </button>
+    <button class="vcard reveal" data-v="c2">
+      <img decoding="async" class="poster" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept">
+      <video src="https://abdelrahman592.github.io/videos/c2.mp4" poster="preview-v4/videos/c2.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Balm tube &mdash; skincare ad</span><span class="vdur">0:16</span></span>
+    </button>
+    <button class="vcard reveal" data-v="c4">
+      <img decoding="async" class="poster" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept">
+      <video src="https://abdelrahman592.github.io/videos/c4.mp4" poster="preview-v4/videos/c4.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Face care &mdash; skincare ad</span><span class="vdur">0:12</span></span>
+    </button>
+    <button class="vcard reveal" data-v="c3">
+      <img decoding="async" class="poster" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept">
+      <video src="https://abdelrahman592.github.io/videos/c3.mp4" poster="preview-v4/videos/c3.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Skin texture &mdash; skincare ad</span><span class="vdur">0:10</span></span>
+    </button>
+    <button class="vcard reveal" data-v="hf">
+      <img decoding="async" class="poster" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept">
+      <video src="https://abdelrahman592.github.io/videos/hf.mp4" poster="preview-v4/videos/hf.webp" muted loop playsinline preload="none"></video>
+      <span class="playic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vmeta"><span class="vname">Foam cleanser &mdash; skincare ad</span><span class="vdur">0:15</span></span>
+    </button>
+  </div>
+  <p class="refstrip-head" data-i18n="rHead">Each film: its reference sheet &rarr; the result</p>
+  <div class="refstrip">
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/desert-ref.webp" alt="Reference sheet: clothes, model and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="desert-lounge"><img decoding="async" src="preview-v4/videos/df.webp" alt="Desert camp, Desert Lounge fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc1">Reference sheet: clothes, model and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-f2-ref.webp" alt="Reference sheet: model, outfit pieces and location (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="f2"><img decoding="async" src="preview-v4/videos/f2.webp" alt="Black jacket, Cairo fashion film"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc2">Reference sheet: model, outfit pieces and location</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c1-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c1"><img decoding="async" src="preview-v4/videos/c1.webp" alt="Cream jar, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c2-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c2"><img decoding="async" src="preview-v4/videos/c2.webp" alt="Balm tube, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: product photo</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c3-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c3"><img decoding="async" src="preview-v4/videos/c3.webp" alt="Skin texture, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-c4-ref.webp" alt="Reference sheet: model and product (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="c4"><img decoding="async" src="preview-v4/videos/c4.webp" alt="Face care, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap">Reference sheet: model and product</p></div>
+    <div class="refpair"><div class="pair"><img decoding="async" class="refimg" src="preview-v4/sources/film-hf-ref.webp" alt="Reference sheet: product photo (tap to enlarge)"><span class="arr">&#8594;</span><button class="filmthumb" data-v="hf"><img decoding="async" src="preview-v4/videos/hf.webp" alt="Foam cleanser, skincare ad concept"><span class="miniplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div><p class="refcap" data-i18n="rc4">Reference sheet: product photo</p></div>
+  </div>
+
+  <div class="cta-row" style="text-align:center"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
+</section>
+
+<!-- STATEMENT BAND -->
+<section class="band">
+  <p class="band-kick" data-fade data-i18n="bKick">The idea</p>
+  <h2 class="band-title">
+    <span class="row"><span data-i18n="bT1">Reference in.</span></span>
+    <span class="row"><span data-i18n="bT2">Campaign out.</span></span>
+  </h2>
+  <p class="band-note" data-fade data-i18n="bNote">Every series on this page starts from a simple source photo of the product and ends as a finished campaign image, retouched and reviewed by hand.</p>
+</section>
+
+<!-- WORK -->
+<section class="sec" id="work">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="wLabel">03 &mdash; Work</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="wT1">Selected</span></span>
+      <span class="row"><span data-i18n="wT2">Work<span class="gold">.</span></span></span>
+    </h2>
+    <p class="sec-note" data-i18n="wNote">61 campaign images in 8 series. Each series leads with its strongest frames; a source &#8594; result pair is one tap away.</p>
+    <span class="ghost" aria-hidden="true">61</span>
+  </div>
+
+  <nav class="sindex" aria-label="Jump to a series"><span class="sindex-label" data-i18n="jump">Jump to a series</span><div class="sindex-row"><a href="#s0"><b>01</b> Classic Sneaker</a><a href="#s1"><b>02</b> Monochrome Derby</a><a href="#s2"><b>03</b> Stiletto Heels</a><a href="#s3"><b>04</b> Croc Leather Bag</a><a href="#s4"><b>05</b> Evening Gown</a><a href="#s5"><b>06</b> Athletic Tracksuits</a><a href="#s6"><b>07</b> Gold Hair-Care</a><a href="#s7"><b>08</b> Niche Fragrance</a></div></nav>
+
+  <!-- 01 sneaker -->
+    <article class="series" id="s0">
+    <div class="series-top">
+      <div><p class="series-id">01 / 08</p><h3 class="series-title" data-i18n="s0t">Classic Sneaker</h3></div>
+      <p class="series-tag" data-i18n="s0g">Floating hero, stitching macro and street style.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/samba-flat.webp" alt="Pair of green and cream classic sneakers floating at an angle in dramatic teal light"><figcaption class="cap">Campaign hero</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/samba-float.webp" alt="Green and cream sneaker floating over a pale ground"><figcaption class="cap">Floating</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/samba-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/samba-side.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="0"><b>10</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+    <article class="series" id="s1">
+    <div class="series-top">
+      <div><p class="series-id">02 / 08</p><h3 class="series-title" data-i18n="s1t">Monochrome Derby</h3></div>
+      <p class="series-tag" data-i18n="s1g">Black-on-black studio light, floating form.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-169 reveal"><img decoding="async" src="preview-v4/photos/derby-hero.webp" alt="Black derby shoe floating on a black background"><figcaption class="cap">On black</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/derby-float.webp" alt="Black derby shoes floating over white"><figcaption class="cap">Floating</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/derby-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/derby-profile.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="1"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s2">
+    <div class="series-top">
+      <div><p class="series-id">03 / 08</p><h3 class="series-title" data-i18n="s2t">Stiletto Heels</h3></div>
+      <p class="series-tag" data-i18n="s2g">Mirror finishes, floating pairs and cream leather.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/heels-floatpair.webp" alt="White stiletto pumps floating over a dark mirrored surface"><figcaption class="cap">Floating pair</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/heels-hero.webp" alt="Pair of cream stiletto pumps on a warm gradient"><figcaption class="cap">Cream pumps</figcaption></figure>
+    </div>
+    <button class="viewall" data-series="2"><b>6</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button>
+  </article>
+
+  <article class="series" id="s3">
+    <div class="series-top">
+      <div><p class="series-id">04 / 08</p><h3 class="series-title" data-i18n="s3t">Croc Leather Bag</h3></div>
+      <p class="series-tag" data-i18n="s3g">Burgundy croc embossing on red silk drapes.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/croc-dramatic.webp" alt="Burgundy croc-embossed leather bag on red silk drapes"><figcaption class="cap">On silk</figcaption></figure>
+      <figure class="shot sp5 a-11 push1 reveal"><img decoding="async" src="preview-v4/photos/croc-macro.webp" alt="Macro of gold zipper on croc-embossed leather"><figcaption class="cap">Hardware macro</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/croc-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/croc-bag.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="3"><b>4</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s4">
+    <div class="series-top">
+      <div><p class="series-id">05 / 08</p><h3 class="series-title" data-i18n="s4t">Evening Gown</h3></div>
+      <p class="series-tag" data-i18n="s4g">Gold sequins, a grand staircase and a waiting limousine.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/gown-stairs.webp" alt="Model in a gold sequin gown on a grand staircase"><figcaption class="cap">Grand staircase</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/gown-limo.webp" alt="Model in a gold sequin gown stepping out of a limousine"><figcaption class="cap">Arrival</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/gown-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/gown-stairsback.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="4"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+  <article class="series" id="s5">
+    <div class="series-top">
+      <div><p class="series-id">06 / 08</p><h3 class="series-title" data-i18n="s5t">Athletic Tracksuits</h3></div>
+      <p class="series-tag" data-i18n="s5g">Three colorways, one elevator, flash photography.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/ctre-group.webp" alt="Three models in grey, brown and navy tracksuits inside an elevator"><figcaption class="cap">Elevator trio</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/ctre-solo.webp" alt="Two models in brown tracksuits in an elevator"><figcaption class="cap">Brown duo</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/ctre-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/ctre-greyfront.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="5"><b>7</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+
+  <article class="series" id="s6">
+    <div class="series-top">
+      <div><p class="series-id">07 / 08</p><h3 class="series-title" data-i18n="s6t">Gold Hair-Care</h3></div>
+      <p class="series-tag" data-i18n="s6g">Black and gold bottles in a golden glow.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/gold-hero.webp" alt="Black and gold shampoo bottle on a pedestal in golden glow"><figcaption class="cap">Gold standard</figcaption></figure>
+      <figure class="shot sp5 a-169 push1 reveal"><img decoding="async" src="preview-v4/photos/gold-group.webp" alt="Black and gold hair-care range on pedestals"><figcaption class="cap">The range</figcaption></figure>
+      <div class="duo-wrap" hidden><figure class="duo slim" data-duo>
+        <div class="duo-panel duo-ref"><img decoding="async" src="preview-v4/sources/gold-ref.webp" alt="Source reference"><span class="duo-tag">Reference</span></div>
+        <div class="duo-link" aria-hidden="true"><b>&#8594;</b></div>
+        <div class="duo-panel duo-res"><div class="duo-wipe"><img decoding="async" src="preview-v4/photos/gold-pump.webp" alt="Final campaign image"></div><div class="duo-edge"></div><span class="duo-tag gold">Result</span></div>
+        <figcaption class="duo-cap"><span>Source reference</span><span>Final campaign image</span></figcaption>
+      </figure></div>
+    </div>
+    <div class="sactions"><button class="srcbtn" type="button" aria-expanded="false" data-i18n="srcBtn">Source &#8594; Result</button><button class="viewall" data-series="6"><b>8</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button></div>
+  </article>
+
+
+  <article class="series" id="s7">
+    <div class="series-top">
+      <div><p class="series-id">08 / 08</p><h3 class="series-title" data-i18n="s7t">Niche Fragrance</h3></div>
+      <p class="series-tag" data-i18n="s7g">Desert light, stone pedestals and a clear bottle.</p>
+    </div>
+    <div class="sgrid">
+      <figure class="shot sp7 a-43 reveal"><img decoding="async" src="preview-v4/photos/frag-hero.webp" alt="Clear perfume bottle on a stone pedestal in golden light"><figcaption class="cap">On stone</figcaption></figure>
+      <figure class="shot sp5 a-43 push1 reveal"><img decoding="async" src="preview-v4/photos/frag-artifact.webp" alt="Perfume bottle on a stone slab under sunbeams"><figcaption class="cap">Sunbeam</figcaption></figure>
+    </div>
+    <button class="viewall" data-series="7"><b>9</b> <i></i> <span data-i18n="vAll">images &middot; View all</span></button>
+  </article>
+
+<div class="marquee rev" aria-hidden="true"><div class="track" id="mq2"></div></div>
+
+<!-- PROCESS -->
+<section class="sec on-paper" id="process">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="prLabel">04 &mdash; Process</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="prT1">How the work</span></span>
+      <span class="row"><span data-i18n="prT2">is made<span class="gold">.</span></span></span>
+    </h2>
+    <p class="sec-note" data-i18n="prNote">Each image is generated with AI, upscaled to print-sharp detail, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.</p>
+    <span class="ghost" aria-hidden="true">03</span>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><span class="n">01</span><h3 data-i18n="st1h">Send one photo</h3><p data-i18n="st1p">Send a simple photo of your product on WhatsApp. That is all the input the process needs.</p></div>
+    <div class="step reveal"><span class="n">02</span><h3 data-i18n="st2h">Generate &amp; upscale</h3><p data-i18n="st2p">Concept scenes are generated with AI and upscaled for print-sharp detail.</p></div>
+    <div class="step reveal"><span class="n">03</span><h3 data-i18n="st3h">Finish by hand</h3><p data-i18n="st3p">Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.</p></div>
+  </div>
+  <div class="cta-row"><a class="btn-solid magnet" data-wa data-i18n="ctaProcess" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send one product photo on WhatsApp &#8599;</a></div>
+  <div class="fineprint">
+    <div style="grid-column:1/-1;max-width:640px"><h4 data-i18n="fpH">Commercial use</h4><p data-i18n="fpP">You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.</p></div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-head">
+    <p class="sec-label" data-i18n="aLabel">05 &mdash; About</p>
+    <h2 class="sec-title">
+      <span class="row"><span data-i18n="aT1">The hands</span></span>
+      <span class="row"><span data-i18n="aT2">behind it<span class="gold">.</span></span></span>
+    </h2>
+    <p class="about-body" data-i18n="aBody" style="margin-top:26px"><b>Abdelrahman Ali</b> is a Cairo-based visual artist with five years of hands-on retouching, photography and video editing, now focused on AI product and fashion imagery. Every campaign is art-directed, generated and finished by hand, one product at a time.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <p class="c-kick" data-fade data-i18n="cKick">Contact</p>
+  <h2>
+    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block" data-i18n="cT1">Have a product</span></span>
+    <span class="row" style="display:block;overflow:hidden"><span style="display:inline-block" data-i18n="cT2">to <span class="acc">shoot?</span></span></span>
+  </h2>
+  <p data-fade data-i18n="cP">Send one photo of your product and a word about what you need. I reply with ideas, timing and a quote.</p>
+  <div class="c-actions" data-fade>
+    <a class="btn-solid magnet" data-wa data-i18n="ctaContact" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Send your product photo on WhatsApp &#8599;</a>
+  </div>
+  <div class="c-links" data-fade>
+    <a class="chan" href="https://www.instagram.com/abdelra7man_alii" rel="noopener">
+      <span class="badge">IG</span>
+      <span class="who"><b>Instagram</b><span>@abdelra7man_alii</span></span>
+      <span class="go">&#8599;</span>
+    </a>
+    <a class="chan" href="https://www.linkedin.com/in/abdelrahman-visuals" rel="noopener">
+      <span class="badge">IN</span>
+      <span class="who"><b>LinkedIn</b><span>abdelrahman-visuals</span></span>
+      <span class="go">&#8599;</span>
+    </a>
+    <a class="chan" href="mailto:abdelrahman95ph@gmail.com">
+      <span class="badge">EM</span>
+      <span class="who"><b>Email</b><span>abdelrahman95ph@gmail.com</span></span>
+      <span class="go">&#8599;</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span data-i18n="ftA">Based in Cairo, Egypt &middot; Available for projects worldwide</span>
+  <span>&copy; 2026 Abdelrahman Ali</span>
+</footer>
+
+</main>
+
+<a class="wasticky btn-solid" data-wa data-i18n="ctaStart" href="https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.">Start with one product photo &#8599;</a>
+
+<!-- LIGHTBOX -->
+<button class="totop" id="toTop" type="button" aria-label="Back to top">&#8593;</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="close" id="lbClose">Close &#10005;</button>
+  <div class="stage">
+    <img decoding="async" id="lbImg" alt="">
+    <video id="lbVid" controls playsinline preload="metadata" style="display:none"></video>
+    <a id="lbVidLink" href="#" target="_blank" rel="noopener" style="display:none;color:var(--paper);font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(244,239,230,.4);border-radius:999px;padding:12px 22px;margin-top:14px">Open video directly &#8599;</a>
+  </div>
+  <div class="bar">
+    <button id="lbPrev">&#8592; Prev</button>
+    <span class="lbcount" id="lbCount"></span>
+    <button id="lbNext">Next &#8594;</button>
+  </div>
+</div>
+
+<script src="preview-v4/js/gsap.min.js"></script>
+<script src="preview-v4/js/ScrollTrigger.min.js"></script>
+<script src="preview-v4/js/lenis.min.js"></script>
+<script>
+(function(){try{
+var ROT=window.__ROT;if(!ROT)return;var R=ROT.R;
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+document.querySelectorAll('article.series').forEach(function(art,si){
+ var shots=art.querySelectorAll('.sgrid .shot');var pool=(ROT.SER[si]||[]).filter(function(u){return (R[u]||.75)<1.2;});
+ if(shots.length<2||pool.length<2)return;
+ var keep={};shots.forEach(function(f){var im=f.querySelector('img'),cp=f.querySelector('.cap');if(im&&cp)keep[im.getAttribute('src')]=cp.textContent;});
+ var pk=shuffle(pool).slice(0,shots.length);
+ shots.forEach(function(f,k){var im=f.querySelector('img'),cp=f.querySelector('.cap');im.setAttribute('src',pk[k]);
+  im.setAttribute('alt',ROT.T[si]);
+  if(cp){if(keep[pk[k]]){cp.textContent=keep[pk[k]];}else{cp.parentNode.removeChild(cp);}}});
+});
+var pairs=[],seen={};
+document.querySelectorAll('#proof figure.duo,.duo-wrap figure.duo').forEach(function(d){
+ var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');if(!a||!b)return;
+ var ra=a.getAttribute('src'),rb=b.getAttribute('src');if(seen[ra])return;seen[ra]=1;pairs.push([ra,rb]);});
+var tgt=document.querySelectorAll('#proof figure.duo');
+if(pairs.length>=tgt.length){var pp=shuffle(pairs).slice(0,tgt.length);
+ tgt.forEach(function(d,k){var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');
+  a.setAttribute('src',pp[k][0]);b.setAttribute('src',pp[k][1]);
+  a.setAttribute('alt','Simple source photo of the product');b.setAttribute('alt','Finished campaign image of the product');});}
+}catch(e){}})();
+</script>
+<script>
+(function(){
+"use strict";
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hasGSAP = typeof gsap !== 'undefined';
+if (hasGSAP && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+
+/* marquees */
+var mqContent = '';
+['Campaign Images','AI Ad Films','Retouching','Fashion Editorials','Product Photography'].forEach(function(t,i){
+  mqContent += (i%2 ? '<span><em>'+t+'</em> &middot; </span>' : '<span>'+t+' &middot; </span>');
+});
+document.getElementById('mq1').innerHTML = mqContent + mqContent;
+var mq2 = ''; ['From one photo','To a full campaign','Cairo','Worldwide'].forEach(function(t,i){
+  mq2 += (i%2 ? '<span><em>'+t+'</em> &middot; </span>' : '<span>'+t+' &middot; </span>');
+});
+document.getElementById('mq2').innerHTML = mq2 + mq2;
+
+/* series data for lightbox */
+var SERIES = [["preview-v4/photos/samba-hero.webp", "preview-v4/photos/samba-float.webp", "preview-v4/photos/samba-side.webp", "preview-v4/photos/samba-macro.webp", "preview-v4/photos/samba-onfeet.webp", "preview-v4/photos/samba-flat.webp", "preview-v4/photos/samba-frontlow.webp", "preview-v4/photos/samba-letters.webp", "preview-v4/photos/samba-rear.webp", "preview-v4/photos/samba-sole.webp"], ["preview-v4/photos/derby-hero.webp", "preview-v4/photos/derby-float.webp", "preview-v4/photos/derby-profile.webp", "preview-v4/photos/derby-macro.webp", "preview-v4/photos/derby-strip.webp", "preview-v4/photos/derby-onfeet.webp", "preview-v4/photos/derby-top.webp", "preview-v4/photos/derby-pair.webp"], ["preview-v4/photos/heels-floatpair.webp", "preview-v4/photos/heels-hero.webp", "preview-v4/photos/heels-pair.webp", "preview-v4/photos/heels-flip.webp", "preview-v4/photos/heels-macro.webp", "preview-v4/photos/heels-top.webp"], ["preview-v4/photos/croc-dramatic.webp", "preview-v4/photos/croc-macro.webp", "preview-v4/photos/croc-bag.webp", "preview-v4/photos/croc-zipper.webp"], ["preview-v4/photos/gown-stairs.webp", "preview-v4/photos/gown-limo.webp", "preview-v4/photos/gown-stairsback.webp", "preview-v4/photos/gown-carpet.webp", "preview-v4/photos/gown-night.webp", "preview-v4/photos/gown-detail.webp", "preview-v4/photos/gown-heels.webp", "preview-v4/photos/gown-limo2.webp"], ["preview-v4/photos/ctre-group.webp", "preview-v4/photos/ctre-solo.webp", "preview-v4/photos/ctre-two.webp", "preview-v4/photos/ctre-greyfront.webp", "preview-v4/photos/ctre-greycrouch.webp", "preview-v4/photos/ctre-greysun.webp", "preview-v4/photos/ctre-navychest.webp"], ["preview-v4/photos/gold-hero.webp", "preview-v4/photos/gold-group.webp", "preview-v4/photos/gold-pump.webp", "preview-v4/photos/gold-tall.webp", "preview-v4/photos/gold-angle.webp", "preview-v4/photos/gold-lineup.webp", "preview-v4/photos/gold-tube.webp", "preview-v4/photos/gold-spray.webp"], ["preview-v4/photos/frag-hero.webp", "preview-v4/photos/frag-artifact.webp", "preview-v4/photos/frag-anchor.webp", "preview-v4/photos/frag-drift.webp", "preview-v4/photos/frag-dune.webp", "preview-v4/photos/frag-integrate.webp", "preview-v4/photos/frag-oasis.webp", "preview-v4/photos/frag-openbox.webp", "preview-v4/photos/frag-set.webp"]];
+
+/* lightbox */
+var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbVid=document.getElementById('lbVid'), lbVidLink=document.getElementById('lbVidLink'),
+    lbCount=document.getElementById('lbCount'), curSet=[], curIdx=0;
+function lbShow(){
+  if(curSet.length){ lbImg.style.display='block'; lbVid.style.display='none'; lbVidLink.style.display='none'; document.getElementById('lbPrev').style.display=''; document.getElementById('lbNext').style.display=''; lbVid.pause(); lbVid.removeAttribute('src');
+    var ns=curSet[curIdx]; lbImg.style.opacity=0; var done=false; function show(){ if(done)return; done=true; lbImg.style.opacity=1; } lbImg.onload=show; lbImg.onerror=show; setTimeout(show,700); lbImg.src=ns; if(lbImg.complete&&lbImg.naturalWidth) requestAnimationFrame(function(){ requestAnimationFrame(show); }); lbCount.textContent=(curIdx+1)+' / '+curSet.length; }
+}
+function lbOpen(set,idx){ curSet=set; curIdx=idx||0; lb.classList.add('open'); lbShow(); document.body.style.overflow='hidden'; }
+function lbOpenVideo(v){ curSet=[]; lb.classList.add('open'); lbImg.style.display='none'; lbVid.style.display='block'; document.getElementById('lbPrev').style.display='none'; document.getElementById('lbNext').style.display='none';
+  var url='https://abdelrahman592.github.io/videos/'+v+'.mp4';
+  lbVidLink.href=url; lbVidLink.style.display='none';
+  lbVid.onerror=function(){ lbVid.style.display='none'; lbVidLink.style.display='inline-block'; };
+  var tok=(window.__lbTok=(window.__lbTok||0)+1);
+  function go(u){ if(tok!==window.__lbTok)return; lbVid.src=u; var pr=lbVid.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+  if(v==='desert-lounge' && window.fetch && window.Blob && window.URL){
+    var base='https://abdelrahman592.github.io/videos/d720', names=['p00','p01','p02','p03','q04','p05','p06','p07','p08','p09','p10','p11','p12','p13','p14','p15','p16','p17','p18'];
+    var cached=window.__dlBlobUrl;
+    if(cached){ go(cached); }
+    else { var started=false; setTimeout(function(){ if(!started){ started=true; go(url); } },4000); Promise.all(names.map(function(n){ return fetch(base+n).then(function(r){ if(!r.ok)throw new Error(n); return r.arrayBuffer(); }); }))
+      .then(function(b){ var blob=new Blob(b,{type:'video/mp4'}); if(blob.size!==5157130)throw new Error('size'); window.__dlBlobUrl=URL.createObjectURL(blob); if(!started){ started=true; go(window.__dlBlobUrl); } })
+      .catch(function(){ if(!started){ started=true; go(url); } }); }
+  } else { go(url); }
+  lbCount.textContent=''; document.body.style.overflow='hidden'; }
+function lbClose(){ window.__lbTok=(window.__lbTok||0)+1; lb.classList.remove('open'); lbVid.pause(); lbVid.removeAttribute('src'); lbVidLink.style.display='none'; document.body.style.overflow=''; }
+document.getElementById('lbClose').addEventListener('click',lbClose);
+lb.addEventListener('click',function(e){ if(e.target===lb) lbClose(); });
+document.getElementById('lbPrev').addEventListener('click',function(){ if(curSet.length){curIdx=(curIdx-1+curSet.length)%curSet.length; lbShow();} });
+document.getElementById('lbNext').addEventListener('click',function(){ if(curSet.length){curIdx=(curIdx+1)%curSet.length; lbShow();} });
+document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lbClose(); if(e.key==='ArrowRight')document.getElementById('lbNext').click(); if(e.key==='ArrowLeft')document.getElementById('lbPrev').click(); });
+var tx=null,ty=0;
+lb.addEventListener('touchstart',function(e){ if(e.touches.length!==1){tx=null;return;} tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
+lb.addEventListener('touchend',function(e){ if(tx===null||!curSet.length)return; var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty; tx=null; if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){ document.getElementById(dx<0?'lbNext':'lbPrev').click(); } },{passive:true});
+var tt=document.getElementById('toTop');
+window.addEventListener('scroll',function(){ tt.classList.toggle('show',window.scrollY>1200); },{passive:true});
+tt.addEventListener('click',function(){ if(typeof lenis!=='undefined'&&lenis) lenis.scrollTo(0); else window.scrollTo({top:0,behavior:'smooth'}); });
+document.querySelectorAll('.viewall').forEach(function(b){ b.addEventListener('click',function(){ var s=SERIES[+b.dataset.series]; if(s.length) lbOpen(s,0); }); });
+document.querySelectorAll('.shot').forEach(function(f){
+  f.style.cursor='pointer';
+  f.addEventListener('click',function(){
+    var src=f.querySelector('img').getAttribute('src');
+    for(var i=0;i<SERIES.length;i++){ var j=SERIES[i].indexOf(src); if(j>-1){ lbOpen(SERIES[i],j); return; } }
+  });
+});
+
+/* film cards: hover preview + click for sound */
+document.querySelectorAll('.refimg').forEach(function(im){ im.addEventListener('click',function(){ lbOpen([im.getAttribute('src')],0); }); });
+document.querySelectorAll('.filmthumb').forEach(function(b){ b.addEventListener('click',function(){ lbOpenVideo(b.dataset.v); }); });
+document.querySelectorAll('.vcard').forEach(function(c){
+  var v=c.querySelector('video');
+  function play(){ c.classList.add('playing'); v.play().catch(function(){}); }
+  function stop(){ c.classList.remove('playing'); v.pause(); }
+  c.addEventListener('mouseenter',play); c.addEventListener('mouseleave',stop);
+  c.addEventListener('click',function(){ lbOpenVideo(c.dataset.v); });
+});
+
+var isMobile = window.matchMedia('(max-width:760px)').matches;
+/* source -> result: on-demand reveal per series */
+document.querySelectorAll('.srcbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var w=b.closest('article').querySelector('.duo-wrap');
+    if(!w) return;
+    function rf(){ if(window.ScrollTrigger&&ScrollTrigger.refresh) ScrollTrigger.refresh(); }
+    if(w.hasAttribute('hidden')){ w.removeAttribute('hidden'); b.setAttribute('aria-expanded','true'); if(!reduced&&w.animate) w.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],{duration:550,easing:'cubic-bezier(.22,1,.36,1)'}); rf(); }
+    else { b.setAttribute('aria-expanded','false'); if(!reduced&&w.animate){ var an=w.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(10px)'}],{duration:260,easing:'ease-out'}); an.onfinish=function(){ w.setAttribute('hidden',''); rf(); }; } else { w.setAttribute('hidden',''); rf(); } }
+  });
+});
+
+/* nav scroll state */
+function navState(){ document.querySelector('.nav').classList.toggle('scrolled', window.scrollY>30); }
+addEventListener('scroll', navState, {passive:true}); navState();
+
+/* cursor */
+var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(fine && !reduced){
+  var c1=document.getElementById('cur1'), c2=document.getElementById('cur2'), mx=innerWidth/2,my=innerHeight/2,x2=mx,y2=my;
+  addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; c1.style.left=mx+'px'; c1.style.top=my+'px'; });
+  (function loop(){ x2+=(mx-x2)*.16; y2+=(my-y2)*.16; c2.style.left=x2+'px'; c2.style.top=y2+'px'; requestAnimationFrame(loop); })();
+  c2.innerHTML='<span class="cl">View</span>';
+  document.querySelectorAll('.shot,.hcard,.vcard,.duo-panel').forEach(function(el){
+    el.addEventListener('mouseenter',function(){c2.classList.add('view')});
+    el.addEventListener('mouseleave',function(){c2.classList.remove('view')});
+  });
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){c2.classList.add('big')});
+    el.addEventListener('mouseleave',function(){c2.classList.remove('big')});
+  });
+}
+
+/* smooth scroll + animations */
+var lenis=null;
+if(!reduced && hasGSAP && typeof Lenis!=='undefined'){
+  lenis=new Lenis({lerp:.09});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('.nav a, .scroll-hint, .sindex a').forEach(function(a){
+    a.addEventListener('click',function(e){ var h=a.getAttribute('href'); if(h&&h[0]==='#'){ e.preventDefault(); lenis.scrollTo(h,{offset:0}); } });
+  });
+}
+var loader=document.getElementById('loader');
+if(reduced || !hasGSAP){
+  loader.style.display='none';
+}else{
+  var cnt={v:0}, lc=document.getElementById('loadCount');
+  /* split hero wordmark into chars for the kinetic reveal */
+  (function(){
+    var t=document.querySelector('#heroTitle .row>span'); if(!t) return;
+    var out='';
+    t.childNodes.forEach(function(n){
+      var cls = (n.nodeType===1 && n.classList.contains('dot')) ? 'ch dot' : 'ch';
+      var s = n.textContent;
+      for(var i=0;i<s.length;i++){ var c = s[i]===' ' ? '\u00A0' : s[i]; out += '<span class="'+cls+'">'+c+'</span>'; }
+    });
+    t.innerHTML=out;
+  })();
+  var tl=gsap.timeline();
+  tl.to(cnt,{v:100,duration:1,ease:'power2.inOut',onUpdate:function(){ lc.textContent=String(Math.round(cnt.v)).padStart(2,'0'); }})
+    .to('#loader .mono',{yPercent:-110,duration:.5,ease:'power3.in'},'+=.1')
+    .to(loader,{yPercent:-100,duration:.8,ease:'power4.inOut'},'-=.2')
+    .set(loader,{display:'none'})
+    .from('#heroTitle .ch',{yPercent:112,rotate:5,duration:.9,stagger:.018,ease:'power4.out'},'-=.45')
+    .from('[data-fade]',{y:26,opacity:0,duration:.8,stagger:.1,ease:'power3.out'},'-=.6')
+    .fromTo('.hcard',{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.1,stagger:.09,ease:'power4.inOut'},'-=.55')
+    .fromTo('.hcard img',{scale:1.3},{scale:1,duration:1.5,stagger:.09,ease:'power3.out'},'<');
+
+  /* staggered scroll entrances: left-to-right cascade per grid (awwwards staggered-grid-reveal pattern) */
+  gsap.utils.toArray('.sgrid').forEach(function(grid){
+    if(isMobile) return; /* no shot entrance on small screens */
+    var gw=Math.max(1,grid.offsetWidth);
+    gsap.utils.toArray(grid.querySelectorAll('.shot:not(.shot-x)')).forEach(function(el){
+      if(el.offsetParent===null) return;
+      var colF=Math.min(1,el.offsetLeft/gw);
+      gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',rotate:3.2,scale:1.07},{clipPath:'inset(0 0 0% 0)',rotate:0,scale:1,duration:1.35,delay:+(colF*0.28).toFixed(3),ease:'power4.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+      var img=el.querySelector('img');
+      if(img) gsap.fromTo(img,{scale:1.26,yPercent:-6},{scale:1.12,yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+  });
+  if(!isMobile) gsap.utils.toArray('.films-grid').forEach(function(grid){
+    var gw=Math.max(1,grid.offsetWidth);
+    gsap.utils.toArray(grid.querySelectorAll('.vcard')).forEach(function(el){
+      var colF=Math.min(1,el.offsetLeft/gw);
+      gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)',scale:1.06},{clipPath:'inset(0 0 0% 0)',scale:1,duration:1.25,delay:+(colF*0.25).toFixed(3),ease:'power4.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+  });
+  gsap.utils.toArray('.reveal:not(.shot):not(.vcard)').forEach(function(el){
+    gsap.fromTo(el,{y:60,opacity:0},{y:0,opacity:1,duration:1,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 88%'}});
+    var img=el.querySelector('img');
+    if(img) gsap.fromTo(img,{scale:1.14},{scale:1.02,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  gsap.utils.toArray('.sec-title .row>span, .contact h2 .row>span, .band-title .row>span').forEach(function(el){
+    gsap.from(el,{yPercent:110,skewY:5,duration:1.1,ease:'power4.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+  });
+  /* hero exit choreography: wordmark lifts and fades, cards drift out at different depths */
+  gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}})
+    .to('#heroTitle',{yPercent:-55,scale:.93,autoAlpha:0,ease:'none'},0)
+    .to('.hero-kick,.hero-sub',{y:-46,autoAlpha:0,ease:'none'},0)
+    .to('.hcard',{y:function(i){return -26-(i%3)*58},rotate:function(i){return (i%2?1:-1)*(1.2+(i%3)*.8)},ease:'none'},0);
+
+  /* liquid scroll: media skews with scroll velocity */
+  var proxy={skew:0}, skewSet=gsap.quickSetter('.shot,.hcard,.vcard','skewY','deg'), clampS=gsap.utils.clamp(-4.5,4.5);
+  ScrollTrigger.create({onUpdate:function(self){var sk=clampS(self.getVelocity()/-320); if(Math.abs(sk)>Math.abs(proxy.skew)){proxy.skew=sk; gsap.to(proxy,{skew:0,duration:.9,ease:'power3',overwrite:true,onUpdate:function(){skewSet(proxy.skew)}});}}});
+
+  gsap.utils.toArray('.ghost').forEach(function(g){
+    gsap.fromTo(g,{yPercent:30},{yPercent:-30,ease:'none',scrollTrigger:{trigger:g.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  /* band title rows drift in opposite directions on scroll */
+  gsap.utils.toArray('.band-title .row').forEach(function(row,i){
+    gsap.fromTo(row,{xPercent:i?-6:6},{xPercent:i?6:-6,ease:'none',scrollTrigger:{trigger:'.band',start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  /* marquees react to scroll velocity */
+  document.querySelectorAll('.marquee .track').forEach(function(track){
+    track.style.animation='none';
+    var rev=track.closest('.marquee').classList.contains('rev');
+    var tw = rev ? gsap.fromTo(track,{xPercent:-50},{xPercent:0,duration:22,ease:'none',repeat:-1})
+                 : gsap.to(track,{xPercent:-50,duration:22,ease:'none',repeat:-1});
+    var target=1;
+    if(lenis) lenis.on('scroll',function(e){ target = 1+Math.min(5,Math.abs(e.velocity)/4); if(e.velocity<0) target=-target; });
+    gsap.ticker.add(function(){ tw.timeScale(gsap.utils.interpolate(tw.timeScale(),target,.08)); target += (1-target)*.04; });
+  });
+  /* premium pointer tilt on cards: besharm-style depth, calmed to +/-4.5deg */
+  if(fine) document.querySelectorAll('.shot,.vcard').forEach(function(card){
+    gsap.set(card,{transformPerspective:1100});
+    var rX=gsap.quickTo(card,'rotationX',{duration:.7,ease:'power3.out'});
+    var rY=gsap.quickTo(card,'rotationY',{duration:.7,ease:'power3.out'});
+    card.addEventListener('pointermove',function(e){
+      var r=card.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      rY(px*9); rX(-py*8);
+      card.style.setProperty('--mx',((px+.5)*100)+'%');
+      card.style.setProperty('--my',((py+.5)*100)+'%');
+    });
+    card.addEventListener('pointerleave',function(){ rX(0); rY(0); });
+  });
+  /* magnetic buttons */
+  if(fine) document.querySelectorAll('.magnet').forEach(function(b){
+    b.addEventListener('mousemove',function(e){ var r=b.getBoundingClientRect(); gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.28,y:(e.clientY-r.top-r.height/2)*.4,duration:.4,ease:'power3.out'}); });
+    b.addEventListener('mouseleave',function(){ gsap.to(b,{x:0,y:0,duration:.8,ease:'elastic.out(1,.4)'}); });
+  });
+  gsap.utils.toArray('.push1:not(.shot-x),.push2:not(.shot-x)').forEach(function(el){
+    if(isMobile) return;
+    if(el.offsetParent===null) return;
+    gsap.fromTo(el,{y:40},{y:-40,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+}
+
+/* i18n: EN/AR toggle */
+var WA_EN='https://wa.me/201556528559?text=Hi%20Abdelrahman%2C%20I%27d%20like%20to%20start%20with%20one%20photo%20of%20my%20product.';
+var WA_AR='https://wa.me/201556528559?text='+encodeURIComponent('أهلاً عبدالرحمن، حابب أبدأ بصورة واحدة لمنتجي.');
+var I18N={
+en:{
+nFilms:'Films',nWork:'Work',nProcess:'Process',nAbout:'About',nContact:'Contact',
+kickA:'<b>Abdelrahman Ali</b> &middot; AI product &amp; fashion studio',kickB:'Based in Cairo &middot; Working worldwide',
+heroSub:'<b>Campaign images and short ad films</b> for your product, made from one simple photo. Finished by hand, delivered in days.',
+ctaStart:'Start with one product photo &#8599;',
+pLabel:'01 &mdash; Proof',pT1:'Source &#8594;',pT2:'Result<span class="gold">.</span>',
+pNote:'Every campaign starts from a simple photo of your product. The details that make it yours stay intact.',
+duoRef:'Reference',duoRes:'Result',duoCapL:'Source reference',duoCapR:'Final campaign image',
+fLabel:'02 &mdash; Films',fT1:'AI Ad',fT2:'Films<span class="gold">.</span>',
+fNote:'Concept ads built with AI from product and character references, edited to final cut. Preview each film in motion, tap to watch with sound.',
+rHead:'Each film: its reference sheet &rarr; the result',
+rc1:'Reference sheet: clothes, model and location',rc2:'Reference sheet: model, outfit pieces and location',rc3:'Reference sheet: model and product',rc4:'Reference sheet: product photo',
+bKick:'The idea',bT1:'Reference in.',bT2:'Campaign out.',
+bNote:'Every series on this page starts from a simple source photo of the product and ends as a finished campaign image, retouched and reviewed by hand.',
+wLabel:'03 &mdash; Work',wT1:'Selected',wT2:'Work<span class="gold">.</span>',
+wNote:'61 campaign images in 8 series. Each series leads with its strongest frames; a source &#8594; result pair is one tap away.',
+jump:'Jump to a series',srcBtn:'Source &#8594; Result',vAll:'images &middot; View all',
+s0t:'Classic Sneaker',s0g:'Floating hero, stitching macro and street style.',s6t:'Skincare Ritual',s6g:'Lather, glass and fresh ingredients.',s7t:'Gold Hair-Care',s7g:'Black and gold bottles in a golden glow.',s1t:'Monochrome Derby',s1g:'Black-on-black studio light, floating form.',
+s2t:'Stiletto Heels',s2g:'Mirror finishes, floating pairs and cream leather.',
+s3t:'Croc Leather Bag',s3g:'Burgundy croc embossing on red silk drapes.',
+s4t:'Evening Gown',s4g:'Gold sequins, a grand staircase and a waiting limousine.',
+s5t:'Athletic Tracksuits',s5g:'Three colorways, one elevator, flash photography.',
+s6t:'Skincare Ritual',s6g:'Lather, glass and fresh ingredients.',
+prLabel:'04 &mdash; Process',prT1:'How the work',prT2:'is made<span class="gold">.</span>',
+prNote:'Each image is generated with AI, upscaled to print-sharp detail, then retouched and reviewed by hand before delivery. Films follow the same path: reference preparation, generation, edit, review.',
+st1h:'Send one photo',st1p:'Send a simple photo of your product on WhatsApp. That is all the input the process needs.',
+st2h:'Generate &amp; upscale',st2p:'Concept scenes are generated with AI and upscaled for print-sharp detail.',
+st3h:'Finish by hand',st3p:'Every image is retouched and reviewed by hand before delivery. Films are edited to a final cut.',
+ctaProcess:'Send one product photo on WhatsApp &#8599;',
+fpH:'Commercial use',fpP:"You keep the rights to your own product assets and logos. AI-generated images are subject to the generation tools' terms, so exclusive copyright registration cannot be promised.",
+aLabel:'05 &mdash; About',aT1:'The hands',aT2:'behind it<span class="gold">.</span>',
+aBody:'<b>Abdelrahman Ali</b> is a Cairo-based visual artist with five years of hands-on retouching, photography and video editing, now focused on AI product and fashion imagery. Every campaign is art-directed, generated and finished by hand, one product at a time.',
+cKick:'Contact',cT1:'Have a product',cT2:'to <span class="acc">shoot?</span>',
+cP:'Send one photo of your product and a word about what you need. I reply with ideas, timing and a quote.',
+ctaContact:'Send your product photo on WhatsApp &#8599;',
+ftA:'Based in Cairo, Egypt &middot; Available for projects worldwide'
+},
+ar:{
+nFilms:'أفلام',nWork:'الشغل',nProcess:'الخطوات',nAbout:'عنّي',nContact:'تواصل',
+kickA:'<b>عبدالرحمن علي</b> · استوديو منتجات وأزياء بالذكاء الاصطناعي',kickB:'من القاهرة · شغل مع العالم',
+heroSub:'<b>صور حملات وأفلام إعلانية بالذكاء الاصطناعي</b> لمنتجك، من صورة واحدة بسيطة. تشطيب باليد، والتسليم خلال أيام.',
+ctaStart:'ابدأ بصورة واحدة لمنتجك ↗',
+pLabel:'01 — البرهان',pT1:'من صورة',pT2:'لنتيجة<span class="gold">.</span>',
+pNote:'كل حملة بتبدأ من صورة بسيطة لمنتجك. التفاصيل اللي بتميزه بتفضل زي ما هي.',
+duoRef:'الصورة الأصلية',duoRes:'النتيجة',duoCapL:'الصورة المرجعية',duoCapR:'صورة الحملة النهائية',
+fLabel:'02 — الأفلام',fT1:'أفلام إعلانية',fT2:'بالذكاء الاصطناعي<span class="gold">.</span>',
+fNote:'إعلانات اتبنت بالذكاء الاصطناعي من مراجع للمنتج والشخصية، واتمونتجت لنسخة نهائية. شوف كل فيلم وهو بيتحرك، ودوس عليه عشان تسمعه بالصوت.',
+rHead:'كل فيلم: شيت المرجع ← النتيجة',
+rc1:'شيت مرجع: الهدوم، الموديل، واللوكيشن',rc2:'شيت مرجع: الموديل، قطع اللبس، واللوكيشن',rc3:'شيت مرجع: الموديل والمنتج',rc4:'شيت مرجع: صورة المنتج',
+bKick:'الفكرة',bT1:'صورة تدخل.',bT2:'حملة تطلع.',
+bNote:'كل سلسلة في الصفحة دي بتبدأ من صورة بسيطة للمنتج وبتنتهي كصورة حملة نهائية، متشطبة ومراجعة باليد.',
+wLabel:'03 — الشغل',wT1:'شغل',wT2:'مختار<span class="gold">.</span>',
+wNote:'61 صورة حملة في 8 سلاسل. كل سلسلة بتبدأ بأقوى لقطاتها، ومقارنة الصورة ← النتيجة على بعد ضغطة واحدة.',
+jump:'روح لسلسلة',srcBtn:'الصورة ← النتيجة',vAll:'صور · شوف الكل',
+s0t:'سنيكر كلاسيك',s0g:'لقطة طايرة، ماكرو للخياطة، وستايل شارع.',s6t:'طقس العناية بالبشرة',s6g:'رغوة وزجاج ومكونات طازجة.',s7t:'عناية بالشعر دهبي',s7g:'زجاجات أسود ودهبي في توهج دهبي.',s1t:'ديربي أسود',s1g:'إضاءة استوديو أسود على أسود، وشكل طائر.',
+s2t:'كعب ستيليتو',s2g:'تشطيبات مرايا، أزواج طايرة، وجلد كريمي.',
+s3t:'شنطة جلد كروك',s3g:'نقشة كروك بورجوندي على ستائر حرير أحمر.',
+s4t:'فستان سهرة',s4g:'ترتر دهبي، سلم كبير، وليموزين مستنية.',
+s5t:'تراكات رياضية',s5g:'تلات ألوان، أسانسير واحد، وتصوير بفلاش.',
+s6t:'عناية بالبشرة',s6g:'رغوة، زجاج، ومكونات طازجة.',
+prLabel:'04 — الخطوات',prT1:'الشغل ده',prT2:'بيتعمل إزاي<span class="gold">.</span>',
+prNote:'كل صورة بتتولد بالذكاء الاصطناعي، وبتترفع جودتها لتفاصيل حادة، وبعدين بتتشطب وبتتراجع باليد قبل التسليم. الأفلام ماشية بنفس الطريق: تجهيز المرجع، توليد، مونتاج، مراجعة.',
+st1h:'ابعت صورة واحدة',st1p:'ابعت صورة بسيطة لمنتجك على واتساب. دي كل الحاجة اللي الشغل محتاجها.',
+st2h:'توليد ورفع جودة',st2p:'مشاهد بأفكار مختلفة بتتولد بالذكاء الاصطناعي وبتترفع لتفاصيل حادة تصلح للطباعة.',
+st3h:'تشطيب باليد',st3p:'كل صورة بتتشطب وبتتراجع باليد قبل التسليم. الأفلام بتتمونتج لقص نهائي.',
+ctaProcess:'ابعت صورة منتجك على واتساب ↗',
+fpH:'الاستخدام التجاري',fpP:'حقوق صور منتجاتك ولوجوهاتك بتفضل ليك. الصور المتولدة بالذكاء الاصطناعي تابعة لشروط أدوات التوليد، فمينفعش نعدك بتسجيل حقوق ملكية حصري.',
+aLabel:'05 — عنّي',aT1:'الإيد اللي',aT2:'ورا الشغل<span class="gold">.</span>',
+aBody:'<b>عبدالرحمن علي</b> فيجوال آرتست من القاهرة، عنده خمس سنين خبرة عملية في الريتاتش والتصوير والمونتاج، ودلوقتي مركّز على صور المنتجات والأزياء بالذكاء الاصطناعي. كل حملة بتتوجّه فنياً وبتتولد وبتتشطب باليد، منتج واحد في المرة.',
+cKick:'تواصل',cT1:'عندك منتج',cT2:'<span class="acc">عايز تصوره؟</span>',
+cP:'ابعت صورة واحدة لمنتجك وكلمة عن اللي محتاجه، وهرد عليك بأفكار ومعاد تسليم وسعر.',
+ctaContact:'ابعت صورة منتجك على واتساب ↗',
+ftA:'من القاهرة، مصر · متاح لمشاريع في أي مكان'
+}};
+var lang=''; try{lang=localStorage.getItem('aaLang')||'';}catch(e){}
+if(lang!=='ar'&&lang!=='en'){ try{lang=((navigator.language||'').toLowerCase().indexOf('ar')===0)?'ar':'en';}catch(e){lang='en';} }
+function setLang(l){ lang=(l==='ar')?'ar':'en'; var d=I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.setAttribute('href', lang==='ar'?WA_AR:WA_EN); });
+  var h=document.documentElement; h.setAttribute('lang',lang);
+  if(lang==='ar'){h.setAttribute('dir','rtl');}else{h.removeAttribute('dir');}
+  var b=document.getElementById('langBtn'); if(b) b.textContent=(lang==='ar'?'EN':'عربي');
+  try{localStorage.setItem('aaLang',lang);}catch(e){}
+  if(window.ScrollTrigger&&ScrollTrigger.refresh) setTimeout(function(){ScrollTrigger.refresh();},80);
+}
+var langBtnEl=document.getElementById('langBtn'); if(langBtnEl) langBtnEl.addEventListener('click',function(){ setLang(lang==='ar'?'en':'ar'); });
+if(lang==='ar') setLang('ar');
+
+})();
+</script>
+<script>
+(function(){
+var AR={'Arrival':'وصول','Brown duo':'ثنائي بني','Campaign hero':'صورة الحملة','Cream pumps':'كعب كريمي','Elevator trio':'تلاتة في الأسانسير','Floating':'معلّق','Floating pair':'زوج معلّق','Gold standard':'الدهبي الكلاسيك','Grand staircase':'السلم الكبير','Hardware macro':'ماكرو الإكسسوار','On black':'على الأسود','On silk':'على الحرير','On stone':'على الحجر','Sunbeam':'شعاع شمس','The range':'المجموعة',
+'Desert Lounge \u2014 fashion film':'Desert Lounge \u2014 فيلم أزياء','Black jacket \u2014 Cairo fashion film':'جاكيت أسود \u2014 فيلم أزياء في القاهرة','Cream jar \u2014 skincare ad':'برطمان كريم \u2014 إعلان عناية بالبشرة','Balm tube \u2014 skincare ad':'أنبوبة بلسم \u2014 إعلان عناية بالبشرة','Face care \u2014 skincare ad':'عناية بالوجه \u2014 إعلان عناية بالبشرة','Skin texture \u2014 skincare ad':'ملمس البشرة \u2014 إعلان عناية بالبشرة','Foam cleanser \u2014 skincare ad':'غسول رغوي \u2014 إعلان عناية بالبشرة',
+'Reference sheet: clothes, model and location':'شيت مرجع: الهدوم، الموديل، واللوكيشن','Reference sheet: model, outfit pieces and location':'شيت مرجع: الموديل، قطع اللبس، واللوكيشن','Reference sheet: model and product':'شيت مرجع: الموديل والمنتج','Reference sheet: product photo':'شيت مرجع: صورة المنتج'};
+var els=[].slice.call(document.querySelectorAll('.cap,.vname,.refcap'));
+els.forEach(function(e){e.setAttribute('data-en',e.textContent.trim());});
+function apply(){var ar=document.documentElement.getAttribute('lang')==='ar';
+ els.forEach(function(e){var en=e.getAttribute('data-en');var t=ar&&AR[en]?AR[en]:en;if(e.textContent!==t)e.textContent=t;});}
+new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});apply();
+var w=document.querySelector('.wasticky'),c=document.getElementById('contact');
+if(w&&c&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){w.classList.toggle('hide',x.isIntersecting);});},{threshold:0.15}).observe(c);}
+})();
+</script>
+<script>
+/* live rotation: soft crossfade, staggered, paused when hidden/hovered/offscreen */
+(function(){try{
+var ROT=window.__ROT;if(!ROT)return;
+if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var cn=navigator.connection||{};if(cn.saveData)return;
+var R=ROT.R,SER=ROT.SER;
+var st=document.createElement('style');
+st.textContent='img.rot{transition:opacity .8s ease}.hcard img.rot{transition:transform 1.2s cubic-bezier(.22,1,.36,1),opacity .8s ease}img.rot.out{opacity:0}.cap.rot,.hcard figcaption.rot{transition:opacity .8s ease}.rot.out{opacity:0}';
+document.head.appendChild(st);
+function ok(u){return (R[u]||.75)<1.2;}
+function rnd(a){return a[Math.floor(Math.random()*a.length)];}
+function lowData(){var c=navigator.connection;return !!(c&&(c.saveData||/(^|-)2g$/.test(c.effectiveType||'')));}
+var paused=document.hidden;document.addEventListener('visibilitychange',function(){paused=document.hidden;});
+function load(u,cb){var i=new Image();i.onload=function(){cb(true);};i.onerror=function(){cb(false);};i.src=u;}
+function srcOf(im){return im.getAttribute('src');}
+function swap(im,u,after){im.classList.add('rot');im.classList.add('out');setTimeout(function(){im.setAttribute('src',u);
+ var go=function(){requestAnimationFrame(function(){im.classList.remove('out');if(after)after();});};
+ if(im.complete)go();else{im.onload=go;im.onerror=go;}},820);}
+function slot(host,next){ /* host: element for hover/viz; next(): returns {apply:fn(done)} or null */
+ var over=false,vis=true;
+ host.addEventListener('mouseenter',function(){over=true;});host.addEventListener('mouseleave',function(){over=false;});
+ host.addEventListener('touchstart',function(){over=true;clearTimeout(host.__t);host.__t=setTimeout(function(){over=false;},9000);},{passive:true});
+ if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(host);
+ function tick(){
+  if(paused||over||!vis||lowData()){return later();}
+  var n=next();if(!n)return later();
+  load(n.url,function(good){if(!good)return later();n.apply(later);});
+ }
+ function later(){setTimeout(tick,4000+Math.random()*2000);}
+ setTimeout(tick,1500+Math.random()*5000);
+}
+/* hero strip */
+var cards=[].slice.call(document.querySelectorAll('#heroStrip .hcard'));
+function heroSeriesNow(){return cards.map(function(c){return +c.__si;});}
+cards.forEach(function(c){var im=c.querySelector('img');var u=srcOf(im);c.__si=SER.findIndex(function(a){return a.indexOf(u)>-1;});});
+cards.forEach(function(c){var im=c.querySelector('img'),cap=c.querySelector('figcaption');
+ slot(c,function(){var used=heroSeriesNow();var opts=[0,1,2,3,4,5,6,7].filter(function(i){return used.indexOf(i)<0;});if(!opts.length)return null;
+  var si=rnd(opts),u=rnd(SER[si].filter(ok));
+  return {url:u,apply:function(done){swap(im,u,function(){});c.__si=si;
+   if(cap){cap.classList.add('rot','out');setTimeout(function(){var h=document.querySelector('#s'+si+' .series-title');cap.textContent=h?h.textContent:'';cap.setAttribute('data-i18n','s'+si+'t');cap.classList.remove('out');},820);}
+   setTimeout(done,900);}};});});
+/* series lead shots */
+document.querySelectorAll('article.series').forEach(function(art,si){
+ var shots=[].slice.call(art.querySelectorAll('.sgrid .shot'));if(shots.length<2)return;
+ var pool=SER[si].filter(ok);if(pool.length<3)return;
+ shots.forEach(function(f){var im=f.querySelector('img');
+  slot(f,function(){var shown=shots.map(function(x){return srcOf(x.querySelector('img'));});
+   var opts=pool.filter(function(u){return shown.indexOf(u)<0;});if(!opts.length)return null;var u=rnd(opts);
+   return {url:u,apply:function(done){var cp=f.querySelector('.cap');if(cp){cp.classList.add('rot','out');setTimeout(function(){if(cp.parentNode)cp.parentNode.removeChild(cp);},850);}
+    im.setAttribute('alt',ROT.T[si]);swap(im,u);setTimeout(done,900);}};});});
+});
+/* before/after pairs */
+var pairs=[],seen={};
+document.querySelectorAll('#proof figure.duo,.duo-wrap figure.duo').forEach(function(d){var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');if(!a||!b)return;var ra=srcOf(a);if(seen[ra])return;seen[ra]=1;pairs.push([ra,srcOf(b)]);});
+var tgt=[].slice.call(document.querySelectorAll('#proof figure.duo'));
+if(pairs.length>tgt.length+1)tgt.forEach(function(d){var a=d.querySelector('.duo-ref img'),b=d.querySelector('.duo-res img');
+ slot(d,function(){var shown=tgt.map(function(x){return srcOf(x.querySelector('.duo-ref img'));});
+  var opts=pairs.filter(function(p){return shown.indexOf(p[0])<0;});if(!opts.length)return null;var p=rnd(opts);
+  return {url:p[1],apply:function(done){var l=new Image();l.onload=function(){swap(a,p[0]);swap(b,p[1]);setTimeout(done,900);};l.onerror=function(){done();};l.src=p[0];}};});});
+}catch(e){}})();
+</script>
+</body>
+</html>
+
+<!-- restructure v2: AR/EN toggle, 5 series, WhatsApp-first CTA -->
